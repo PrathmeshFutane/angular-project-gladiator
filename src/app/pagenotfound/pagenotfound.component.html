@@ -1,0 +1,18 @@
+<div class="container text-center"  >
+    <div class="image" style="margin-bottom: 30px;">
+        <img height="300px" width="30%" src="https://cdn.pixabay.com/photo/2013/07/13/13/15/traffic-sign-160659_960_720.png" alt="">
+    </div>
+    <div class="content">
+        <h2>Warning !</h2>
+        <h3>Page Not Found</h3>
+    </div>
+</div>
+
+<select [(ngModel)]="id">
+    <option *ngFor="let i of data" value="{{i['id']}}">
+        {{i['title']}} {{i['id']}}
+    </option>
+</select>
+
+id you selected is : {{id}}
+

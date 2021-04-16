@@ -1,0 +1,119 @@
+<div class="container">
+  <!-- first -->
+  <div class="row" style="display: flex; justify-content: space-around; align-items: center;">
+    
+    <div class="col-lg-3 col-md-3 col-sm-12">
+      <!-- <div class="card " style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title text-center">Prathmesh Futane</h5>
+          
+        </div>
+      </div> -->
+    </div>
+
+    <!-- second -->
+    <div class="col-lg-3 col-md-3 col-sm-12" style="padding: 20px;;">
+      <div class="card " style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title text-center">Prathmesh Futane</h5>
+          <div class="text-center">
+            <i style="margin-left: 0px;" class=" text-center fa fa-user fa-5x"></i>
+          </div>
+        </div>
+      </div>
+    
+    </div>
+  </div>
+</div>
+
+<!-- --------------------------------------------------------------------------------------------- -->
+
+<div class="container">
+  <!-- first -->
+  <div class="row" style="display: flex; justify-content: space-around; align-items: center;">
+    <div class="col-lg-3 col-md-3 col-sm-12">
+      <div class="card " style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">
+            <i class="fa fa-eye fa-3x"></i>
+          </h5>
+          <div class="container" style="text-align: center;">
+            <button class="btn btn-outline-dark">View Order</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- second -->
+    <div class="col-lg-3 col-md-3 col-sm-12">
+      <div class="card " style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">
+            <i class="fa fa-gift fa-3x"></i>
+          </h5>
+          <div class="container" style="text-align: center;">
+            <button class="btn  btn-outline-dark ">Place Order</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- third -->
+    <div class="col-lg-3 col-md-3 col-sm-12">
+      <div class="card  " style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title ">
+            <i class="fa fa-window-close fa-3x"></i>
+          </h5>
+          <div class="container" style="text-align: center;">
+            <button class="btn  btn-outline-dark">Cancel Order</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- first row end -->
+
+<hr class="my-5">   
+
+  <!-- second row start -->
+
+  <div class="row" style=" margin-top: 30px; display: flex; justify-content: space-around; align-items: center;">
+    <div class="col-lg-3 col-md-3 col-sm-12">
+      <div class="card " style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">
+            <i class="fa fa-user fa-3x"></i>
+          </h5>
+          <div class="container" style="text-align: center;">
+            <button class="btn  btn-outline-dark" (click)="open(content)">Profile</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+
+  </div>
+</div>
+
+
+<!-- ----------------------------------------------------------------------------------------- -->
+<!-- modals -->
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <i class="fa fa-window-close fa-2x"></i>
+    </button>
+  </div>
+  <div class="modal-body">
+     <div class="content">
+       this is your profile congradulation bro
+     </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+  </div>
+</ng-template>
+

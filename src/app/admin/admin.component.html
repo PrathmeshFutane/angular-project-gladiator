@@ -1,0 +1,24 @@
+<div class="container" style="width: 50%; margin-bottom: 30px; margin-top: 30px; border: 2px solid grey; padding: 30px;;">
+    <div class="container" style="text-align:center;">
+      <h3>Admin Login </h3>
+      <i class="fa fa-user-plus fa-10x"></i>
+    </div>
+    <form (ngSubmit)="login()">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" name="email" [(ngModel)]="email">
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" name="password" [(ngModel)]="password">
+      </div>
+      <div class="checkbox">
+        <label><input type="checkbox" name="rememberMe" [(ngModel)]="rememberMe"> Remember me</label>
+      </div>
+      <button type="submit" class="btn btn-primary">Login</button>
+      <button type="reset" class="btn btn-danger m-3">Reset</button>
+    </form>
+      
+  </div>
+  
+  

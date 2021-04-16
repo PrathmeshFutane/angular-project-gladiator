@@ -1,0 +1,20 @@
+.form-box {
+  width: 50%;
+  margin-top: 30px;
+  border: 2px solid grey;
+  padding: 30px;
+  margin-bottom: 30px;
+  border: 2px solid orange;
+}
+
+i {
+  color: orange;
+}
+
+h3 {
+  color: orange;
+}
+
+input:hover {
+  color: orange;
+}

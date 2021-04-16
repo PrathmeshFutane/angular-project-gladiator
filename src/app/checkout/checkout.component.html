@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="container ">
+    <!-- card -->
+    <div class="card" style="margin-top: 20px; margin-bottom: 20px;">
+      <div class="card-header bg-primary text-white">
+        Prathmesh Futane
+      </div>
+      <div class="card-body ">
+        <div class="card-text">Order Id :</div>
+        <div class="card-text">Shipping address :</div>
+        <div class="card-text">Mobile No :</div>
+        <div class="card-text">Total Price :</div>
+        
+        <div class="displayDates">
+            <div class="card-text">Shipping Date :</div>
+            <div class="card-text" >Delivery Date: 25/04/2020</div>
+        </div>
+        
+
+      </div>
+    </div>
+
+    <!-- order detail -->
+    <h2 class="">Order Details</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Photo</th>
+          <th style="margin-left: 20px; text-align: center;">Quantity</th>
+          <th>Name</th>
+          <th style="margin-left: 20px; text-align: center;">Sub Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let i of data">
+          <th style="height: 100px; width: 100px;"><img height="100%" width="100%" class="card-img-top"
+              src="{{i['image']}}" alt="Card image cap"></th>
+          <th style="margin-left: 20px; text-align: center;">1</th>
+          <th style="height: 100px; width: 400px;">{{i['title']}}</th>
+          <th style="margin-left: 20px; text-align: center;">unit*quant</th>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="button" style="text-align: right;">
+      <button class="btn btn-primary" routerLink="/payment">make payment</button>
+    </div>
+
+  </div>
+</div>
