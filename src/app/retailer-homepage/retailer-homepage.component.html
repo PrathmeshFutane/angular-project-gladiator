@@ -79,8 +79,8 @@
 <div class="container" style="width: 50%;">
     <label for="cars" style="margin-top: 10px; margin-bottom: 10px;">Choose a Category:</label>
 
-    <select [(ngModel)]="id" [(ngModel)]="categoryName" class="form-select" style="margin-top: 10px; margin-bottom: 10px;" aria-label="Default select example">
-        <option *ngFor="let i of data" [value]="i.title" [value]="i.id">{{i['title']}}</option>
+    <select [(ngModel)]="product.categoryId" class="form-select" style="margin-top: 10px; margin-bottom: 10px;" aria-label="Default select example">
+        <!-- <option *ngFor="let i of data" [value]="i.title" [value]="i.id">{{i['title']}}</option> -->
        
       </select>
       id is : {{id}}
@@ -110,7 +110,7 @@
 
       <div class="form-group">
         <label for="name">Name</label>
-        <input type="text" class="form-control" name="name" id="name" [(ngModel)]="name">
+        <input type="text" class="form-control" name="name" id="name" [(ngModel)]="product.productName">
       </div>
 
 
@@ -122,30 +122,22 @@
 
       
 
-     
-
-      <div class="form-group">
-        <label for="image">Image</label>
-        <input type="file" class="form-control" name="image" id="image" [(ngModel)]="image">
-        
-      </div>
-
 
 
       <div class="form-group">
         <label for="productDetails">Product Details</label>
-        <input type="text" class="form-control" id="productDetails" name="productDetails" [(ngModel)]="productDetails">
+        <input type="text" class="form-control" id="productDetails" name="productDetails" [(ngModel)]="product.productDescription">
       </div>
 
 
       <div class="form-group">
-        <label for="quantity">Quantity</label>
-        <input type="number" class="form-control" id="quantity" name="quantity" [(ngModel)]="quantity">
+        <label for="quantity">Stock</label>
+        <input type="number" class="form-control" id="quantity" name="quantity" [(ngModel)]="product.stock">
       </div>
 
       <div class="form-group">
         <label for="price">Price</label>
-        <input type="number" class="form-control" id="price" name="price" [(ngModel)]="price">
+        <input type="number" class="form-control" id="price" name="price" [(ngModel)]="product.unitPrice">
       </div>
 
 
@@ -156,9 +148,17 @@
     </form>
 
   </div>
+  
+
+</div>
 
 
-
-
-
+<div class="container text-center" >
+  <form>
+    <div class="form-group">
+      <label for="image">Image</label>
+      <input type="file" class="form-control" name="image" id="image" [(ngModel)]="product.image">
+      
+    </div>
+    </form>
 </div>
