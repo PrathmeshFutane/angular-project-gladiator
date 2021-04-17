@@ -17,7 +17,7 @@
       <input type="text" class="form-control" required name="ownerName" id="name" [(ngModel)]="retailer.ownerName" #ownerName="ngModel">
       <div *ngIf="ownerName.invalid && (ownerName.dirty || ownerName.touched)" class="alert alert-danger">
         <div *ngIf="ownerName.errors.required">
-          Name is required.
+          Owner Name is required.
         </div>
       </div>
     </div>
@@ -27,7 +27,7 @@
       <input type="text" class="form-control" required name="company" id="name" [(ngModel)]="retailer.company" #company="ngModel">
       <div *ngIf="company.invalid && (company.dirty || company.touched)" class="alert alert-danger">
         <div *ngIf="company.errors.required">
-          Name is required.
+          Company Name is required.
         </div>
       </div>
     </div>
