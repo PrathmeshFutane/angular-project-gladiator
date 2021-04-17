@@ -34,7 +34,6 @@ import { AdminHomepageComponent } from './admin-homepage/admin-homepage.componen
 import { AdminTotalCustomerComponent } from './admin-total-customer/admin-total-customer.component';
 import { AdminTotalRetailerComponent } from './admin-total-retailer/admin-total-retailer.component';
 import { AdminAddCategoryComponent } from './admin-add-category/admin-add-category.component';
-import { AdminAddCarouselComponent } from './admin-add-carousel/admin-add-carousel.component';
 import { RetailerHomepageComponent } from './retailer-homepage/retailer-homepage.component';
 
 @NgModule({
@@ -67,7 +66,6 @@ import { RetailerHomepageComponent } from './retailer-homepage/retailer-homepage
     AdminTotalCustomerComponent,
     AdminTotalRetailerComponent,
     AdminAddCategoryComponent,
-    AdminAddCarouselComponent,
     RetailerHomepageComponent
   ],
   imports: [

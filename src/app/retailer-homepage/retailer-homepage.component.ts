@@ -9,13 +9,27 @@ import { Product } from '../appmodel/product';
   templateUrl: './retailer-homepage.component.html',
   styleUrls: ['./retailer-homepage.component.css']
 })
-export class RetailerHomepageComponent  {
+export class RetailerHomepageComponent implements OnInit {
 
-  
+  constructor(private productService: AddProductService, private router: Router, private http: HttpClient) { }
+
   product: Product = new Product();
-  id:number=this.product.categoryId;
+  data: any;
+  id: number;
 
- 
+
+
+  ngOnInit() {
+    let url = "http://localhost:8282/getAllCategory";
+    this.http.get(url).subscribe(response => {
+      this.data = response;
+      this.id = response['categoryId']
+      console.log(response[0]['categoryId']);
+    })
+  }
+
+
+
 
   // ngOnInit(): void {
   //   let url = "https://fakestoreapi.com/products";
@@ -25,16 +39,21 @@ export class RetailerHomepageComponent  {
   //   })
   // }
 
-  constructor(private productService: AddProductService, private router: Router) { }
+
 
   addProduct() {
-    // alert(this.quantity + " " + this.id + " " + this.price + " " + this.productDetails + " " + this.name + " " + this.image)
+    let retailerId = sessionStorage.getItem("retailerId");
+    this.product.retailer.retailerId = parseInt(retailerId);
+    this.product.category.categoryId = this.id;
     this.productService.addProduct(this.product).subscribe(response => {
       alert(JSON.stringify(response));
-      // if (response.status == true) {
-      //   sessionStorage.setItem('productId', response.registeredProductId);
-      //   this.router.navigate(['login']);
-      // }
+
     })
   }
+
+  // setImage() {
+  //   this.productService.addProduct()
+  // }
+
+
 }

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AddProductComponent } from './add-product/add-product.component';
+import { AdminAddCategoryComponent } from './admin-add-category/admin-add-category.component';
 import { AdminHomepageComponent } from './admin-homepage/admin-homepage.component';
 import { AdminComponent } from './admin/admin.component';
 import { CarouselComponent } from './carousel/carousel.component';
@@ -43,6 +44,7 @@ const routes: Routes = [
   { path: 'admin-homepage', component: AdminHomepageComponent },
   { path: 'checking', component: CheckingComponent },
   { path: 'retailer-homepage', component: RetailerHomepageComponent },
+  { path: 'admin-add-category', component: AdminAddCategoryComponent },
   { path: '**', component: PagenotfoundComponent }
 ];
 

@@ -22,10 +22,8 @@ export class LoginComponent {
       alert(JSON.stringify(response));
       console.log(response);
       if (response.status == true) {
-        let customerId = response.customerId;
-        let customerName = response.name;
+        let customerId = response.id;
         sessionStorage.setItem('customerId', String(customerId));
-        sessionStorage.setItem('customerName', customerName);
         this.router.navigate(['dashboard']);
       }
       else

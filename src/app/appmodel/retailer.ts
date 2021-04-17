@@ -1,4 +1,5 @@
-export class Retailer{
+export class Retailer {
+    retailerId: number;
     ownerName: string;
     company: string;
     email: string;
