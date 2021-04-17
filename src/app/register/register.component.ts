@@ -1,28 +1,29 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Customer } from '../appmodel/customer';
+import { CustomerService } from '../customer.service';
 
 @Component({
   selector: 'register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
-export class RegisterComponent implements OnInit {
+export class RegisterComponent {
 
-  constructor(private router: Router) { }
-
-  ngOnInit(): void {
-  }
-
-  name: string;
-  email: string;
-  password: string;
+  customer: Customer = new Customer();
   confirmPassword: string;
-  mobileNumber: number;
-  address1: string;
-  address2: string;
+
+  constructor(private customerService: CustomerService, private router: Router) { }
 
   register() {
-    alert(this.confirmPassword + this.name + " " + this.email + this.password + this.mobileNumber + this.address1 + this.address2)
+    alert(JSON.stringify(this.customer));
+    this.customerService.register(this.customer).subscribe(response => {
+      alert(JSON.stringify(response));
+      if (response.status == true) {
+        sessionStorage.setItem('customerId', response.registeredCustomerId);
+        this.router.navigate(['login']);
+      }
+    })
   }
 
 

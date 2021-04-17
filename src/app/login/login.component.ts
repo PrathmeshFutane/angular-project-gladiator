@@ -1,23 +1,36 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Login } from '../appmodel/login';
+import { CustomerService } from '../customer.service';
 
 @Component({
   selector: 'login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-  email: string;
-  password: string;
+  login: Login = new Login();
+  message: string;
   rememberMe: boolean;
 
-  login() {
-    alert(this.email + " " + this.password + " " + this.rememberMe);
+  constructor(private customerService: CustomerService, private router: Router) { }
+
+  loginCheck() {
+    console.log(this.login);
+    this.customerService.login(this.login).subscribe(response => {
+      alert(JSON.stringify(response));
+      console.log(response);
+      if (response.status == true) {
+        let customerId = response.customerId;
+        let customerName = response.name;
+        sessionStorage.setItem('customerId', String(customerId));
+        sessionStorage.setItem('customerName', customerName);
+        this.router.navigate(['dashboard']);
+      }
+      else
+        this.message = response.message;
+    })
   }
 
 }
