@@ -8,12 +8,12 @@ import { Category } from './appmodel/category';
 })
 export class AddCategoryServiceService {
 
-  // constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  // addCategory(category: Category): Observable<any> {
-  //   let url = "http://localhost:8282/category";
-  //   return this.http.post(url, category);
-  // }
+  addCategory(category: Category): Observable<any> {
+    let url = "http://localhost:8282/category";
+    return this.http.post(url, category);
+  }
 
 
 }
