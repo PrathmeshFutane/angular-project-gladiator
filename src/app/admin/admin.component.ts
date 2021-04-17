@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Login } from '../appmodel/login';
 
 @Component({
   selector: 'admin',
@@ -9,6 +10,8 @@ export class AdminComponent implements OnInit {
 
   constructor() { }
 
+  login: Login = new Login();
+
   ngOnInit(): void {
   }
 
@@ -16,7 +19,7 @@ export class AdminComponent implements OnInit {
   password: string;
   rememberMe: boolean;
 
-  login() {
+  loginCheck() {
     alert(this.email + " " + this.password + " " + this.rememberMe)
   }
 }

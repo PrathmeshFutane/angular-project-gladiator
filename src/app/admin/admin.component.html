@@ -1,17 +1,43 @@
+<!-- Admin Login -->
+
+<!-- Author
+     Muskaan P
+     This is the login page for Admin -->
+
 <div class="container" style="width: 50%; margin-bottom: 30px; margin-top: 30px; border: 2px solid grey; padding: 30px;;">
     <div class="container" style="text-align:center;">
       <h3>Admin Login </h3>
       <i class="fa fa-user-plus fa-10x"></i>
     </div>
-    <form (ngSubmit)="login()">
+
+    <form (ngSubmit)="loginCheck()">
+
+      <!-- Email -->
+
       <div class="form-group">
         <label for="email">Email</label>
-        <input type="email" class="form-control" id="email" name="email" [(ngModel)]="email">
+        <input type="email" class="form-control" required #email="ngModel" id="email" name="email" [(ngModel)]="login.email">
+        <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
+          <div *ngIf="email.errors.required">
+            Username is required
+          </div>
+        </div>
       </div>
+
+      <!-- Password -->
+
       <div class="form-group">
         <label for="password">Password</label>
-        <input type="password" class="form-control" id="password" name="password" [(ngModel)]="password">
+        <input type="password" class="form-control" #password="ngModel" required id="password" name="password" [(ngModel)]="login.password">
+        <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger">
+          <div *ngIf="password.errors.required">
+            Password is required.
+          </div>
+        </div>
       </div>
+ 
+      <!-- Checkbox -->
+
       <div class="checkbox">
         <label><input type="checkbox" name="rememberMe" [(ngModel)]="rememberMe"> Remember me</label>
       </div>
