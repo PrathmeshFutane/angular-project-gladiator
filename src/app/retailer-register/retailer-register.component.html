@@ -1,39 +1,73 @@
 <!-- this is retailer registration -->
 
+<!--  Author
+      Jeshma M
+      This is the Registration page for the Retailer -->
+
+
 <div class="container form-box">
   <div class="container" style="text-align:center; ">
     <h3>Retailer Register</h3>
   </div>
 
-
-
-  <form action="">
-
-
+  <form (ngSubmit)="register()">
 
     <div class="form-group">
       <label for="ownerName">Owner Name</label>
-      <i class="fa fa-user"></i><input type="text" class="form-control" name="ownerName" id="ownerName">
+      <input type="text" class="form-control" required name="ownerName" id="name" [(ngModel)]="retailer.ownerName" #ownerName="ngModel">
+      <div *ngIf="ownerName.invalid && (ownerName.dirty || ownerName.touched)" class="alert alert-danger">
+        <div *ngIf="ownerName.errors.required">
+          Name is required.
+        </div>
+      </div>
     </div>
 
     <div class="form-group">
       <label for="company">Company</label>
-      <input type="text" class="form-control" name="company" id="company">
+      <input type="text" class="form-control" required name="company" id="name" [(ngModel)]="retailer.company" #company="ngModel">
+      <div *ngIf="company.invalid && (company.dirty || company.touched)" class="alert alert-danger">
+        <div *ngIf="company.errors.required">
+          Name is required.
+        </div>
+      </div>
     </div>
 
     <div class="form-group">
       <label for="email">Email</label>
-      <input type="email" class="form-control" name="email" id="email">
+      <input type="email" class="form-control" required name="email" id="email" [(ngModel)]="retailer.email" #email="ngModel">
+      <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
+        <div *ngIf="email.errors.required">
+          Email is required.
+        </div>
+      </div>
     </div>
 
     <div class="form-group">
       <label for="password">Password</label>
-      <input type="password" class="form-control" id="password">
+      <input type="password" class="form-control" required id="password" name="password" [(ngModel)]="retailer.password" #password="ngModel">
+      <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger">
+        <div *ngIf="password.errors.required">
+          Password is required.
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="confirmPassword">Confirm Password</label>
+      <input type="confirmPassword" class="form-control" required id="confirmPassword" name="confirmPassword"
+        [(ngModel)]="confirmPassword" >
+        
     </div>
 
     <div class="form-group">
       <label for="mobileNumber">Mobile Number</label>
-      <input type="number" class="form-control" id="mobileNumber">
+      <input type="number" class="form-control" required id="mobileNumber" name="mobileNumber"
+      [(ngModel)]="retailer.mobileNumber" #mobileNumber="ngModel">
+      <div *ngIf="mobileNumber.invalid && (mobileNumber.dirty || mobileNumber.touched)" class="alert alert-danger">
+        <div *ngIf="mobileNumber.errors.required">
+          Mobile number is required.
+        </div>
+      </div>
     </div>
 
 
