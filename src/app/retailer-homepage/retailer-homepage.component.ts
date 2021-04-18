@@ -22,7 +22,7 @@ export class RetailerHomepageComponent implements OnInit {
 
 
   ngOnInit() {
-    let url = "http://localhost:8282/getcategory";
+    let url = "http://localhost:8282/get-category";
     this.http.get(url).subscribe(response => {
       this.data = response;
       this.id = response['categoryId']
@@ -67,8 +67,8 @@ export class RetailerHomepageComponent implements OnInit {
   // add image for uploaded image
   setImage() {
     let formData: FormData = new FormData();
-    formData.append('registeredProductId', sessionStorage.getItem('registeredProductId'));
-    formData.append('profilePic', this.productImage);
+    formData.append('productId', sessionStorage.getItem('registeredProductId'));
+    formData.append('productImg', this.productImage);
     this.productService.imageUpload(formData).subscribe(data => {
       alert(JSON.stringify(data))
     })

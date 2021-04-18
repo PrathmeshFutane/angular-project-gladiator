@@ -12,12 +12,12 @@ export class AddProductService {
 
   addProduct(product: Product): Observable<any> {
     console.log(product)
-    let url = "http://localhost:8282/product";
+    let url = "http://localhost:8282/add-product";
     return this.http.post(url, product);
   }
 
   imageUpload(formData: FormData): Observable<any> {
-    let url = "http://localhost:8282/uploadimage";
+    let url = "http://localhost:8282/upload-image";
     return this.http.post(url, formData);
   }
 }

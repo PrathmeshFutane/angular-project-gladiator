@@ -7,18 +7,19 @@ import { Retailer } from './appmodel/retailer';
 @Injectable({
   providedIn: 'root'
 })
+
 export class RetailerService {
-  
+
   constructor(private http: HttpClient) { }
 
-  register(retailer: Retailer) : Observable<any> {
-    let url = "http://localhost:8282/retailer";
-   return this.http.post(url, retailer); 
+  register(retailer: Retailer): Observable<any> {
+    let url = "http://localhost:8282/register-retailer";
+    return this.http.post(url, retailer);
   }
 
-  login(login: Login) : Observable<any> {
-    let url = "http://localhost:8282/retailerlogin";
-   return this.http.post(url, login); 
+  login(login: Login): Observable<any> {
+    let url = "http://localhost:8282/login-retailer";
+    return this.http.post(url, login);
   }
 
   // picUpload(formData: FormData) : Observable<any> {

@@ -11,7 +11,7 @@ export class AddCategoryServiceService {
   constructor(private http: HttpClient) { }
 
   addCategory(category: Category): Observable<any> {
-    let url = "http://localhost:8282/category";
+    let url = "http://localhost:8282/add-category";
     return this.http.post(url, category);
   }
 
