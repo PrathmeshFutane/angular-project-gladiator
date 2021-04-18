@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AdminService } from '../admin.service';
 import { Login } from '../appmodel/login';
 
 @Component({
@@ -6,20 +8,23 @@ import { Login } from '../appmodel/login';
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.css']
 })
-export class AdminComponent implements OnInit {
-
-  constructor() { }
+export class AdminComponent {
 
   login: Login = new Login();
-
-  ngOnInit(): void {
-  }
-
   email: string;
   password: string;
   rememberMe: boolean;
 
+  constructor(private adminService: AdminService, private router: Router) { }
+
   loginCheck() {
-    alert(this.email + " " + this.password + " " + this.rememberMe)
+   console.log(this.login);
+   this.adminService.login(this.login).subscribe(response => {
+     alert(JSON.stringify(response));
+     console.log(response);
+
+
+   })
+  
   }
 }
