@@ -14,11 +14,11 @@ export class AdminAddCategoryComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  // category: Category = new Category();
-  // addProduct() {
-  //   alert(this.category)
-  //   this.addCategoryService.addCategory(this.category).subscribe(response => {
-  //     alert(JSON.stringify(response));
-  //   })
-  // }
+  category: Category = new Category();
+  addProduct() {
+
+    this.addCategoryService.addCategory(this.category).subscribe(response => {
+      alert(JSON.stringify(response));
+    })
+  }
 }

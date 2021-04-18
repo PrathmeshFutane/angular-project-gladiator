@@ -102,23 +102,14 @@
 
   <div style="width: 50%; border: 2px solid orange; padding: 30px; ">
     <!-- form -->
-    <form>
+    <form (ngSubmit)="addProduct()">
 
 
 
       <div class="form-group">
         <label for="name">Name</label>
         <input type="text" class="form-control" name="name" id="name" [(ngModel)]="product.productName">
-      </div>
-
-
-      <!-- <select [(ngModel)]="id" class="form-select" style="margin-top: 10px; margin-bottom: 10px;" aria-label="Default select example">
-        <option *ngFor="let i of data" [value]="i['id']">{{i['id']}} {{i['title']}}</option>
-       
-      </select>
-      id is : {{id}} -->
-
-      
+      </div> 
 
 
 

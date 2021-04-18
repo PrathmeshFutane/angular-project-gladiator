@@ -20,7 +20,7 @@ export class RetailerHomepageComponent implements OnInit {
 
 
   ngOnInit() {
-    let url = "http://localhost:8282/getAllCategory";
+    let url = "http://localhost:8282/getcategory";
     this.http.get(url).subscribe(response => {
       this.data = response;
       this.id = response['categoryId']
@@ -47,12 +47,11 @@ export class RetailerHomepageComponent implements OnInit {
     this.product.category.categoryId = this.id;
     this.productService.addProduct(this.product).subscribe(response => {
       alert(JSON.stringify(response));
-
     })
   }
 
   // setImage() {
-  //   this.productService.addProduct()
+  //   this.productService.imageUpload()
   // }
 
 
