@@ -17,7 +17,7 @@ export class AddProductService {
   }
 
   imageUpload(formData: FormData): Observable<any> {
-    let url = "http://localhost:8181/pic-upload";
+    let url = "http://localhost:8282/uploadimage";
     return this.http.post(url, formData);
   }
 }
