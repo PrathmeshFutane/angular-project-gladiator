@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Customer } from '../appmodel/cart';
+import { CustomerService } from '../customer.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,14 +12,33 @@ export class DashboardComponent {
 
   closeResult = '';
 
-  constructor(private modalService: NgbModal) { }
+  constructor(private modalService: NgbModal, private customerService: CustomerService) { }
 
+  customerId: number;
+  customer: Customer = new Customer();
+  data: any;
+
+
+  
+
+
+
+
+
+
+
+  //below code is for open model
   open(content) {
     this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
     }, (reason) => {
       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
     });
+    this.customerId = parseInt(sessionStorage.getItem('customerId'));
+    this.customerService.fetchProfile(this.customerId).subscribe(response => {
+      this.data = response;
+
+    })
   }
 
   private getDismissReason(reason: any): string {

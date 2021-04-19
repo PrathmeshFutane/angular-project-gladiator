@@ -31,4 +31,9 @@ export class CustomerService {
   //   return this.http.get<Customer>(url);
   // }
 
+  fetchProfile(id: number): Observable<Customer> {
+    let url = "http://localhost:8282/customer-profile?customerId=" + id;
+    return this.http.get<Customer>(url);
+  }
+
 }

@@ -25,6 +25,14 @@ export class CartComponent implements OnInit {
     })
 
   }
+
+
+
+
+
+  deleteCartItem(info) {
+    alert(info['cartItemId'])
+  }
 }
 
 
