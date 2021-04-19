@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'navbar',
@@ -14,7 +15,7 @@ export class NavbarComponent implements OnInit {
 
 
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private router: Router) {
     console.log(this.data)
   }
 
@@ -22,6 +23,11 @@ export class NavbarComponent implements OnInit {
 
   search() {
     alert(this.id)
+  }
+
+  clearData() {
+    sessionStorage.clear();
+    this.router.navigate([''])
   }
 
 

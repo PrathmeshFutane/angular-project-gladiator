@@ -15,8 +15,8 @@ export class CartItemService {
     return this.http.post(url, cartItem);
   }
 
-  getAllCartItem() {
+  getAllCartItem(cartItem: CartItem) {
     let url = "http://localhost:8282/get-all-cart-item";
-    return this.http.get(url);
+    return this.http.post(url, cartItem);
   }
 }

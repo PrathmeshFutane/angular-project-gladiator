@@ -1,5 +1,6 @@
 
 export class Cart {
+    cartId: number;
     customer: Customer = new Customer();
 }
 

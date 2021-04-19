@@ -38,23 +38,24 @@ export class LoginComponent {
     this.customerService.login(this.login).subscribe(response => {
       alert(JSON.stringify(response));
       console.log(response);
+      sessionStorage.setItem('registeredCartId', response['cartId']);
       if (response.status == true) {
         let customerId = response.id;
         sessionStorage.setItem('customerId', String(customerId));
 
-        //to create cart
-        if (sessionStorage.getItem("registeredCartId") == undefined) {
-          this.cart.customer.customerId = parseInt(sessionStorage.getItem('customerId'));
-          alert(JSON.stringify(this.cart));
-          this.cartService.createCart(this.cart).subscribe(data => {
-            alert(JSON.stringify(data));
-            sessionStorage.setItem("registeredCartId", data['registeredCartId'])
-          })
-        } else {
-          alert(sessionStorage.getItem("registeredCartId") + " cart already exist")
+        // //to create cart
+        // if (sessionStorage.getItem("registeredCartId") == undefined) {
+        //   this.cart.customer.customerId = parseInt(sessionStorage.getItem('customerId'));
+        //   alert(JSON.stringify(this.cart));
+        //   this.cartService.createCart(this.cart).subscribe(data => {
+        //     alert(JSON.stringify(data));
+        //     sessionStorage.setItem("registeredCartId", data['registeredCartId'])
+        //   })
+        // } else {
+        //   alert(sessionStorage.getItem("registeredCartId") + " cart already exist")
 
-        }
-        //end of cart
+        // }
+        // //end of cart
 
         this.router.navigate(['products']);
       } else
