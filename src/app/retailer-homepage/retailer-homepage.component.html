@@ -81,7 +81,6 @@
 
     <select [(ngModel)]="id" class="form-select" style="margin-top: 10px; margin-bottom: 10px;" aria-label="Default select example">
         <option *ngFor="let i of data"  [value]="i.categoryId">{{i['name']}}</option> 
-       
       </select>
       id is : {{id}}
 </div>
@@ -152,3 +151,8 @@
     <button type="submit" class="btn btn-primary">Add Image</button>
     </form>
 </div>
+
+
+<!-- <div class="container m-5">
+  <button class="btn-btn-success" (click)="displayAll()">Display all images</button>
+</div> -->

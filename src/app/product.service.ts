@@ -20,4 +20,9 @@ export class AddProductService {
     let url = "http://localhost:8282/upload-image";
     return this.http.post(url, formData);
   }
+
+  displayAllImages() {
+    let url = "http://localhost:8282/all-products";
+    return this.http.get(url);
+  }
 }

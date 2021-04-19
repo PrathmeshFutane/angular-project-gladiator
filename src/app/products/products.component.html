@@ -8,10 +8,10 @@
 
                 </div>
                 <div class="card-body">
-                    <span class="title">{{i['id']}}</span>
-                  <h5 class="card-title">{{i['title']}}</h5>
-                  <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, nihil.</p>
-                  <div class="content subtitle">Price {{i['price']}}</div>
+                    <span class="title">{{i['productId']}}</span>
+                  <h5 class="card-title">{{i['productName']}}</h5>
+                  <p class="card-text">{{i['productDescription']}}</p>
+                  <div class="content subtitle">Price {{i['unitPrice']}}</div>
                   <!-- <button  class="btn btn-primary" style="margin-left:15px;" (click)="mycart(i)" >Add to Cart</button> -->
                   <button (click)="addToCart()"  class="btn btn-primary" style="margin-left:15px;"  >Add to Cart</button>
                 </div>

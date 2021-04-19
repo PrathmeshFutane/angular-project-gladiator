@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AddProductService } from '../add-product.service';
+import { AddProductService } from '../product.service';
 import { Product } from '../appmodel/product';
 
 @Component({
