@@ -22,9 +22,10 @@ export class AdminComponent {
    this.adminService.login(this.login).subscribe(response => {
      alert(JSON.stringify(response));
      console.log(response);
-
-
+     
+     this.router.navigate(["admin-homepage"])
    })
-  
+   
   }
 }
+  
