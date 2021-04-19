@@ -5,9 +5,11 @@ import {
 import {
   Router
 } from '@angular/router';
+import { Cart } from '../appmodel/cart';
 import {
   Customer
 } from '../appmodel/customer';
+import { CartServiceService } from '../cart-service.service';
 import {
   CustomerService
 } from '../customer.service';
@@ -31,6 +33,9 @@ export class RegisterComponent {
         alert(JSON.stringify(response));
         if (response.status == true) {
           sessionStorage.setItem('customerId', response.registeredCustomerId);
+
+
+
           this.router.navigate(['login']);
         }
       })

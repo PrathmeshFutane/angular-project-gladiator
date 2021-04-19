@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { AddProductService } from '../product.service';
 import { Cart } from '../appmodel/cart';
 import { CartServiceService } from '../cart-service.service';
+import { CartItemService } from '../cart-item.service';
+import { CartItem } from '../appmodel/cartItem';
 
 @Component({
   selector: 'products',
@@ -12,11 +14,11 @@ import { CartServiceService } from '../cart-service.service';
 })
 export class ProductsComponent implements OnInit {
 
-  constructor(private http: HttpClient, private router: Router, private cartService: CartServiceService, private productService: AddProductService) { }
+  constructor(private http: HttpClient, private router: Router, private cartItemService: CartItemService, private productService: AddProductService) { }
 
   data: any;
-  cart: Cart = new Cart();
-  addToCartFlag: boolean = true;
+
+  cartItem: CartItem = new CartItem();
 
   ngOnInit(): void {
     this.productService.displayAllData().subscribe(data => {
@@ -24,25 +26,22 @@ export class ProductsComponent implements OnInit {
       this.data = data;
       console.log(data[0]['image'])
     })
-
   }
 
-
-  // mycart(data) {
-  //   alert(data['id'];
-  // }
-
-  addToCart() {
+  addToCart(productInformation) {
     //create cart on page load for customer
-    if (this.addToCartFlag) {
-      if (sessionStorage.getItem('customerId') != undefined) {
-        this.cart.customer.customerId = parseInt(sessionStorage.getItem('customerId'));
-        alert(JSON.stringify(this.cart));
-        this.cartService.createCart(this.cart).subscribe(data => {
-          alert(JSON.stringify(data));
-        })
-      }
-    }
-    this.addToCartFlag = false;
+    // alert(productInformation['productId'] + " " + productInformation['productName'] + " " + productInformation['productDescription'] + " " + productInformation['stock'] + " " + productInformation['unitPrice'])
+
+
+
+    this.cartItem.cart.cartId = parseInt(sessionStorage.getItem('registeredCartId'));
+    this.cartItem.product.productId = productInformation['productId'];
+    this.cartItem.quantity = 1;
+
+    //code to send data to database
+    this.cartItemService.addToCart(this.cartItem).subscribe(data => {
+      alert(JSON.stringify(data))
+    })
+
   }
 }

@@ -1,19 +1,21 @@
 <div class="container mt-4">
     <div class="row" >
         
-        <div class="col-sm-12 col-md-6 col-lg-4" *ngFor="let i of data" >
+        <div class="col-sm-12 col-md-6 col-lg-4" *ngFor="let info of data" >
             <div class="card" style="width: 100%;">
                 <div class="image">
-                    <img height="100%" width="100%" class="card-img-top img" src="http://localhost:8282/downloads/{{i['image']}}"  alt="Card image cap">
+                    <img height="100%" width="100%" class="card-img-top img" src="http://localhost:8282/downloads/{{info['image']}}"  alt="Card image cap">
 
                 </div>
                 <div class="card-body">
-                    <span class="title">{{i['productId']}}</span>
-                  <h5 class="card-title">{{i['productName']}}</h5>
-                  <p class="card-text">{{i['productDescription']}}</p>
-                  <div class="content subtitle">Price {{i['unitPrice']}}</div>
+                    <span class="title">{{info['productId']}}</span>
+                  <h5 class="card-title">{{info['productName']}}</h5>
+                  <p class="card-text">{{info['productDescription']}}</p>
+                  <div class="content subtitle">Price {{info['unitPrice']}}</div>
+                  <!-- select quantity -->
+                  
                   <!-- <button  class="btn btn-primary" style="margin-left:15px;" (click)="mycart(i)" >Add to Cart</button> -->
-                  <button (click)="addToCart()"  class="btn btn-primary" style="margin-left:15px;"  >Add to Cart</button>
+                  <button (click)="addToCart(info, quantity)"  class="btn btn-primary" style="margin-left:15px;"  >Add to Cart</button>
                 </div>
             </div>
         </div>
@@ -21,3 +23,7 @@
 </div>
 
 
+<!-- <select [(ngModel)]="id" class="form-select" style="margin-top: 10px; margin-bottom: 10px;" aria-label="Default select example">
+    <option *ngFor="let i of data"  [value]="i.categoryId">{{i['name']}}</option> 
+  </select>
+  id is : {{id}} -->
