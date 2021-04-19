@@ -31,12 +31,6 @@ export class CartComponent implements OnInit {
       console.log(response);
     })
   }
-
-
-
-
-
-
 }
 
 

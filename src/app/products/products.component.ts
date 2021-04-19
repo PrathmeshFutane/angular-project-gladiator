@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AddProductService } from '../product.service';
 import { Cart } from '../appmodel/cart';
 import { CartServiceService } from '../cart-service.service';
 
@@ -11,18 +12,19 @@ import { CartServiceService } from '../cart-service.service';
 })
 export class ProductsComponent implements OnInit {
 
-  constructor(private http: HttpClient, private router: Router, private cartService: CartServiceService) { }
+  constructor(private http: HttpClient, private router: Router, private cartService: CartServiceService, private productService: AddProductService) { }
 
   data: any;
   cart: Cart = new Cart();
   addToCartFlag: boolean = true;
 
   ngOnInit(): void {
-    let url = "https://fakestoreapi.com/products";
-    this.http.get(url).subscribe(response => {
-      this.data = response;
-      console.log(response);
+    this.productService.displayAllData().subscribe(data => {
+      console.log(data);
+      this.data = data;
+      console.log(data[0]['image'])
     })
+
   }
 
 
@@ -41,8 +43,6 @@ export class ProductsComponent implements OnInit {
         })
       }
     }
-
-
     this.addToCartFlag = false;
   }
 }
