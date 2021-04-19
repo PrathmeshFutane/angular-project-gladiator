@@ -13,6 +13,7 @@ export class AdminComponent {
   login: Login = new Login();
   email: string;
   password: string;
+  message: string;
   rememberMe: boolean;
 
   constructor(private adminService: AdminService, private router: Router) { }
@@ -22,9 +23,15 @@ export class AdminComponent {
    this.adminService.login(this.login).subscribe(response => {
      alert(JSON.stringify(response));
      console.log(response);
-
-
+     if(response.status == true) {
+       let adminId = response.id;
+       sessionStorage.setItem('adminId', String(adminId));
+       this.router.navigate(['admin-homepage']);
+     }
+     else
+     this.message = response.message;
    })
-  
+   
   }
 }
+  
