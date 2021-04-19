@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Cart } from '../appmodel/cart';
+import { CartItemService } from '../cart-item.service';
 import { CartServiceService } from '../cart-service.service';
 
 @Component({
@@ -11,25 +12,26 @@ import { CartServiceService } from '../cart-service.service';
 })
 export class CartComponent implements OnInit {
 
-  constructor(private http: HttpClient, private router: Router, private cartService: CartServiceService) { }
+  constructor(private router: Router, private cartItemService: CartItemService) { }
 
   data: any;
-  message: any;
-  mycartobj = [];
-  quantity: number = 1;
-
-  cart: Cart = new Cart();
-  addToCartFlag: boolean = true;
-
-
 
   ngOnInit(): void {
-    // loop through the fake api 
-    let url = "https://fakestoreapi.com/products";
-    this.http.get(url).subscribe(response => {
-      this.data = response;
-      console.log(response);
+
+    this.cartItemService.getAllCartItem().subscribe(data => {
+      console.log(data);
+      this.data = data;
+      console.log(data[0]['image'])
     })
+
+  }
+
+
+
+
+
+  deleteCartItem(info) {
+    alert(info['cartItemId'])
   }
 }
 

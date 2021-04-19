@@ -105,11 +105,21 @@
     <h4 class="modal-title" id="modal-basic-title">Profile</h4>
     <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
       <i class="fa fa-window-close fa-2x"></i>
+      
     </button>
   </div>
   <div class="modal-body">
      <div class="content">
+
        This is your profile congradulation bro    
+
+      Details of your profile are as follows: <br />
+      Customer ID : {{ data.customerId }} <br />
+      Name : {{ data.name }} <br />
+      Email : {{ data.email }} <br />
+      Address1 : {{ data.address1 }} <br />
+      Address2 : {{ data.address2 }} <br />
+
      </div>
   </div>
   <div class="modal-footer">
