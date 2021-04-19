@@ -1,40 +1,39 @@
 <div class="container">
-    <div class="container">
-        <h2>Your Cart</h2>            
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th>Photo</th>
-              <th>Name</th>
-              <th>Quantity</th>
-              <th>Unit Price</th>
-              <th>Sub Total</th>
-              <th>Delete</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let i of data">
-              <th style="height: 100px; width: 100px;"><img height="100%" width="100%" class="card-img-top" src="{{i['image']}}"  alt="Card image cap"></th>
-              <th style="height: 100px; width: 400px;">{{i['title']}}</th>
-              <th>
-                <select class="form-select">
-                  <option value="1">1</option> 
-                  <option value="2">2</option> 
-                  <option value="3">3</option> 
-                  <option value="4">4</option> 
-                 
-                </select>
-              </th>
-              <th> {{i['price']}}</th>
-              <th>Sub Total</th>
-              <th><i class="fa fa-trash-alt fa-2x"></i></th>
-            </tr>
-          </tbody>
-        </table>
+  <div class="container">
+    <h2>Your Cart</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Photo</th>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Quantity</th>
+          <th>Unit Price</th>
 
-        <div class="button" style="text-align: right;">
-          <button class="btn btn-warning" style="color: white;" routerLink="/checkout">Place Order</button>
-        </div>
-        
-      </div>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let info of data">
+          <th style="height: 100px; width: 100px;">
+            <img height="100%" width="100%" class="card-img-top"
+              src="http://localhost:8282/downloads/{{info['product']['image']}}" alt="Card image cap">
+          </th>
+          <th style="height: 100px; width: 400px;">{{info['product']['productName']}}</th>
+          <th>{{info['product']['productDescription']}}</th>
+
+
+
+          <th> {{info['quantity']}}</th>
+          <th>{{info['product']['unitPrice']}}</th>
+          <th><i class="fa fa-trash-alt fa-2x"></i></th>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="button" style="text-align: right;">
+      <button class="btn btn-warning" style="color: white;" routerLink="/checkout">Place Order</button>
+    </div>
+
+  </div>
 </div>
