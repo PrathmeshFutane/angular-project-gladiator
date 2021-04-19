@@ -19,7 +19,7 @@ export class ProductsComponent implements OnInit {
   addToCartFlag: boolean = true;
 
   ngOnInit(): void {
-    this.productService.displayAllImages().subscribe(data => {
+    this.productService.displayAllData().subscribe(data => {
       console.log(data);
       this.data = data;
       console.log(data[0]['image'])

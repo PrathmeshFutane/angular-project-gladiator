@@ -21,7 +21,7 @@ export class AddProductService {
     return this.http.post(url, formData);
   }
 
-  displayAllImages() {
+  displayAllData() {
     let url = "http://localhost:8282/all-products";
     return this.http.get(url);
   }
