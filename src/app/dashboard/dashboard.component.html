@@ -52,7 +52,7 @@
             <i class="fa fa-gift fa-3x"></i>
           </h5>
           <div class="container" style="text-align: center;">
-            <button class="btn  btn-outline-dark ">Place Order</button>
+            <button class="btn  btn-outline-dark ">Order Status</button>
           </div>
         </div>
       </div>
@@ -85,7 +85,7 @@
             <i class="fa fa-user fa-3x"></i>
           </h5>
           <div class="container" style="text-align: center;">
-            <button class="btn  btn-outline-dark" (click)="open(content)">Profile</button>
+            <button class="btn  btn-outline-dark" (click)="open(content)">Profile Update</button>
           </div>
         </div>
       </div>
@@ -102,14 +102,14 @@
 
 <ng-template #content let-modal>
   <div class="modal-header">
-    <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+    <h4 class="modal-title" id="modal-basic-title">Profile</h4>
     <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
       <i class="fa fa-window-close fa-2x"></i>
     </button>
   </div>
   <div class="modal-body">
      <div class="content">
-       this is your profile congradulation bro
+       This is your profile congradulation bro    
      </div>
   </div>
   <div class="modal-footer">

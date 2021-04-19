@@ -21,6 +21,9 @@ export class CustomerService {
     return this.http.post(url, login);
   }
 
+
+  
+
   // picUpload(formData: FormData): Observable<any> {
   //   let url = "http://localhost:8181/pic-upload";
   //   return this.http.post(url, formData);
