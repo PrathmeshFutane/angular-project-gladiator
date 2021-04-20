@@ -90,12 +90,6 @@
 
 
 
-
-
-
-
-
-
 <div class=" container  mb-3" style="display: flex; justify-content: center; align-items: center;">
 
 
@@ -106,38 +100,51 @@
 
 
       <div class="form-group">
-        <label for="name">Name</label>
-        <input type="text" class="form-control" name="name" id="name" [(ngModel)]="product.productName">
+        <label for="productName">Product Name</label>
+        <input type="text" class="form-control" required name="productName" id="name" [(ngModel)]="product.productName" #productName="ngModel">
+        <div *ngIf="productName.invalid && (productName.dirty || productName.touched)" class="alert alert-danger">
+          <div *ngIf="productName.errors.required">
+            Product Name is required.
+          </div>
+        </div>
       </div> 
 
 
 
       <div class="form-group">
         <label for="productDetails">Product Details</label>
-        <input type="text" class="form-control" id="productDetails" name="productDetails" [(ngModel)]="product.productDescription">
+        <input type="text" class="form-control" id="name" required name="productDetails" [(ngModel)]="product.productDescription" #productDescription="ngModel">
+        <div *ngIf="productDescription.invalid && (productDescription.dirty || productDescription.touched)" class="alert alert-danger">
+          <div *ngIf="productDescription.errors.required">
+            Product Description is required.
+          </div>
       </div>
 
 
       <div class="form-group">
-        <label for="quantity">Stock</label>
-        <input type="number" class="form-control" id="quantity" name="quantity" [(ngModel)]="product.stock">
+        <label for="stock">Stock</label>
+        <input type="number" class="form-control" id="number" required name="stock" [(ngModel)]="product.stock " #stock ="ngModel" >
+        <div *ngIf="stock.invalid && (stock.dirty || stock.touched)" class="alert alert-danger">
+          <div *ngIf="stock.errors.required">
+            Stock is required.
+          </div>
       </div>
 
       <div class="form-group">
-        <label for="price">Price</label>
-        <input type="number" class="form-control" id="price" name="price" [(ngModel)]="product.unitPrice">
+        <label for="unitPrice">Price</label>
+        <input type="number" class="form-control" id="number" required name="unitPrice" [(ngModel)]="product.unitPrice" #unitPrice="ngModel">
+        <div *ngIf="unitPrice.invalid && (unitPrice.dirty || unitPrice.touched)" class="alert alert-danger">
+          <div *ngIf="unitPrice.errors.required">
+            Price is required.
+          </div>
       </div>
 
 
       <button type="submit" class="btn btn-primary">Register</button>
       <button type="reset" class="btn btn-danger m-3">Reset</button>
 
-
-    </form>
-
   </div>
   
-
 </div>
 
  
