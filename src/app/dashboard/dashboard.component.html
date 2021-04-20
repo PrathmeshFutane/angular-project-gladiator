@@ -1,3 +1,10 @@
+<!--This is User Dashboard-->
+
+<!-- Author
+     Jeshma M
+     This is dashboard of the user
+-->
+
 <div class="container">
   <!-- first -->
   <div class="row" style="display: flex; justify-content: space-around; align-items: center;">
@@ -85,7 +92,7 @@
             <i class="fa fa-user fa-3x"></i>
           </h5>
           <div class="container" style="text-align: center;">
-            <button class="btn  btn-outline-dark" (click)="open(content)">Profile Update</button>
+            <button class="btn  btn-outline-dark" (click)="open(content)">View Profile </button>
           </div>
         </div>
       </div>
@@ -100,6 +107,10 @@
 <!-- ----------------------------------------------------------------------------------------- -->
 <!-- modals -->
 
+<!-- Modal for the User Profile -->
+
+
+
 <ng-template #content let-modal>
   <div class="modal-header">
     <h4 class="modal-title" id="modal-basic-title">Profile</h4>
@@ -111,7 +122,7 @@
   <div class="modal-body">
      <div class="content">
 
-       This is your profile congradulation bro    
+       <!-- This is your profile congradulation bro     -->
 
       Details of your profile are as follows: <br />
       Customer ID : {{ data.customerId }} <br />
@@ -127,3 +138,24 @@
   </div>
 </ng-template>
 
+
+<!-- Modal for the View Orders -->
+
+<!-- <ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Order</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <i class="fa fa-window-close fa-2x"></i>
+      
+    </button>
+  </div>
+  <div class="modal-body">
+     <div class="content">
+     This is your order
+     </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+  </div>
+</ng-template>
+ -->
