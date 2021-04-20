@@ -84,12 +84,13 @@
 
 
 <div class="container" style="width: 50%;">
-    <label for="cars" style="margin-top: 10px; margin-bottom: 10px;">Choose a Category:</label>
+  <label for="cars" style="margin-top: 10px; margin-bottom: 10px;">Choose a Category:</label>
 
-    <select [(ngModel)]="id" class="form-select" style="margin-top: 10px; margin-bottom: 10px;" aria-label="Default select example">
-        <option *ngFor="let i of data"  [value]="i.categoryId">{{i['name']}}</option> 
-    </select>
-     
+  <select [(ngModel)]="id" class="form-select" style="margin-top: 10px; margin-bottom: 10px;"
+    aria-label="Default select example">
+    <option *ngFor="let i of data" [value]="i.categoryId">{{i['name']}}</option>
+  </select>
+
 </div>
 
 <!-- ---------------------------retailer add product------------------------------ -->
@@ -108,65 +109,70 @@
 
       <div class="form-group">
         <label for="productName">Product Name</label>
-        <input type="text" class="form-control" required name="productName" id="name" [(ngModel)]="product.productName" #productName="ngModel">
+        <input type="text" class="form-control" required name="productName" id="name" [(ngModel)]="product.productName"
+          #productName="ngModel">
         <div *ngIf="productName.invalid && (productName.dirty || productName.touched)" class="alert alert-danger">
           <div *ngIf="productName.errors.required">
             Product Name is required.
           </div>
         </div>
-      </div> 
+      </div>
 
 
 
       <div class="form-group">
         <label for="productDetails">Product Details</label>
-        <input type="text" class="form-control" id="name" required name="productDetails" [(ngModel)]="product.productDescription" #productDescription="ngModel">
-        <div *ngIf="productDescription.invalid && (productDescription.dirty || productDescription.touched)" class="alert alert-danger">
+        <input type="text" class="form-control" id="name" required name="productDetails"
+          [(ngModel)]="product.productDescription" #productDescription="ngModel">
+        <div *ngIf="productDescription.invalid && (productDescription.dirty || productDescription.touched)"
+          class="alert alert-danger">
           <div *ngIf="productDescription.errors.required">
             Product Description is required.
           </div>
-      </div>
+        </div>
 
 
-      <div class="form-group">
-        <label for="stock">Stock</label>
-        <input type="number" class="form-control" id="number" required name="stock" [(ngModel)]="product.stock " #stock ="ngModel" >
-        <div *ngIf="stock.invalid && (stock.dirty || stock.touched)" class="alert alert-danger">
-          <div *ngIf="stock.errors.required">
-            Stock is required.
+        <div class="form-group">
+          <label for="stock">Stock</label>
+          <input type="number" class="form-control" id="number" required name="stock" [(ngModel)]="product.stock "
+            #stock="ngModel">
+          <div *ngIf="stock.invalid && (stock.dirty || stock.touched)" class="alert alert-danger">
+            <div *ngIf="stock.errors.required">
+              Stock is required.
+            </div>
           </div>
-      </div>
 
-      <div class="form-group">
-        <label for="unitPrice">Price</label>
-        <input type="number" class="form-control" id="number" required name="unitPrice" [(ngModel)]="product.unitPrice" #unitPrice="ngModel">
-        <div *ngIf="unitPrice.invalid && (unitPrice.dirty || unitPrice.touched)" class="alert alert-danger">
-          <div *ngIf="unitPrice.errors.required">
-            Price is required.
+          <div class="form-group">
+            <label for="unitPrice">Price</label>
+            <input type="number" class="form-control" id="number" required name="unitPrice"
+              [(ngModel)]="product.unitPrice" #unitPrice="ngModel">
+            <div *ngIf="unitPrice.invalid && (unitPrice.dirty || unitPrice.touched)" class="alert alert-danger">
+              <div *ngIf="unitPrice.errors.required">
+                Price is required.
+              </div>
+            </div>
+
+
+            <button type="submit" class="btn btn-primary">Register</button>
+            <button type="reset" class="btn btn-danger m-3">Reset</button>
+
           </div>
-      </div>
+
+        </div>
 
 
-      <button type="submit" class="btn btn-primary">Register</button>
-      <button type="reset" class="btn btn-danger m-3">Reset</button>
+        <div class="container text-center" style="width: 50%;">
+          <form (ngSubmit)="setImage()">
+            <div class="form-group">
+              <label for="image">Image</label>
+              <input type="file" class="form-control" name="image" (change)="onFileChange($event)">
+            </div>
 
-  </div>
-  
-</div>
-
- 
-<div class="container text-center" style="width: 50%;" >
-  <form (ngSubmit)="setImage()">
-    <div class="form-group">
-      <label for="image">Image</label>
-      <input type="file" class="form-control" name="image" (change)="onFileChange($event)">
-    </div>
-
-    <button type="submit" class="btn btn-primary">Add Image</button>
-    </form>
-</div>
+            <button type="submit" class="btn btn-primary">Add Image</button>
+          </form>
+        </div>
 
 
-<!-- <div class="container m-5">
+        <!-- <div class="container m-5">
   <button class="btn-btn-success" (click)="displayAll()">Display all images</button>
 </div> -->

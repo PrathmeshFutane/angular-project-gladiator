@@ -18,6 +18,7 @@ export class ProductsComponent implements OnInit {
   quantity: any;
   id: number;
 
+
   cartItem: CartItem = new CartItem();
 
   ngOnInit(): void {
