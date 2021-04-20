@@ -2,8 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AddProductService } from '../product.service';
-import { Cart } from '../appmodel/cart';
-import { CartServiceService } from '../cart-service.service';
 import { CartItemService } from '../cart-item.service';
 import { CartItem } from '../appmodel/cartItem';
 
@@ -17,6 +15,8 @@ export class ProductsComponent implements OnInit {
   constructor(private http: HttpClient, private router: Router, private cartItemService: CartItemService, private productService: AddProductService) { }
 
   data: any;
+  quantity: any;
+  id: number;
 
   cartItem: CartItem = new CartItem();
 
@@ -26,11 +26,18 @@ export class ProductsComponent implements OnInit {
       this.data = data;
       console.log(data[0]['image'])
     })
+
+    this.productService.getAllQuantity().subscribe(data => {
+      console.log(data)
+      this.quantity = data;
+      this.id = data['total_count']
+
+    })
   }
 
   addToCart(productInformation) {
     //create cart on page load for customer
-    // alert(productInformation['productId'] + " " + productInformation['productName'] + " " + productInformation['productDescription'] + " " + productInformation['stock'] + " " + productInformation['unitPrice'])
+    alert(productInformation['productId'] + " " + productInformation['productName'] + " " + productInformation['productDescription'] + " " + this.id + " " + productInformation['unitPrice'])
 
 
 

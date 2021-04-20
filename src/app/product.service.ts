@@ -25,4 +25,9 @@ export class AddProductService {
     let url = "http://localhost:8282/all-products";
     return this.http.get(url);
   }
+
+  getAllQuantity() {
+    let url = "http://localhost:8282/get-quantity";
+    return this.http.get(url);
+  }
 }

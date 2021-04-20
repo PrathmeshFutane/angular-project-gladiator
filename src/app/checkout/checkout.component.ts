@@ -1,6 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { OrderItem } from '../appmodel/orderItem';
+import { CheckoutService } from '../checkout.service';
+import { OrderService } from '../order.service';
 
 @Component({
   selector: 'checkout',
@@ -9,18 +12,19 @@ import { Router } from '@angular/router';
 })
 export class CheckoutComponent implements OnInit {
 
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(private http: HttpClient, private router: Router, private checkout: CheckoutService) { }
 
   data: any;
-  message: any;
-  mycartobj = [];
-  quantity: number = 1;
+
+
+  orderItem: OrderItem = new OrderItem();
+
 
   ngOnInit(): void {
-    let url = "https://fakestoreapi.com/products";
-    this.http.get(url).subscribe(response => {
-      this.data = response;
-      console.log(response);
+    this.orderItem.order.orderId = parseInt(sessionStorage.getItem('registeredOrderId'));
+    this.checkout.getAllOrderItem(this.orderItem).subscribe(data => {
+      alert(JSON.stringify(data))
+      this.data = data;
     })
   }
 

@@ -45,7 +45,6 @@ export class RegisterComponent {
             })
           } else {
             alert(sessionStorage.getItem("registeredCartId") + " cart already exist")
-
           }
           //end of cart
 

@@ -20,6 +20,7 @@ import { RegisterComponent } from './register/register.component';
 import { RetailerHomepageComponent } from './retailer-homepage/retailer-homepage.component';
 import { RetailerRegisterComponent } from './retailer-register/retailer-register.component';
 import { RetailerComponent } from './retailer/retailer.component';
+import { SearchResultComponent } from './search-result/search-result.component';
 import { SuccessComponent } from './success/success.component';
 import { TrendingComponent } from './trending/trending.component';
 
@@ -45,6 +46,7 @@ const routes: Routes = [
   { path: 'checking', component: CheckingComponent },
   { path: 'retailer-homepage', component: RetailerHomepageComponent },
   { path: 'admin-add-category', component: AdminAddCategoryComponent },
+  { path: 'search-result', component: SearchResultComponent },
   { path: '**', component: PagenotfoundComponent }
 ];
 
