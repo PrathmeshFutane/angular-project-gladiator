@@ -42,9 +42,34 @@
       </tbody>
     </table>
 
+    <div class="button" style="text-align: left;">
+      <button class="btn btn-primary" (click)="open(content)">Cancel Order</button>
+    </div>
+
     <div class="button" style="text-align: right;">
       <button class="btn btn-primary" routerLink="/payment">make payment</button>
     </div>
 
   </div>
 </div>
+
+<!-- This is model for Order cancel -->
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Profile</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <i class="fa fa-window-close fa-2x"></i>
+      
+    </button>
+  </div>
+  <div class="modal-body">
+     <div class="content">
+
+      Your Order has been cancelled!!
+
+     </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+  </div>
+</ng-template>
