@@ -16,7 +16,7 @@ export class AdminService {
     return this.http.post(url, login);
   }
 
-  fetchPersonalInformation(id: number): Observable<Admin> {
+  fetchProfile(id: number): Observable<Admin> {
     let url = "http://localhost:8282/admin-profile?adminId=" + id;
     return this.http.get<Admin>(url);
   }

@@ -110,19 +110,20 @@
 <!-- personal information for admin popup -->
 <ng-template #content let-modal>
   <div class="modal-header">
-    <h4 class="modal-title" id="modal-basic-title">Profile</h4>
+    <h4 class="modal-title" id="modal-basic-title">Personal Information</h4>
     <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
       <i class="fa fa-window-close fa-2x"></i>
     </button>
   </div>
   <div class="modal-body">
      <div class="content">
-       <!-- This is your profile congratulation bro     -->
-       <!-- Admin Personal Information: <br />
+
+     <!---  This is your profile congratulation    -->
+        Admin Personal Information: <br />
        Admin ID : {{ data.adminId }} <br />
        Name : {{ data.name }} <br />
        Email : {{ data.email }} <br />
-       Mobile No : {{ data.mobileNumber }} <br /> -->
+       Mobile No : {{ data.mobileNumber }} <br />
      </div>
   </div>
   <div class="modal-footer">

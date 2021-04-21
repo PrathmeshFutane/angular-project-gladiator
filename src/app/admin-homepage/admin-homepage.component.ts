@@ -30,7 +30,7 @@ export class AdminHomepageComponent {
 
     // this is to get the admin information
     this.adminId = parseInt(sessionStorage.getItem('adminId'));
-    this.adminService.fetchPersonalInformation(this.adminId).subscribe(response => {
+    this.adminService.fetchProfile(this.adminId).subscribe(response => {
       this.data = response;
     })
 
