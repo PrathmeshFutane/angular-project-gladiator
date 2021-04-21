@@ -1,0 +1,72 @@
+
+<!-- this is payment gateway -->
+
+<!--  Author
+      Jeshma M
+      This is page for getting bank details from the user and to make payment -->
+
+
+      <div class="container form-box">
+        <div class="container" style="text-align:center; ">
+          <h3>Getting the bank details for payment</h3>
+        </div>
+      
+        <form (ngSubmit)="makePayment()">
+      
+          <!-- Field for card number -->
+
+          <div class="form-group">
+            <label for="cardNumber">Card Number</label>
+            <input type="number" class="form-control" required id="cardNumber" name="cardNumber"
+            [(ngModel)]="payment.cardNumber" #cardNumber="ngModel">
+            <div *ngIf="cardNumber.invalid && (cardNumber.dirty || cardNumber.touched)" class="alert alert-danger">
+              <div *ngIf="cardNumber.errors.required">
+                Card Number is required.
+              </div>
+            </div>
+          </div>
+
+          <!-- Field for Expiry Month -->
+
+          <div class="form-group">
+            <label for="expiryMonth">Expiry Month</label>
+            <input type="number" class="form-control" required id="ExpiryMonth" name="expiryMonth"
+            [(ngModel)]="payment.expiryMonth" #expiryMonth="ngModel">
+            <div *ngIf="expiryMonth.invalid && (expiryMonth.dirty || expiryMonth.touched)" class="alert alert-danger">
+              <div *ngIf="expiryMonth.errors.required">
+                Expiry Month is required.
+              </div>
+            </div>
+          </div>
+
+          <!-- Field for Expiry Year -->
+
+          <div class="form-group">
+            <label for="expiryYear">Expiry Year</label>
+            <input type="number" class="form-control" required id="ExpiryYear" name="expiryYear"
+            [(ngModel)]="payment.expiryYear" #expiryYear="ngModel">
+            <div *ngIf="expiryYear.invalid && (expiryYear.dirty || expiryYear.touched)" class="alert alert-danger">
+              <div *ngIf="expiryYear.errors.required">
+                Expiry Year is required.
+              </div>
+            </div>
+          </div>
+
+          <!-- Field for cvv -->
+
+          <div class="form-group">
+            <label for="cvv">Cvv</label>
+            <input type="number" class="form-control" required id="cvv" name="cvv"
+            [(ngModel)]="payment.cvv" #cvv="ngModel">
+            <div *ngIf="cvv.invalid && (cvv.dirty || cvv.touched)" class="alert alert-danger">
+              <div *ngIf="cvv.errors.required">
+                Cvv is required.
+              </div>
+            </div>
+          </div>
+      
+          <button type="submit" class="btn btn-primary"  >Make Payment</button>
+          <button type="reset" class="btn btn-danger m-3">Reset</button>
+        </form>
+      </div>
+      

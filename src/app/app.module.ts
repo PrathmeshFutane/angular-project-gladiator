@@ -35,6 +35,7 @@ import { AdminTotalCustomerComponent } from './admin-total-customer/admin-total-
 import { AdminTotalRetailerComponent } from './admin-total-retailer/admin-total-retailer.component';
 import { AdminAddCategoryComponent } from './admin-add-category/admin-add-category.component';
 import { RetailerHomepageComponent } from './retailer-homepage/retailer-homepage.component';
+import { BankDetailsComponent } from './bank-details/bank-details.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,8 @@ import { RetailerHomepageComponent } from './retailer-homepage/retailer-homepage
     AdminTotalCustomerComponent,
     AdminTotalRetailerComponent,
     AdminAddCategoryComponent,
-    RetailerHomepageComponent
+    RetailerHomepageComponent,
+    BankDetailsComponent
   ],
   imports: [
     BrowserModule,

@@ -4,6 +4,7 @@ import { AddProductComponent } from './add-product/add-product.component';
 import { AdminAddCategoryComponent } from './admin-add-category/admin-add-category.component';
 import { AdminHomepageComponent } from './admin-homepage/admin-homepage.component';
 import { AdminComponent } from './admin/admin.component';
+import { BankDetailsComponent } from './bank-details/bank-details.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { CartComponent } from './cart/cart.component';
 import { CategoryComponent } from './category/category.component';
@@ -47,7 +48,9 @@ const routes: Routes = [
   { path: 'retailer-homepage', component: RetailerHomepageComponent },
   { path: 'admin-add-category', component: AdminAddCategoryComponent },
   { path: 'search-result', component: SearchResultComponent },
+  { path: 'bank-details', component: BankDetailsComponent},
   { path: '**', component: PagenotfoundComponent }
+
 ];
 
 @NgModule({
