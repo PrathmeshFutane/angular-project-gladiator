@@ -43,7 +43,12 @@ export class CartComponent implements OnInit {
 
 
   deleteCartItem(info) {
-    alert(info['cartItemId'])
+    this.cartItems.cartItemId = info['cartItemId']
+    alert(this.cartItems.cartItemId)
+    this.cartItemService.deleteCartitem(this.cartItems).subscribe(data => {
+      alert(JSON.stringify(data))
+    })
+    // alert(info['cartItemId'])
   }
 }
 
