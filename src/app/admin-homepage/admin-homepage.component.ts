@@ -19,7 +19,6 @@ export class AdminHomepageComponent {
 
   adminId: number;
   admin: Admin = new Admin();
-  data: any;
 
   open(content) {
     this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then((result) => {
@@ -31,7 +30,7 @@ export class AdminHomepageComponent {
     // this is to get the admin information
     this.adminId = parseInt(sessionStorage.getItem('adminId'));
     this.adminService.fetchProfile(this.adminId).subscribe(response => {
-      this.data = response;
+      this.admin = response;
     })
 
   }
