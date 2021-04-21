@@ -13,11 +13,11 @@ export class AdminService {
 
   login(login: Login): Observable<any> {
     let url = "http://localhost:8282/admin-login";
-    return this.http.post(url, login);  
+    return this.http.post(url, login);
   }
 
   fetchPersonalInformation(id: number): Observable<Admin> {
-    let url = "http://localhost:8282/admin-personalInformation?adminId=" + id;
+    let url = "http://localhost:8282/admin-profile?adminId=" + id;
     return this.http.get<Admin>(url);
   }
 }

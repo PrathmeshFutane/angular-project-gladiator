@@ -1,7 +1,7 @@
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Component } from '@angular/core';
-import {Admin} from '../appmodel/admin';
-import {AdminService} from '../admin.service';
+import { Admin } from '../appmodel/admin';
+import { AdminService } from '../admin.service';
 
 
 @Component({
@@ -27,11 +27,13 @@ export class AdminHomepageComponent {
     }, (reason) => {
       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
     });
+
+    // this is to get the admin information
     this.adminId = parseInt(sessionStorage.getItem('adminId'));
     this.adminService.fetchPersonalInformation(this.adminId).subscribe(response => {
       this.data = response;
-
     })
+
   }
 
   private getDismissReason(reason: any): string {

@@ -19,19 +19,19 @@ export class AdminComponent {
   constructor(private adminService: AdminService, private router: Router) { }
 
   loginCheck() {
-   console.log(this.login);
-   this.adminService.login(this.login).subscribe(response => {
-     alert(JSON.stringify(response));
-     console.log(response);
-     if(response.status == true) {
-       let adminId = response.id;
-       sessionStorage.setItem('adminId', String(adminId));
-       this.router.navigate(['admin-homepage']);
-     }
-     else
-     this.message = response.message;
-   })
-   
+    console.log(this.login);
+    this.adminService.login(this.login).subscribe(response => {
+      alert(JSON.stringify(response));
+      console.log(response);
+      if (response.status == true) {
+        let adminId = response.id;
+        sessionStorage.setItem('adminId', adminId);
+        this.router.navigate(['admin-homepage']);
+      }
+      else
+        this.message = response.message;
+    })
+
   }
 }
-  
+
