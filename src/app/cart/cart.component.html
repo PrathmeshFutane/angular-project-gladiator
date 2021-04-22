@@ -31,9 +31,16 @@
       </tbody>
     </table>
 
-    <div class="button" style="text-align: right;">
-      <button class="btn btn-warning" style="color: white;" routerLink="/checkout" (click)="placeOrder()">Place Order</button>
+    <div class="container" style="margin-bottom: 20px;display: flex; align-items: center; justify-content: space-between;">
+      <div  >
+        <button class="btn btn-warning" style="color: white;" routerLink="/homepage" (click)="placeOrder()">Back To Shopping</button>
+      </div>
+
+      <div >
+        <button class="btn btn-warning" style="color: white;" routerLink="/checkout" (click)="placeOrder()">Place Order</button>
+      </div>
     </div>
+   
 
   </div>
 </div>

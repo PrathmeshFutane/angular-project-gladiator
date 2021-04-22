@@ -16,4 +16,17 @@ export class AddCategoryServiceService {
   }
 
 
+  getAllCategory() {
+    let url = "http://localhost:8282/get-category";
+    return this.http.get(url);
+  }
+
+
+  getProductsByCategory(categoryId) {
+    let url = "http://localhost:8282/get-products-by-category?categoryId=" + categoryId;
+    return this.http.get(url);
+  }
+
+
 }
+

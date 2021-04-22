@@ -9,12 +9,10 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-        <input width="50%" class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="value"
-        [(ngModel)]="id" list="search-list">
+        <input width="50%" class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="searchValue"
+        [(ngModel)]="searchValue" list="search-list">
 
-        <datalist id="search-list"  >
-          <option *ngFor="let i of data" value="{{i['title']}}">            
-        </datalist>
+        
         <i class="fa fa-search" (click)="search()"></i>
         
 

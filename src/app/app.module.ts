@@ -36,6 +36,7 @@ import { AdminTotalRetailerComponent } from './admin-total-retailer/admin-total-
 import { AdminAddCategoryComponent } from './admin-add-category/admin-add-category.component';
 import { RetailerHomepageComponent } from './retailer-homepage/retailer-homepage.component';
 import { BankDetailsComponent } from './bank-details/bank-details.component';
+import { SearchfilterPipe } from './searchfilter.pipe';
 
 @NgModule({
   declarations: [
@@ -68,7 +69,8 @@ import { BankDetailsComponent } from './bank-details/bank-details.component';
     AdminTotalRetailerComponent,
     AdminAddCategoryComponent,
     RetailerHomepageComponent,
-    BankDetailsComponent
+    BankDetailsComponent,
+    SearchfilterPipe
   ],
   imports: [
     BrowserModule,

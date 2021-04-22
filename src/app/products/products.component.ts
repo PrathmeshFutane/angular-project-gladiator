@@ -3,7 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AddProductService } from '../product.service';
 import { CartItemService } from '../cart-item.service';
-import { CartItem } from '../appmodel/cartItem';
+import { CartItem, Product } from '../appmodel/cartItem';
+import { SharedService } from '../shared.service';
 
 @Component({
   selector: 'products',
@@ -12,11 +13,13 @@ import { CartItem } from '../appmodel/cartItem';
 })
 export class ProductsComponent implements OnInit {
 
-  constructor(private http: HttpClient, private router: Router, private cartItemService: CartItemService, private productService: AddProductService) { }
+  constructor(private http: HttpClient, private router: Router, private cartItemService: CartItemService, private productService: AddProductService, private sharedService: SharedService) { }
 
   data: any;
   quantity: any;
   id: number;
+  products: Product[];
+  searchValue: any;
 
 
   cartItem: CartItem = new CartItem();
@@ -27,6 +30,11 @@ export class ProductsComponent implements OnInit {
       this.data = data;
       console.log(data[0]['image'])
     })
+
+    // this.productService.displayAllData().subscribe((data: Product[]) => {
+    //   this.products = data;
+    //   this.searchValue = this.sharedService.getSearchValue();
+    // })
 
     this.productService.getAllQuantity().subscribe(data => {
       console.log(data)
@@ -52,4 +60,15 @@ export class ProductsComponent implements OnInit {
     })
 
   }
+
+
+
+
+
+
+
+
+
+
+
 }

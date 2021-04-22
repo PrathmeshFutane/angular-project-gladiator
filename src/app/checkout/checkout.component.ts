@@ -13,21 +13,25 @@ import { OrderService } from '../order.service';
 })
 export class CheckoutComponent implements OnInit {
 
-  constructor(private http: HttpClient, private router: Router, private checkoutService: CheckoutService, private modalService : NgbModal ) { }
+  constructor(private http: HttpClient, private router: Router, private checkoutService: CheckoutService, private modalService: NgbModal) { }
 
   data: any;
 
 
   orderItem: OrderItem = new OrderItem();
+  orderId = parseInt(sessionStorage.getItem('registeredOrderId'))
   closeResult = "";
 
   ngOnInit(): void {
     this.orderItem.order.orderId = parseInt(sessionStorage.getItem('registeredOrderId'));
     this.checkoutService.getAllOrderItem(this.orderItem).subscribe(data => {
-      alert(JSON.stringify(data))
+      //alert(JSON.stringify(data))
       this.data = data;
+      console.log(data)
     })
   }
+
+
 
 
 
@@ -43,9 +47,9 @@ export class CheckoutComponent implements OnInit {
 
     let orderId = parseInt(sessionStorage.getItem('registeredOrderId'));
     this.checkoutService.cancelOrder(orderId).subscribe(data => {
-      alert(JSON.stringify(data))
+      //alert(JSON.stringify(data))
     })
-    
+
   }
 
   private getDismissReason(reason: any): string {

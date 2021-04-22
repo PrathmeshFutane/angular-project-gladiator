@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AddProductService } from '../product.service';
+import { SharedService } from '../shared.service';
 
 @Component({
   selector: 'navbar',
@@ -9,20 +11,23 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
 
-  value: string;
+  searchValue: string;
   data: any;
   id: number;
 
 
 
-  constructor(private http: HttpClient, private router: Router) {
+  constructor(private http: HttpClient, private router: Router, private productService: AddProductService, private sharedService: SharedService) {
     console.log(this.data)
   }
 
 
 
   search() {
-    alert(this.id)
+    //alert(this.id)
+    alert(this.searchValue)
+    this.sharedService.setSearchValue(this.searchValue);
+
   }
 
   clearData() {
@@ -33,10 +38,10 @@ export class NavbarComponent implements OnInit {
 
 
   ngOnInit(): void {
-    let url = "https://jsonplaceholder.typicode.com/todos";
-    this.http.get(url).subscribe(response => {
-      this.data = response;
-      console.log(response);
+    this.productService.displayAllData().subscribe(data => {
+      console.log(data);
+      this.data = data;
+      console.log(data[0]['image'])
     })
   }
 

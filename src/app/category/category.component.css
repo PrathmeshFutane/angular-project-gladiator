@@ -6,3 +6,18 @@
 a {
   text-decoration: none;
 }
+
+.category {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.individual-category {
+  border: 2px solid grey;
+  padding: 30px;
+  cursor: pointer;
+  transform: scale(1.1);
+  border: 2px solid black;
+}

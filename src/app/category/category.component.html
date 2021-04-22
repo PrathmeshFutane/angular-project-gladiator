@@ -1,5 +1,4 @@
-<div class="container-fluid">
-  <div class="container-fluid" style="text-align: center; margin-top: 10px; margin-bottom: 10px;">
+  <div class="container-fluid" >
     <div class="row">
 
       <div class="col-sm">
@@ -9,34 +8,15 @@
         </a>
       </div>
 
-      <div class="col-sm">
-        <i class="fa fa-mobile fa-6x"></i>
-        <div class="container">
-          Mobile
+      <div class="col-sm category" >
+        <div class="container "  *ngFor="let i of data">
+          <div class="content individual-category" (click)="getProductById(i)">
+            <h3>{{i['name']}}</h3>
+          </div>
         </div>
       </div>
 
-      <div class="col-sm">
-        <i class="fa fa-user fa-6x"></i>
-        <div class="container">
-          Electronics
-        </div>
-      </div>
-
-      <div class="col-sm">
-        <i class="fa fa-laptop fa-6x"></i>
-        <div class="container">
-          Laptop
-        </div>
-      </div>
-
-      <div class="col-sm">
-        <i class="fa fa-home fa-6x"></i>
-        <div class="container">
-          Furniture
-        </div>
-      </div>
+     
 
     </div>
   </div>
-</div>
