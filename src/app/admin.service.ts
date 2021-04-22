@@ -34,8 +34,11 @@ export class AdminService {
     return this.http.get<Retailer>(url);
   }
 
-
-
+   AdminApproveRetailer(retailer : Retailer) : Observable<any> {
+     let url = "http://localhost:8282/admin-approve-retailer";
+     return this.http.post<any>(url , retailer);
+   }
+  
 
 
 

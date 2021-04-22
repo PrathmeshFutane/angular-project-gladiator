@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AddProductComponent } from './add-product/add-product.component';
 import { AdminAddCategoryComponent } from './admin-add-category/admin-add-category.component';
+import { AdminApproveRetailerComponent } from './admin-approve-retailer/admin-approve-retailer.component';
 import { AdminHomepageComponent } from './admin-homepage/admin-homepage.component';
 import { AdminComponent } from './admin/admin.component';
 import { BankDetailsComponent } from './bank-details/bank-details.component';
@@ -51,6 +52,7 @@ const routes: Routes = [
   { path: 'search-result', component: SearchResultComponent },
   { path: 'bank-details', component: BankDetailsComponent },
   { path: 'search-by-keyword', component: SearchByKeywordComponent },
+  { path: 'admin-approve-retailer', component: AdminApproveRetailerComponent},
   { path: '**', component: PagenotfoundComponent }
 
 ];

@@ -38,6 +38,7 @@ import { RetailerHomepageComponent } from './retailer-homepage/retailer-homepage
 import { BankDetailsComponent } from './bank-details/bank-details.component';
 import { SearchfilterPipe } from './searchfilter.pipe';
 import { SearchByKeywordComponent } from './search-by-keyword/search-by-keyword.component';
+import { AdminApproveRetailerComponent } from './admin-approve-retailer/admin-approve-retailer.component';
 
 @NgModule({
   declarations: [
@@ -72,7 +73,8 @@ import { SearchByKeywordComponent } from './search-by-keyword/search-by-keyword.
     RetailerHomepageComponent,
     BankDetailsComponent,
     SearchfilterPipe,
-    SearchByKeywordComponent
+    SearchByKeywordComponent,
+    AdminApproveRetailerComponent
   ],
   imports: [
     BrowserModule,
