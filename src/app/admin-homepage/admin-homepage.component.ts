@@ -21,10 +21,13 @@ export class AdminHomepageComponent {
   adminId: number;
   admin: Admin = new Admin();
 
+  customerData: any;
+  retailerData: any;
 
 
-   
-//  This is model for profile
+
+
+  //  This is model for profile
   openProfile(content) {
     this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
@@ -53,8 +56,8 @@ export class AdminHomepageComponent {
 
 
   // This is for all Customer 
-  openTotalCustomer(content) {
-    this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then((result) => {
+  openTotalCustomer(customer) {
+    this.modalService.open(customer, { ariaLabelledBy: 'model-for-customer' }).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
     }, (reason) => {
       this.closeResult = `Dismissed ${this.getDismissReasonCustomer(reason)}`;
@@ -79,9 +82,9 @@ export class AdminHomepageComponent {
   }
 
 
-//  This is for Total Retailer 
-  openTotalRetailer(content) {
-    this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then((result) => {
+  //  This is for Total Retailer 
+  openTotalRetailer(retailer) {
+    this.modalService.open(retailer, { ariaLabelledBy: 'modal-for-retailer' }).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
     }, (reason) => {
       this.closeResult = `Dismissed ${this.getDismissReasonRetailer(reason)}`;

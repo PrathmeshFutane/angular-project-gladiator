@@ -39,7 +39,7 @@
             <i  class=" text-center fa fa-user fa-5x"></i>
           </h5>
           <div class="container" style="text-align: center;">
-            <button class="btn btn-outline-light" (click)="openTotalCustomer(content)">Total Customer</button>
+            <button class="btn btn-outline-light" (click)="openTotalCustomer(customer)">Total Customer</button>
           </div>
         </div>
       </div>
@@ -53,7 +53,7 @@
             <i  class=" text-center fa fa-store fa-5x"></i>
           </h5>
           <div class="container" style="text-align: center;">
-            <button class="btn btn-outline-light" (click)="openTotalRetailer(content)">Total Retailer</button>
+            <button class="btn btn-outline-light" (click)="openTotalRetailer(retailer)">Total Retailer</button>
           </div>
         </div>
       </div>
@@ -138,18 +138,32 @@
 
 
 <!-- Total number of customers popup -->
-<ng-template #content let-modal>
+<ng-template #customer let-modal>
   <div class="modal-header">
-    <h4 class="modal-title" id="modal-basic-title">Personal Information</h4>
+    <h4 class="modal-title" id="model-for-customer">Personal Information</h4>
     <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
       <i class="fa fa-window-close fa-2x"></i>
     </button>
   </div>
   <div class="modal-body">
-     <div class="content">
+     <div class="customer">
 
      <!---  This is total number of customers   -->
-      This is Customer
+     <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Address1</th>
+          <th>Address2</th>
+          <th>Mobile Number</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let info of customerData">
+          <td>{{info['name']}}</td>
+      </tbody>
+    </table>
 
      </div>
   </div>
@@ -164,18 +178,32 @@
 
 
 <!-- Total number of retailer popup -->
-<ng-template #content let-modal>
+<ng-template #retailer let-modal>
   <div class="modal-header">
-    <h4 class="modal-title" id="modal-basic-title">Personal Information</h4>
+    <h4 class="modal-title" id="modal-for-retailer">Personal Information</h4>
     <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
       <i class="fa fa-window-close fa-2x"></i>
     </button>
   </div>
   <div class="modal-body">
-     <div class="content">
+     <div class="retailer">
 
      <!---  This is total number of retailer   -->
-     This is Retailer
+     <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Address1</th>
+          <th>Address2</th>
+          <th>Mobile Number</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let info of customerData">
+          <td>{{info['name']}}</td>
+      </tbody>
+    </table>
      </div>
   </div>
   <div class="modal-footer">
