@@ -20,8 +20,13 @@ export class CartItemService {
     return this.http.post(url, cartItem);
   }
 
-  deleteCartitem(cartItem: CartItem): Observable<any>{
+  deleteCartitem(cartItem: CartItem): Observable<any> {
     let url = "http://localhost:8282/delete-cart-item";
+    return this.http.post(url, cartItem);
+  }
+
+  updateQuantity(cartItem: CartItem): Observable<any> {
+    let url = "http://localhost:8282/update-cart-item";
     return this.http.post(url, cartItem);
   }
 }

@@ -21,6 +21,7 @@ import { RegisterComponent } from './register/register.component';
 import { RetailerHomepageComponent } from './retailer-homepage/retailer-homepage.component';
 import { RetailerRegisterComponent } from './retailer-register/retailer-register.component';
 import { RetailerComponent } from './retailer/retailer.component';
+import { SearchByKeywordComponent } from './search-by-keyword/search-by-keyword.component';
 import { SearchResultComponent } from './search-result/search-result.component';
 import { SuccessComponent } from './success/success.component';
 import { TrendingComponent } from './trending/trending.component';
@@ -48,7 +49,8 @@ const routes: Routes = [
   { path: 'retailer-homepage', component: RetailerHomepageComponent },
   { path: 'admin-add-category', component: AdminAddCategoryComponent },
   { path: 'search-result', component: SearchResultComponent },
-  { path: 'bank-details', component: BankDetailsComponent},
+  { path: 'bank-details', component: BankDetailsComponent },
+  { path: 'search-by-keyword', component: SearchByKeywordComponent },
   { path: '**', component: PagenotfoundComponent }
 
 ];

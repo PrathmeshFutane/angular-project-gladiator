@@ -9,6 +9,7 @@ export class SharedService {
 
   categoryId: any;
   searchValue: any;
+  keyword: any;
 
   setSearchValue(searchValue) {
     this.searchValue = searchValue
@@ -24,5 +25,13 @@ export class SharedService {
 
   getCategoryId() {
     return this.categoryId;
+  }
+
+  setKeywordValue(keyword) {
+    this.keyword = keyword;
+  }
+
+  getKeyword() {
+    return this.searchValue;
   }
 }

@@ -14,7 +14,7 @@ export class CartComponent implements OnInit {
 
   constructor(private router: Router, private orderService: OrderService, private cartItemService: CartItemService) { }
 
-  data: any;
+  data: [];
   cartItems: CartItem = new CartItem();
   order: Order = new Order();
 
@@ -47,8 +47,37 @@ export class CartComponent implements OnInit {
     alert(this.cartItems.cartItemId)
     this.cartItemService.deleteCartitem(this.cartItems).subscribe(data => {
       alert(JSON.stringify(data))
+      //removing the element from array
     })
     // alert(info['cartItemId'])
+  }
+
+  updateQuantity(quantity, info) {
+
+    if (quantity > 0) {
+      if (quantity <= 4) {
+        //code for backend
+        alert(quantity + " " + JSON.stringify(info))
+        console.log(JSON.stringify(info))
+        this.cartItems.quantity = quantity;
+        this.cartItems.cartItemId = info.cartItemId;
+        this.cartItems.cart.cartId = info.cart.cartId;
+        this.cartItems.product.productId = info.product.productId;
+
+        alert(this.cartItems.product.productId)
+
+        this.cartItemService.updateQuantity(this.cartItems).subscribe(data => {
+          alert(JSON.stringify(data));
+        })
+      }
+      else {
+        alert("more than four is not allowed")
+      }
+    }
+    else {
+      alert("less than zero is not allowed")
+    }
+
   }
 }
 

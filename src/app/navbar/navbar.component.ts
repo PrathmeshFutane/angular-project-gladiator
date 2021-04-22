@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AddProductService } from '../product.service';
+import { SearchService } from '../search.service';
 import { SharedService } from '../shared.service';
 
 @Component({
@@ -17,7 +18,9 @@ export class NavbarComponent implements OnInit {
 
 
 
-  constructor(private http: HttpClient, private router: Router, private productService: AddProductService, private sharedService: SharedService) {
+
+
+  constructor(private http: HttpClient, private router: Router, private productService: AddProductService, private sharedService: SharedService, private searchService: SearchService) {
     console.log(this.data)
   }
 
@@ -25,8 +28,15 @@ export class NavbarComponent implements OnInit {
 
   search() {
     //alert(this.id)
+    this.router.navigate([''])
+    this.router.navigate(['search-by-keyword'])
     alert(this.searchValue)
     this.sharedService.setSearchValue(this.searchValue);
+    this.sharedService.setKeywordValue(this.searchValue);
+    this.router.navigate(['search-by-keyword'])
+    this.searchService.searchByKeyword(this.searchValue).subscribe(data => {
+      alert(JSON.stringify(data))
+    })
 
   }
 
@@ -34,7 +44,6 @@ export class NavbarComponent implements OnInit {
     sessionStorage.clear();
     this.router.navigate([''])
   }
-
 
 
   ngOnInit(): void {

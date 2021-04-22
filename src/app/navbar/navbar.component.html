@@ -6,14 +6,17 @@
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+ 
+    <div class="collapse navbar-collapse" style="display: flex;" id="navbarSupportedContent">
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-        <input width="50%" class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="searchValue"
+      
+        <input width="100%" class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="searchValue"
         [(ngModel)]="searchValue" list="search-list">
 
         
-        <i class="fa fa-search" (click)="search()"></i>
+        <i class="fa fa-search fa-2x" (click)="search()" routerLink="/search-by-keyword"></i>
+     
+       
         
 
         <!-- <select >

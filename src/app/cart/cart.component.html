@@ -19,12 +19,13 @@
             <img height="100%" width="100%" class="card-img-top"
               src="http://localhost:8282/downloads/{{info['product']['image']}}" alt="Card image cap">
           </th>
+         
           <th style="height: 100px; width: 400px;">{{info['product']['productName']}}</th>
           <th>{{info['product']['productDescription']}}</th>
 
-
-
-          <th> {{info['quantity']}}</th>
+          <th>
+            <input type="text" name="quantity" value="{{info['quantity']}}" #quantity (keyup)="updateQuantity(quantity.value, info)">
+          </th>
           <th>{{info['product']['unitPrice']}}</th>
           <th style="cursor: pointer;" (click)="deleteCartItem(info)"><i class="fa fa-trash-alt fa-2x"></i></th>
         </tr>
@@ -33,7 +34,7 @@
 
     <div class="container" style="margin-bottom: 20px;display: flex; align-items: center; justify-content: space-between;">
       <div  >
-        <button class="btn btn-warning" style="color: white;" routerLink="/homepage" (click)="placeOrder()">Back To Shopping</button>
+        <button class="btn btn-warning" style="color: white;" routerLink="" >Back To Shopping</button>
       </div>
 
       <div >
