@@ -18,15 +18,6 @@ export class DashboardComponent {
   customer: Customer = new Customer();
   data: any;
 
-
-  
-
-
-
-
-
-
-
   //below code is for open model
   open(content) {
     this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then((result) => {
@@ -36,7 +27,7 @@ export class DashboardComponent {
     });
     this.customerId = parseInt(sessionStorage.getItem('customerId'));
     this.customerService.fetchProfile(this.customerId).subscribe(response => {
-      this.data = response;
+      this.data=response;
 
     })
   }
