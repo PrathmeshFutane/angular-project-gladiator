@@ -15,7 +15,7 @@
     <div class="col-lg-3 col-md-3 col-sm-12" style="padding: 20px;;">
       <div class="card " style="width: 18rem;">
         <div class="card-body">
-          <h5 class="card-title text-center">Prathmesh Futane</h5>
+          <h5 class="card-title text-center">{{admin['name']}}</h5>
           <div class="text-center">
             <i style="margin-left: 30px;" class=" text-center fa fa-user-plus fa-5x"></i>
           </div>
@@ -140,7 +140,7 @@
 <!-- Total number of customers popup -->
 <ng-template #customer let-modal>
   <div class="modal-header">
-    <h4 class="modal-title" id="model-for-customer">Personal Information</h4>
+    <h4 class="modal-title" id="model-for-customer">Customer Information</h4>
     <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
       <i class="fa fa-window-close fa-2x"></i>
     </button>
@@ -162,6 +162,10 @@
       <tbody>
         <tr *ngFor="let info of customerData">
           <td>{{info['name']}}</td>
+          <td>{{info['email']}}</td>
+          <td>{{info['address1']}}</td>
+          <td>{{info['address2']}}</td>
+          <td>{{info['mobileNumber']}}</td>
       </tbody>
     </table>
 
@@ -180,7 +184,7 @@
 <!-- Total number of retailer popup -->
 <ng-template #retailer let-modal>
   <div class="modal-header">
-    <h4 class="modal-title" id="modal-for-retailer">Personal Information</h4>
+    <h4 class="modal-title" id="modal-for-retailer">Retailer Information</h4>
     <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
       <i class="fa fa-window-close fa-2x"></i>
     </button>
@@ -192,16 +196,20 @@
      <table class="table table-striped">
       <thead>
         <tr>
-          <th>Name</th>
+          <th>OwnerName</th>
+          <th>Company</th>
           <th>Email</th>
-          <th>Address1</th>
-          <th>Address2</th>
           <th>Mobile Number</th>
+          <th>Revenue</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let info of customerData">
-          <td>{{info['name']}}</td>
+        <tr *ngFor="let info of retailerData">
+          <td>{{info['ownerName']}}</td>
+          <td>{{info['company']}}</td>
+          <td>{{info['email']}}</td>
+          <td>{{info['mobileNumber']}}</td>
+          <td>{{info['revenue']}}</td>
       </tbody>
     </table>
      </div>

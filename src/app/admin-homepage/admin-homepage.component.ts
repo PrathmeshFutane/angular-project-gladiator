@@ -38,6 +38,7 @@ export class AdminHomepageComponent {
     // this is to get the admin information
     this.adminId = parseInt(sessionStorage.getItem('adminId'));
     this.adminService.fetchProfile(this.adminId).subscribe(response => {
+      console.log(response);
       this.admin = response;
     })
 
@@ -63,10 +64,10 @@ export class AdminHomepageComponent {
       this.closeResult = `Dismissed ${this.getDismissReasonCustomer(reason)}`;
     });
 
-    // this is to get the admin information
-    this.adminId = parseInt(sessionStorage.getItem('adminId'));
-    this.adminService.fetchProfile(this.adminId).subscribe(response => {
-      this.admin = response;
+    // this is to get the total customer information
+    
+    this.adminService.fetchTotalCustomer().subscribe(response => {
+      this.customerData = response;
     })
 
   }
@@ -91,9 +92,9 @@ export class AdminHomepageComponent {
     });
 
     // this is to get the admin information
-    this.adminId = parseInt(sessionStorage.getItem('adminId'));
-    this.adminService.fetchProfile(this.adminId).subscribe(response => {
-      this.admin = response;
+   
+    this.adminService.fetchTotalRetailer().subscribe(response => {
+      this.retailerData = response;
     })
 
   }
