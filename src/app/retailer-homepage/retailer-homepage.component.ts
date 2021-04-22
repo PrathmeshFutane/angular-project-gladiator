@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AddProductService } from '../product.service';
 import { Product } from '../appmodel/product';
+import { RetailerService } from '../retailer.service';
 
 @Component({
   selector: 'app-retailer-homepage',
@@ -11,13 +12,14 @@ import { Product } from '../appmodel/product';
 })
 export class RetailerHomepageComponent implements OnInit {
 
-  constructor(private productService: AddProductService, private router: Router, private http: HttpClient) { }
+  constructor(private productService: AddProductService, private retailerService: RetailerService, private router: Router, private http: HttpClient) { }
 
   product: Product = new Product();
   data: any;
   id: number;
   productImage: any;//File;
   productId: any;//number
+  info: any;
 
 
 
@@ -73,6 +75,15 @@ export class RetailerHomepageComponent implements OnInit {
       alert(JSON.stringify(data))
     })
     alert("image upload");
+  }
+
+  getProductByRetailerId() {
+    this.retailerService.getProductsByRetailerId(sessionStorage.getItem('retailerId')).subscribe(data => {
+        alert(JSON.stringify(data))
+        this.info=data
+    })
+    
+
   }
 
 

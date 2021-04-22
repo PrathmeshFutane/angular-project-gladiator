@@ -31,4 +31,11 @@ export class RetailerService {
   //   let url = "http://localhost:8181/profile?customerId="+id;
   //  return this.http.get<Customer>(url); 
   // }
+
+  //made change
+  getProductsByRetailerId(retailerId) {
+    let url = "http://localhost:8282/get-products-by-retailer?retailerId=" + retailerId;
+    return this.http.get(url);
+  }
+
 }

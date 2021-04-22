@@ -4,6 +4,7 @@
      Jeshma M
      This is the Homepage of retailer
 -->
+<button class="btn btn-primary" (click)="getProductByRetailerId()">View My Products</button>
 
 <div class="container">
   <!-- first -->
@@ -159,7 +160,7 @@
           </div>
 
         </div>
-
+       
 
         <div class="container text-center" style="width: 50%;">
           <form (ngSubmit)="setImage()">
@@ -176,3 +177,22 @@
         <!-- <div class="container m-5">
   <button class="btn-btn-success" (click)="displayAll()">Display all images</button>
 </div> -->
+</div>
+
+
+
+
+<div class="col-sm-12 col-md-6 col-lg-4" *ngFor="let info of data " ></div>
+<div class="card" style="width: 100%;">
+  <div class="image" style="text-align: center;">
+      <img height="100%"  width="100%" class="card-img-top img" src="http://localhost:8282/downloads/{{info['image']}}"  alt="Card image cap">
+
+  </div>
+  <div class="card-body">
+      <span class="title">{{info['productId']}}</span>
+    <h5 class="card-title">{{info['productName']}}</h5>
+    <h5 class="card-title">{{info['stock']}}</h5>
+    <p class="card-text">{{info['productDescription']}}</p>
+    <div class="content subtitle">Price {{info['unitPrice']}}</div>
+</div>
+</div>

@@ -40,4 +40,7 @@ export class RetailerComponent implements OnInit {
         })
     }
 
+    //made change
+    
+
 }
