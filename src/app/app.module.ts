@@ -41,6 +41,7 @@ import { SearchByKeywordComponent } from './search-by-keyword/search-by-keyword.
 import { AdminApproveRetailerComponent } from './admin-approve-retailer/admin-approve-retailer.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
 import { ProductDescriptionComponent } from './product-description/product-description.component';
+import { OrderDetailsComponent } from './order-details/order-details.component';
 
 @NgModule({
   declarations: [
@@ -78,7 +79,8 @@ import { ProductDescriptionComponent } from './product-description/product-descr
     SearchByKeywordComponent,
     AdminApproveRetailerComponent,
     WishlistComponent,
-    ProductDescriptionComponent
+    ProductDescriptionComponent,
+    OrderDetailsComponent
   ],
   imports: [
     BrowserModule,
