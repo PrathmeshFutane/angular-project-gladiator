@@ -20,6 +20,8 @@ export class ProductsComponent implements OnInit {
   id: number;
   products: Product[];
   searchValue: any;
+  obj = [];
+
 
 
   cartItem: CartItem = new CartItem();
@@ -47,9 +49,6 @@ export class ProductsComponent implements OnInit {
   addToCart(productInformation) {
     //create cart on page load for customer
     alert(productInformation['productId'] + " " + productInformation['productName'] + " " + productInformation['productDescription'] + " " + this.id + " " + productInformation['unitPrice'])
-
-
-
     this.cartItem.cart.cartId = parseInt(sessionStorage.getItem('registeredCartId'));
     this.cartItem.product.productId = productInformation['productId'];
     this.cartItem.quantity = 1;
@@ -58,11 +57,36 @@ export class ProductsComponent implements OnInit {
     this.cartItemService.addToCart(this.cartItem).subscribe(data => {
       alert(JSON.stringify(data))
     })
+  }
 
+
+  //add to compare
+  addToCompare(information) {
+
+    this.obj.push(information)
+    sessionStorage.setItem("myCompare", JSON.stringify(this.obj))
   }
 
 
 
+
+
+  //code for filter
+  from500to1000() {
+    alert('click')
+    this.productService.filter500to1000().subscribe(data => {
+      alert(JSON.stringify(data))
+      this.data = data;
+    })
+  }
+
+  from5000to10000() {
+    alert('click')
+    this.productService.filter5000to10000().subscribe(data => {
+      alert(JSON.stringify(data))
+      this.data = data;
+    })
+  }
 
 
 

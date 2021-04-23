@@ -17,6 +17,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { LoginComponent } from './login/login.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { PaymentComponent } from './payment/payment.component';
+import { ProductDescriptionComponent } from './product-description/product-description.component';
 import { ProductsComponent } from './products/products.component';
 import { RegisterComponent } from './register/register.component';
 import { RetailerHomepageComponent } from './retailer-homepage/retailer-homepage.component';
@@ -52,7 +53,8 @@ const routes: Routes = [
   { path: 'search-result', component: SearchResultComponent },
   { path: 'bank-details', component: BankDetailsComponent },
   { path: 'search-by-keyword', component: SearchByKeywordComponent },
-  { path: 'admin-approve-retailer', component: AdminApproveRetailerComponent},
+  { path: 'admin-approve-retailer', component: AdminApproveRetailerComponent },
+  { path: 'product-description', component: ProductDescriptionComponent },
   { path: '**', component: PagenotfoundComponent }
 
 ];

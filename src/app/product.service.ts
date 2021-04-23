@@ -30,4 +30,16 @@ export class AddProductService {
     let url = "http://localhost:8282/get-quantity";
     return this.http.get(url);
   }
+
+
+
+  filter500to1000() {
+    let url = "http://localhost:8282/product-filter?price1=500&price2=1000"
+    return this.http.get(url);
+  }
+
+  filter5000to10000() {
+    let url = "http://localhost:8282/product-filter?price1=5000&price2=10000"
+    return this.http.get(url);
+  }
 }

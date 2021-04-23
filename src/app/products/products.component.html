@@ -1,40 +1,77 @@
+<div class="container">
+  <div class="card " style="width: 18rem;">
+    <div class="card-body" style="cursor: pointer;">
+        
+        <!-- radio button -->
+        <div class="form-check">
+            <input (click)="from500to1000()" class="form-check-input" type="radio" name="filter" id="filter">
+            <label class="form-check-label" for="filter">
+                From 500 to 1000
+            </label>
+          </div>
+          <div class="form-check">
+            <input (click)="from5000to10000()" class="form-check-input" type="radio" name="filter" id="filter" >
+            <label class="form-check-label" for="flexRadioDefault2">
+                From 5000 to 10000
+            </label>
+          </div>
+        <!-- end -->
 
+      <!-- <h5 class="card-title text-center" (click)="from500to1000()">
+        From 500 to 1000
+      </h5>
+      <h5 class="card-title text-center" (click)="from500to1000()">
+        From 500 to 1000
+      </h5>
+      <h5 class="card-title text-center" (click)="from500to1000()">
+        From 500 to 1000
+      </h5>
+      <h5 class="card-title text-center" (click)="from500to1000()">
+        From 500 to 1000
+      </h5> -->
+
+      
+    </div>
+  </div>
+</div>
 
 
 <div class="container mt-4">
-    <div class="row" >
-        
-        <div class="col-sm-12 col-md-6 col-lg-4" *ngFor="let info of data | searchfilter : searchValue" >
-            <div class="card" style="width: 100%;">
-                <div class="image" style="text-align: center;">
-                    <img height="100%"  width="100%" class="card-img-top img" src="http://localhost:8282/downloads/{{info['image']}}"  alt="Card image cap">
+  <div class="row">
 
-                </div>
-                <div class="card-body">
-                    <span class="title">{{info['productId']}}</span>
-                  <h5 class="card-title">{{info['productName']}}</h5>
-                  <h5 class="card-title">{{info['stock']}}</h5>
-                  <p class="card-text">{{info['productDescription']}}</p>
-                  <div class="content subtitle">Price {{info['unitPrice']}}</div>
-                  <!-- select quantity -->
+    <div class="col-sm-12 col-md-6 col-lg-4" *ngFor="let info of data | searchfilter : searchValue">
+      <div class="card" style="width: 100%;">
+        <div class="image" style="text-align: center;">
+          <img height="100%" width="100%" class="card-img-top img"
+            src="http://localhost:8282/downloads/{{info['image']}}" alt="Card image cap">
 
-                  <!-- <select [(ngModel)]="id" name="id" class="form-select" style="margin-top: 10px; margin-bottom: 10px;" aria-label="Default select example">
+        </div>
+        <div class="card-body">
+          <span class="title">{{info['productId']}}</span>
+          <h5 class="card-title">{{info['productName']}}</h5>
+          <h5 class="card-title">{{info['stock']}}</h5>
+          <p class="card-text">{{info['productDescription']}}</p>
+          <div class="content subtitle">Price {{info['unitPrice']}}</div>
+          <!-- select quantity -->
+
+          <!-- <select [(ngModel)]="id" name="id" class="form-select" style="margin-top: 10px; margin-bottom: 10px;" aria-label="Default select example">
                     <option *ngFor="let i of quantity"  [value]="i.QuantityId">{{i.totalCount}}</option> 
                     
                 </select> -->
 
-                
 
-                  
-                  <!-- <button  class="btn btn-primary" style="margin-left:15px;" (click)="mycart(i)" >Add to Cart</button> -->
-                  <button (click)="addToCart(info)"  class="btn btn-primary" style="margin-left:15px;"  >Add to Cart</button>
-                
-                
-                
-                </div>
-            </div>
+
+
+          <!-- <button  class="btn btn-primary" style="margin-left:15px;" (click)="mycart(i)" >Add to Cart</button> -->
+          <button (click)="addToCart(info)" class="btn btn-primary" style="margin-left:15px;">Add to Cart</button>
+          
+          <button class="btn btn-info" (click)=addToCompare(info)>Add To Compare</button>
+
+
         </div>
+      </div>
     </div>
+  </div>
 </div>
 
 {{id}}
