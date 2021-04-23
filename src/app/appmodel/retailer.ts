@@ -6,4 +6,5 @@ export class Retailer {
     password: string;
     mobileNumber: number;
     retailerStatus: string;
+    revenue: number;
 }

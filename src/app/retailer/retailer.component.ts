@@ -34,6 +34,7 @@ export class RetailerComponent implements OnInit {
                 alert(response.id);
                 sessionStorage.setItem('retailerId', id);
                 this.router.navigate(['retailer-homepage']);
+                sessionStorage.setItem("retailerName", response['name'])
             }
             else
                 this.message = response.message;
@@ -41,6 +42,6 @@ export class RetailerComponent implements OnInit {
     }
 
     //made change
-    
+
 
 }

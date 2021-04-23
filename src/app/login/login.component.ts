@@ -1,22 +1,9 @@
-import {
-  Component,
-  OnInit
-} from '@angular/core';
-import {
-  Router
-} from '@angular/router';
-import {
-  Cart
-} from '../appmodel/cart';
-import {
-  Login
-} from '../appmodel/login';
-import {
-  CartServiceService
-} from '../cart-service.service';
-import {
-  CustomerService
-} from '../customer.service';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Cart } from '../appmodel/cart';
+import { Login } from '../appmodel/login';
+import { CartServiceService } from '../cart-service.service';
+import { CustomerService } from '../customer.service';
 
 @Component({
   selector: 'login',
@@ -37,6 +24,7 @@ export class LoginComponent {
     console.log(this.login);
     this.customerService.login(this.login).subscribe(response => {
       alert(JSON.stringify(response));
+
       sessionStorage.setItem("customerName", response['name'])
       console.log(response);
       sessionStorage.setItem('registeredCartId', response['cartId']);

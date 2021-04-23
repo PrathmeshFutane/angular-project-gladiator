@@ -21,9 +21,9 @@
 
     <!-- second -->
     <div class="col-lg-3 col-md-3 col-sm-12" style="padding: 20px;;">
-      <div class="card " style="width: 18rem;">
+      <div class="card bg-light" style="width: 18rem;">
         <div class="card-body">
-          <h5 class="card-title text-center">Retailer Name</h5>
+          <h5 class="card-title text-center">{{ownerName}}</h5>
           <div class="text-center">
             <i style="margin-left: 30px;" class=" text-center fa fa-user fa-5x"></i>
             <i class="fad fa-user-crown"></i>
@@ -38,53 +38,50 @@
 
 <hr class="my-4">
 
+<!-- retailer dashboard -->
 
-<div class="container">
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro saepe consectetur eum eaque, quis sapiente enim,
-  ratione inventore assumenda asperiores quo aliquam nesciunt tenetur esse vero provident, cum earum. Cupiditate eum,
-  repellendus facere modi ut placeat eveniet dolorum molestiae impedit dolores veritatis quas tenetur necessitatibus vel
-  expedita blanditiis voluptatibus earum?
-</div>
+<div class="row" style=" margin-bottom:30px; margin-top: 30px; display: flex; justify-content: space-around; align-items: center;">
+  <div class="col-lg-3 col-md-3 col-sm-12">
+    <div class="card  bg-light" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">
+          <i class="fa fa-user fa-3x"></i>
+        </h5>
+        <div class="container" style="text-align: center;">
+          <button class="btn  btn-outline-dark" >View My Products</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<div class="container">
-  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi rem voluptatibus earum corrupti quae dicta quisquam
-  quibusdam illo dolore doloribus, suscipit dignissimos praesentium velit molestiae quo repudiandae, vel vitae
-  recusandae minus. Incidunt corrupti delectus fugit expedita in sit perferendis dolor laudantium eum ea, nostrum
-  sapiente quasi alias dicta saepe ratione.
-</div>
-<div class="container">
-  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi rem voluptatibus earum corrupti quae dicta quisquam
-  quibusdam illo dolore doloribus, suscipit dignissimos praesentium velit molestiae quo repudiandae, vel vitae
-  recusandae minus. Incidunt corrupti delectus fugit expedita in sit perferendis dolor laudantium eum ea, nostrum
-  sapiente quasi alias dicta saepe ratione.
-</div>
-<div class="container">
-  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi rem voluptatibus earum corrupti quae dicta quisquam
-  quibusdam illo dolore doloribus, suscipit dignissimos praesentium velit molestiae quo repudiandae, vel vitae
-  recusandae minus. Incidunt corrupti delectus fugit expedita in sit perferendis dolor laudantium eum ea, nostrum
-  sapiente quasi alias dicta saepe ratione.
-</div>
-<div class="container">
-  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi rem voluptatibus earum corrupti quae dicta quisquam
-  quibusdam illo dolore doloribus, suscipit dignissimos praesentium velit molestiae quo repudiandae, vel vitae
-  recusandae minus. Incidunt corrupti delectus fugit expedita in sit perferendis dolor laudantium eum ea, nostrum
-  sapiente quasi alias dicta saepe ratione.
-</div>
+  <div class="col-lg-3 col-md-3 col-sm-12">
+    <div class="card bg-light" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">
+          <i class="fa fa-user fa-3x"></i>
+        </h5>
+        <div class="container" style="text-align: center;">
+          <button class="btn  btn-outline-dark" (click)="open(content)">Total Revenue</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<div class="mt-5 container">
-  <input type="checkbox" class="mr-5" name="accept" id="accept">
-  <label for="accept" class="m-2">Accept Terms and Conditions</label>
-</div>
+  
+  
 
-<div class="container">
-  <button class="btn btn-primary">Confirm</button>
 </div>
 
 
+<hr class="my-4">
 
 
 
-<div class="container" style="width: 50%;">
+
+
+<!-- below code is for add the items -->
+
+<div class="container card bg-light" style="width: 50%; margin-bottom: 10px;">
   <label for="cars" style="margin-top: 10px; margin-bottom: 10px;">Choose a Category:</label>
 
   <select [(ngModel)]="id" class="form-select" style="margin-top: 10px; margin-bottom: 10px;"
@@ -102,7 +99,7 @@
 <div class=" container  mb-3" style="display: flex; justify-content: center; align-items: center;">
 
 
-  <div style="width: 50%; border: 2px solid orange; padding: 30px; ">
+  <div class="card bg-light" style="width: 57%;   padding: 30px; ">
     <!-- form -->
     <form (ngSubmit)="addProduct()">
 
@@ -168,7 +165,7 @@
 
 
 
-<div class="container text-center" style="width: 50%;">
+<div class="card bg-light   container text-center" style="width: 50%;">
   <form (ngSubmit)="setImage()">
     <div class="form-group">
       <label for="image">Image</label>
@@ -196,3 +193,25 @@
         </div>
       </div>
 </div> -->
+
+<!-- Modal for the revenue -->
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Revenue</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <i class="fa fa-window-close fa-2x"></i>
+    </button>
+  </div>
+  <div class="modal-body">
+     <div class="content">
+
+      {{retailer['revenue']}}
+
+     </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+  </div>
+</ng-template>
+
+
