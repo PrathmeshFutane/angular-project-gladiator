@@ -44,6 +44,7 @@ import { ProductDescriptionComponent } from './product-description/product-descr
 import { ViewOrderComponent } from './view-order/view-order.component';
 import { OrderCancelComponent } from './order-cancel/order-cancel.component';
 import { UpdateCustomerProfileComponent } from './update-customer-profile/update-customer-profile.component';
+import { FinalCheckoutComponent } from './final-checkout/final-checkout.component';
 
 
 @NgModule({
@@ -85,7 +86,8 @@ import { UpdateCustomerProfileComponent } from './update-customer-profile/update
     ProductDescriptionComponent,
     ViewOrderComponent,
     OrderCancelComponent,
-    UpdateCustomerProfileComponent
+    UpdateCustomerProfileComponent,
+    FinalCheckoutComponent
 
   ],
   imports: [

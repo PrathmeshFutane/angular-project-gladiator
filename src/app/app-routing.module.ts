@@ -13,6 +13,7 @@ import { CheckingComponent } from './checking/checking.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { CompareComponent } from './compare/compare.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { FinalCheckoutComponent } from './final-checkout/final-checkout.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { LoginComponent } from './login/login.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
@@ -59,6 +60,7 @@ const routes: Routes = [
   { path: 'product-description', component: ProductDescriptionComponent },
   { path: 'update-customer-profile', component: UpdateCustomerProfileComponent },
   { path: 'wishlist', component: WishlistComponent },
+  { path: 'final-checkout', component: FinalCheckoutComponent },
   { path: '**', component: PagenotfoundComponent }
 
 ];

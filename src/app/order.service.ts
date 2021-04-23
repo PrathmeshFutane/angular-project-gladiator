@@ -19,4 +19,14 @@ export class OrderService {
     let url = "http://localhost:8282/cancel-order";
     return this.http.post(url, order);
   }
+
+  confirmOrder(order: Order): Observable<any>{
+    let url = "http://localhost:8282/confirm-order";
+    return this.http.post(url, order);
+  }
+
+  displayAllOrders(customerId): Observable<any>{
+    let url = "http://localhost:8282/get-order-by-customer?customerId=" + customerId;
+    return this.http.get(url);
+  }
 }

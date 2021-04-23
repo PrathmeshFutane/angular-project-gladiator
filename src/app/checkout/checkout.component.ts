@@ -2,8 +2,10 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Order } from '../appmodel/order';
 import { OrderItem } from '../appmodel/orderItem';
 import { CheckoutService } from '../checkout.service';
+import { OrderItemService } from '../order-item.service';
 import { OrderService } from '../order.service';
 
 @Component({
@@ -13,10 +15,11 @@ import { OrderService } from '../order.service';
 })
 export class CheckoutComponent implements OnInit {
 
-  constructor(private http: HttpClient, private router: Router, private checkoutService: CheckoutService, private modalService: NgbModal) { }
+  constructor(private http: HttpClient, private router: Router,private orderService: OrderService, private checkoutService: CheckoutService, private modalService: NgbModal) { }
 
   data: any;
 
+  order: Order = new Order();
 
   orderItem: OrderItem = new OrderItem();
   orderId = parseInt(sessionStorage.getItem('registeredOrderId'))
@@ -31,6 +34,14 @@ export class CheckoutComponent implements OnInit {
     })
   }
 
+  cancelOrder(){
+    alert("this is cancel");
+    this.order.orderId = parseInt(sessionStorage.getItem('registeredOrderId'));
+    this.orderService.cancelOrder(this.order).subscribe(data=>{
+      alert(JSON.stringify(data));
+      this.router.navigate([''])
+    })
+  }
 
 
 

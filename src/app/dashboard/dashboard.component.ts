@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Customer } from '../appmodel/cart';
 import { CustomerService } from '../customer.service';
+import { OrderService } from '../order.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -17,12 +18,27 @@ export class DashboardComponent implements OnInit {
     alert(this.customerName)
   }
 
-  constructor(private modalService: NgbModal, private customerService: CustomerService) { }
+  constructor(private modalService: NgbModal, private customerService: CustomerService,private orderService: OrderService) { }
 
   customerId: number;
   customer: Customer = new Customer();
   data: any;
   customerName: string;
+
+
+
+  viewMyOrder(){
+    alert("this is view order");
+    this.customerId = parseInt(sessionStorage.getItem('customerId'));
+    this.orderService.displayAllOrders(this.customerId).subscribe(data=>{
+      alert(JSON.stringify(data));
+    })
+  }
+
+
+
+
+
 
   //below code is for open model
   open(content) {
@@ -47,5 +63,6 @@ export class DashboardComponent implements OnInit {
       return `with: ${reason}`;
     }
   }
+
 
 }
