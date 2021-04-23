@@ -15,6 +15,7 @@ import { CompareComponent } from './compare/compare.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { LoginComponent } from './login/login.component';
+import { OrderDetailsComponent } from './order-details/order-details.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { PaymentComponent } from './payment/payment.component';
 import { ProductDescriptionComponent } from './product-description/product-description.component';
@@ -57,8 +58,12 @@ const routes: Routes = [
   { path: 'search-by-keyword', component: SearchByKeywordComponent },
   { path: 'admin-approve-retailer', component: AdminApproveRetailerComponent },
   { path: 'product-description', component: ProductDescriptionComponent },
+<<<<<<< HEAD
   { path: 'update-customer-profile', component: UpdateCustomerProfileComponent },
   { path: 'wishlist', component: WishlistComponent },
+=======
+  { path: 'order-details', component: OrderDetailsComponent },
+>>>>>>> c7b7b809b1a6d0e05735784cbcc66bc952f49c53
   { path: '**', component: PagenotfoundComponent }
 
 ];

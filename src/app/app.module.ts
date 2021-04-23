@@ -41,9 +41,13 @@ import { SearchByKeywordComponent } from './search-by-keyword/search-by-keyword.
 import { AdminApproveRetailerComponent } from './admin-approve-retailer/admin-approve-retailer.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
 import { ProductDescriptionComponent } from './product-description/product-description.component';
+<<<<<<< HEAD
 import { ViewOrderComponent } from './view-order/view-order.component';
 import { OrderCancelComponent } from './order-cancel/order-cancel.component';
 import { UpdateCustomerProfileComponent } from './update-customer-profile/update-customer-profile.component';
+=======
+import { OrderDetailsComponent } from './order-details/order-details.component';
+>>>>>>> c7b7b809b1a6d0e05735784cbcc66bc952f49c53
 
 @NgModule({
   declarations: [
@@ -82,9 +86,13 @@ import { UpdateCustomerProfileComponent } from './update-customer-profile/update
     AdminApproveRetailerComponent,
     WishlistComponent,
     ProductDescriptionComponent,
+<<<<<<< HEAD
     ViewOrderComponent,
     OrderCancelComponent,
     UpdateCustomerProfileComponent
+=======
+    OrderDetailsComponent
+>>>>>>> c7b7b809b1a6d0e05735784cbcc66bc952f49c53
   ],
   imports: [
     BrowserModule,
