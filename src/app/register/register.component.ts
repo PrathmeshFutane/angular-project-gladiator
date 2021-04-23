@@ -5,11 +5,15 @@ import {
 import {
   Router
 } from '@angular/router';
-import { Cart } from '../appmodel/cart';
+import {
+  Cart
+} from '../appmodel/cart';
 import {
   Customer
 } from '../appmodel/customer';
-import { CartServiceService } from '../cart-service.service';
+import {
+  CartServiceService
+} from '../cart-service.service';
 import {
   CustomerService
 } from '../customer.service';
@@ -25,7 +29,7 @@ export class RegisterComponent {
   confirmPassword: string;
   cart: Cart = new Cart();
 
-  constructor(private customerService: CustomerService, private router: Router, private cartService: CartServiceService) { }
+  constructor(private customerService: CustomerService, private router: Router, private cartService: CartServiceService) {}
 
   register() {
     if (this.customer.password == this.confirmPassword) {

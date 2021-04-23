@@ -35,6 +35,7 @@ export class CartComponent implements OnInit {
       alert(JSON.stringify(data))
       sessionStorage.setItem('registeredOrderId', data['registeredOrderId'])
       this.data = data;
+      this.router.navigate(['checkout'])
     })
 
   }
@@ -53,7 +54,6 @@ export class CartComponent implements OnInit {
   }
 
   updateQuantity(quantity, info) {
-
     if (quantity > 0) {
       if (quantity <= 4) {
         //code for backend
@@ -69,7 +69,7 @@ export class CartComponent implements OnInit {
         this.cartItemService.updateQuantity(this.cartItems).subscribe(data => {
           alert(JSON.stringify(data));
         })
-        this.router.navigate(['checkout'])
+
       }
       else {
         alert("more than four is not allowed")
@@ -78,7 +78,6 @@ export class CartComponent implements OnInit {
     else {
       alert("less than zero is not allowed")
     }
-
   }
 }
 
