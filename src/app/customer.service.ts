@@ -22,7 +22,7 @@ export class CustomerService {
   }
 
 
-  
+
 
   // picUpload(formData: FormData): Observable<any> {
   //   let url = "http://localhost:8181/pic-upload";
@@ -37,6 +37,12 @@ export class CustomerService {
   fetchProfile(id: number): Observable<Customer> {
     let url = "http://localhost:8282/customer-profile?customerId=" + id;
     return this.http.get<Customer>(url);
+  }
+
+
+  updateProfile(customer: Customer) {
+    let url = "http://localhost:8282/update-customer";
+    return this.http.post(url, customer);
   }
 
 }

@@ -27,6 +27,8 @@ import { SearchByKeywordComponent } from './search-by-keyword/search-by-keyword.
 import { SearchResultComponent } from './search-result/search-result.component';
 import { SuccessComponent } from './success/success.component';
 import { TrendingComponent } from './trending/trending.component';
+import { UpdateCustomerProfileComponent } from './update-customer-profile/update-customer-profile.component';
+import { WishlistComponent } from './wishlist/wishlist.component';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
@@ -55,6 +57,8 @@ const routes: Routes = [
   { path: 'search-by-keyword', component: SearchByKeywordComponent },
   { path: 'admin-approve-retailer', component: AdminApproveRetailerComponent },
   { path: 'product-description', component: ProductDescriptionComponent },
+  { path: 'update-customer-profile', component: UpdateCustomerProfileComponent },
+  { path: 'wishlist', component: WishlistComponent },
   { path: '**', component: PagenotfoundComponent }
 
 ];

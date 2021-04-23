@@ -48,10 +48,17 @@
         </div>
         <div class="card-body">
           <span class="title">{{info['productId']}}</span>
-          <h5 class="card-title">{{info['productName']}}</h5>
+          <div style="display: flex; justify-content: space-between; align-items: center;"> 
+            <h5 class="card-title">{{info['productName']}}</h5>
+          <i class="fas fa-heart fa-2x" (click)="wishlist(info)" style="cursor: pointer; color: red;"></i>
+          </div>
+          
+          
           <h5 class="card-title">{{info['stock']}}</h5>
           <p class="card-text">{{info['productDescription']}}</p>
           <div class="content subtitle">Price {{info['unitPrice']}}</div>
+
+          
           <!-- select quantity -->
 
           <!-- <select [(ngModel)]="id" name="id" class="form-select" style="margin-top: 10px; margin-bottom: 10px;" aria-label="Default select example">

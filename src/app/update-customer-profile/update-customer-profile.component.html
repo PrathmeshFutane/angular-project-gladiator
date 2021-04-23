@@ -1,0 +1,56 @@
+<div class="container"
+  style="margin-bottom: 30px; width: 50%; margin-top: 30px; border: 2px solid grey; padding: 30px;;">
+  <div class="container" style="text-align:center; ">
+    <h3>Update Profile</h3>
+  </div>
+
+  <form (ngSubmit)="updateProfile()">
+
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" required name="name" id="name" [(ngModel)]="customer.name" #name="ngModel">
+      <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+        <div *ngIf="name.errors.required">
+          Name is required.
+        </div>
+      </div>
+    </div> 
+
+
+    <div class="form-group">
+      <label for="address1">Address1</label>
+      <input type="text" class="form-control" required id="address1" name="address1" [(ngModel)]="customer.address1" #address1="ngModel">
+      <div *ngIf="address1.invalid && (address1.dirty || address1.touched)" class="alert alert-danger">
+        <div *ngIf="address1.errors.required">
+          Address is required.
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="address2">Address2</label>
+      <input type="text" class="form-control" required id="address2" name="address2" [(ngModel)]="customer.address2" #address2="ngModel">
+      <div *ngIf="address2.invalid && (address2.dirty || address2.touched)" class="alert alert-danger">
+        <div *ngIf="address2.errors.required">
+          Address is required.
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="mobileNumber">Mobile Number</label>
+      <input type="number" class="form-control" required id="mobileNumber" name="mobileNumber"
+        [(ngModel)]="customer.mobileNumber" #mobileNumber="ngModel">
+        <div *ngIf="mobileNumber.invalid && (mobileNumber.dirty || mobileNumber.touched)" class="alert alert-danger">
+          <div *ngIf="mobileNumber.errors.required">
+            Moble is required.
+          </div>
+        </div>
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">Register</button>
+    <button type="reset" class="btn btn-danger m-3">Reset</button>
+
+  </form>
+</div>

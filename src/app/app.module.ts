@@ -41,6 +41,9 @@ import { SearchByKeywordComponent } from './search-by-keyword/search-by-keyword.
 import { AdminApproveRetailerComponent } from './admin-approve-retailer/admin-approve-retailer.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
 import { ProductDescriptionComponent } from './product-description/product-description.component';
+import { ViewOrderComponent } from './view-order/view-order.component';
+import { OrderCancelComponent } from './order-cancel/order-cancel.component';
+import { UpdateCustomerProfileComponent } from './update-customer-profile/update-customer-profile.component';
 
 @NgModule({
   declarations: [
@@ -78,7 +81,10 @@ import { ProductDescriptionComponent } from './product-description/product-descr
     SearchByKeywordComponent,
     AdminApproveRetailerComponent,
     WishlistComponent,
-    ProductDescriptionComponent
+    ProductDescriptionComponent,
+    ViewOrderComponent,
+    OrderCancelComponent,
+    UpdateCustomerProfileComponent
   ],
   imports: [
     BrowserModule,

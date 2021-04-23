@@ -21,6 +21,8 @@ export class ProductsComponent implements OnInit {
   products: Product[];
   searchValue: any;
   obj = [];
+  obj2 = [];
+  pinkColor: boolean = false;
 
 
 
@@ -62,9 +64,16 @@ export class ProductsComponent implements OnInit {
 
   //add to compare
   addToCompare(information) {
-
     this.obj.push(information)
     sessionStorage.setItem("myCompare", JSON.stringify(this.obj))
+  }
+
+
+  //for wishlist
+  wishlist(information) {
+    alert(JSON.stringify(information));
+    this.obj2.push(information)
+    localStorage.setItem("wishlist", JSON.stringify(this.obj2))
   }
 
 
