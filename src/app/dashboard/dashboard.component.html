@@ -22,13 +22,12 @@
     <div class="col-lg-3 col-md-3 col-sm-12" style="padding: 20px;;">
       <div class="card " style="width: 18rem;">
         <div class="card-body">
-          <h5 class="card-title text-center">Prathmesh Futane</h5>
+          <h5 class="card-title text-center"> {{customerName}} </h5>
           <div class="text-center">
             <i style="margin-left: 0px;" class=" text-center fa fa-user fa-5x"></i>
           </div>
         </div>
       </div>
-    
     </div>
   </div>
 </div>
@@ -84,7 +83,7 @@
 
   <!-- second row start -->
 
-  <div class="row" style=" margin-top: 30px; display: flex; justify-content: space-around; align-items: center;">
+  <div class="row" style=" margin-bottom:30px; margin-top: 30px; display: flex; justify-content: space-around; align-items: center;">
     <div class="col-lg-3 col-md-3 col-sm-12">
       <div class="card " style="width: 18rem;">
         <div class="card-body">
@@ -92,7 +91,33 @@
             <i class="fa fa-user fa-3x"></i>
           </h5>
           <div class="container" style="text-align: center;">
-            <button class="btn  btn-outline-dark" (click)="open(content)">View Profile </button>
+            <button class="btn  btn-outline-dark" (click)="open(content)">View Profile</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-md-3 col-sm-12">
+      <div class="card " style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">
+            <i class="fa fa-user fa-3x"></i>
+          </h5>
+          <div class="container" style="text-align: center;">
+            <button class="btn  btn-outline-dark">Update Profile</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-md-3 col-sm-12">
+      <div class="card " style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">
+            <i class="fa fa-shopping-bag fa-3x" ></i>
+          </h5>
+          <div class="container" style="text-align: center;">
+            <button class="btn  btn-outline-dark" (click)="open(content)">Wishlist</button>
           </div>
         </div>
       </div>

@@ -69,6 +69,7 @@ export class CartComponent implements OnInit {
         this.cartItemService.updateQuantity(this.cartItems).subscribe(data => {
           alert(JSON.stringify(data));
         })
+        this.router.navigate(['checkout'])
       }
       else {
         alert("more than four is not allowed")

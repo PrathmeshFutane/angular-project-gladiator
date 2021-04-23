@@ -8,15 +8,21 @@ import { CustomerService } from '../customer.service';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent {
+export class DashboardComponent implements OnInit {
 
   closeResult = '';
+
+  ngOnInit() {
+    this.customerName = sessionStorage.getItem('customerName')
+    alert(this.customerName)
+  }
 
   constructor(private modalService: NgbModal, private customerService: CustomerService) { }
 
   customerId: number;
   customer: Customer = new Customer();
   data: any;
+  customerName: string;
 
   //below code is for open model
   open(content) {
@@ -27,7 +33,7 @@ export class DashboardComponent {
     });
     this.customerId = parseInt(sessionStorage.getItem('customerId'));
     this.customerService.fetchProfile(this.customerId).subscribe(response => {
-      this.data=response;
+      this.data = response;
 
     })
   }

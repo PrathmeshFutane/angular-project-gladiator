@@ -37,6 +37,7 @@ export class LoginComponent {
     console.log(this.login);
     this.customerService.login(this.login).subscribe(response => {
       alert(JSON.stringify(response));
+      sessionStorage.setItem("customerName", response['name'])
       console.log(response);
       sessionStorage.setItem('registeredCartId', response['cartId']);
       if (response.status == true) {

@@ -12,12 +12,15 @@ a {
   justify-content: center;
   align-items: center;
   padding: 20px;
+
 }
 
 .individual-category {
   border: 2px solid grey;
-  padding: 30px;
+  padding: 15px;
   cursor: pointer;
   transform: scale(1.1);
-  border: 2px solid black;
+  border: 1px solid grey;
+
+
 }

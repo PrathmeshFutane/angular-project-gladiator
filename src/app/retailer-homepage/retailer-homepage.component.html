@@ -131,18 +131,21 @@
             Product Description is required.
           </div>
         </div>
+      </div>
 
 
-        <div class="form-group">
-          <label for="stock">Stock</label>
-          <input type="number" class="form-control" id="number" required name="stock" [(ngModel)]="product.stock "
-            #stock="ngModel">
-          <div *ngIf="stock.invalid && (stock.dirty || stock.touched)" class="alert alert-danger">
-            <div *ngIf="stock.errors.required">
-              Stock is required.
-            </div>
+      <div class="form-group">
+        <label for="stock">Stock</label>
+        <input type="number" class="form-control" id="number" required name="stock" [(ngModel)]="product.stock "
+          #stock="ngModel">
+        <div *ngIf="stock.invalid && (stock.dirty || stock.touched)" class="alert alert-danger">
+          <div *ngIf="stock.errors.required">
+            Stock is required.
           </div>
+        </div>
+      </div>
 
+<<<<<<< HEAD
           <div class="form-group">
             <label for="unitPrice">Price</label>
             <input type="number" class="form-control" id="number" required name="unitPrice"
@@ -155,28 +158,29 @@
          
             <button type="submit" class="btn btn-primary">Register</button>
             <button type="reset" class="btn btn-danger m-3">Reset</button>
+=======
+      
+>>>>>>> d26c5f82c1d995fdad35f1aa85f99bbe299d24bf
 
+      <div class="form-group">
+        <label for="unitPrice">Price</label>
+        <input type="number" class="form-control" id="number" required name="unitPrice" [(ngModel)]="product.unitPrice"
+          #unitPrice="ngModel">
+        <div *ngIf="unitPrice.invalid && (unitPrice.dirty || unitPrice.touched)" class="alert alert-danger">
+          <div *ngIf="unitPrice.errors.required">
+            Price is required.
           </div>
-
         </div>
-       
-
-        <div class="container text-center" style="width: 50%;">
-          <form (ngSubmit)="setImage()">
-            <div class="form-group">
-              <label for="image">Image</label>
-              <input type="file" class="form-control" name="image" (change)="onFileChange($event)">
-            </div>
-
-            <button type="submit" class="btn btn-primary">Add Image</button>
-          </form>
-        </div>
+      </div>
 
 
-        <!-- <div class="container m-5">
-  <button class="btn-btn-success" (click)="displayAll()">Display all images</button>
-</div> -->
+      <button type="submit" class="btn btn-primary">Register</button>
+      <button type="reset" class="btn btn-danger m-3">Reset</button>
+
+    </form>
+  </div>
 </div>
+<<<<<<< HEAD
 <div class="col-sm-12 col-md-6 col-lg-4" *ngFor="let info of data " ></div>
 <div class="card" style="width: 100%;">
   <div class="image" style="text-align: center;">
@@ -189,5 +193,36 @@
     <h5 class="card-title">{{info['stock']}}</h5>
     <p class="card-text">{{info['productDescription']}}</p>
     <div class="content subtitle">Price {{info['unitPrice']}}</div>
+=======
+
+
+
+<div class="container text-center" style="width: 50%;">
+  <form (ngSubmit)="setImage()">
+    <div class="form-group">
+      <label for="image">Image</label>
+      <input type="file" class="form-control" name="image" (change)="onFileChange($event)">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Add Image</button>
+  </form>
+>>>>>>> d26c5f82c1d995fdad35f1aa85f99bbe299d24bf
 </div>
-</div>
+
+<!-- <div class="container">
+  <div class="col-sm-12 col-md-6 col-lg-4" *ngFor="let info of data "></div>
+      <div class="card" style="width: 100%;">
+        <div class="image" style="text-align: center;">
+          <img height="100%" width="100%" class="card-img-top img"
+            src="http://localhost:8282/downloads/{{info['image']}}" alt="Card image cap">
+
+        </div>
+        <div class="card-body">
+          <span class="title">{{info['productId']}}</span>
+          <h5 class="card-title">{{info['productName']}}</h5>
+          <h5 class="card-title">{{info['stock']}}</h5>
+          <p class="card-text">{{info['productDescription']}}</p>
+          <div class="content subtitle">Price {{info['unitPrice']}}</div>
+        </div>
+      </div>
+</div> -->

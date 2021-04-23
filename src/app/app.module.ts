@@ -39,6 +39,9 @@ import { BankDetailsComponent } from './bank-details/bank-details.component';
 import { SearchfilterPipe } from './searchfilter.pipe';
 import { SearchByKeywordComponent } from './search-by-keyword/search-by-keyword.component';
 import { AdminApproveRetailerComponent } from './admin-approve-retailer/admin-approve-retailer.component';
+import { WishlistComponent } from './wishlist/wishlist.component';
+import { ProductDescriptionComponent } from './product-description/product-description.component';
+import { OrderDetailsComponent } from './order-details/order-details.component';
 
 @NgModule({
   declarations: [
@@ -74,7 +77,10 @@ import { AdminApproveRetailerComponent } from './admin-approve-retailer/admin-ap
     BankDetailsComponent,
     SearchfilterPipe,
     SearchByKeywordComponent,
-    AdminApproveRetailerComponent
+    AdminApproveRetailerComponent,
+    WishlistComponent,
+    ProductDescriptionComponent,
+    OrderDetailsComponent
   ],
   imports: [
     BrowserModule,

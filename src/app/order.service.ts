@@ -14,4 +14,9 @@ export class OrderService {
     let url = "http://localhost:8282/place-order";
     return this.http.post(url, order);
   }
+
+  cancelOrder(order: Order): Observable<any>{
+    let url = "http://localhost:8282/cancel-order";
+    return this.http.post(url, order);
+  }
 }
