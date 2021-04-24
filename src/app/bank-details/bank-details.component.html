@@ -55,7 +55,7 @@
           <!-- Field for cvv -->
 
           <div class="form-group">
-            <label for="cvv">Cvv</label>
+            <label for="cvv">CVV</label>
             <input type="number" class="form-control" required id="cvv" name="cvv"
             [(ngModel)]="payment.cvv" #cvv="ngModel">
             <div *ngIf="cvv.invalid && (cvv.dirty || cvv.touched)" class="alert alert-danger">
@@ -64,7 +64,32 @@
               </div>
             </div>
           </div>
-      
+
+          <div class="form-group">
+            <label for="nameOnCard">Name on Card</label>
+            <input type="text" class="form-control" required id="nameOnCard" name="nameOnCard"
+            [(ngModel)]="payment.nameOnCard" #nameOnCard="ngModel">
+            <div *ngIf="nameOnCard.invalid && (nameOnCard.dirty || nameOnCard.touched)" class="alert alert-danger">
+              <div *ngIf="nameOnCard.errors.required">
+                name on card is required.
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="paymentMode">Payment Mode</label>
+            <select class="form-select"  aria-label="Default select example" [(ngModel)]="payment.paymentMode" name="paymentMode" id="paymentMode" #paymentMode="ngModel">
+              <option  value="Credit Card" selected>Credit Card</option>
+              <option value="Debit Card">Debit Card</option>
+            </select>
+            
+            <div *ngIf="paymentMode.invalid && (paymentMode.dirty || paymentMode.touched)" class="alert alert-danger">
+              <div *ngIf="paymentMode.errors.required">
+                payment mode is required.
+              </div>
+            </div>
+          </div>
+          <br>
           <button type="submit" class="btn btn-primary" (click)="makePayment()">Make Payment</button>
           <button type="reset" class="btn btn-danger m-3">Reset</button>
         </form>

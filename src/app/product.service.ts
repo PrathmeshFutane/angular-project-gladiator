@@ -31,8 +31,6 @@ export class AddProductService {
     return this.http.get(url);
   }
 
-
-
   filter500to1000() {
     let url = "http://localhost:8282/product-filter?price1=500&price2=1000"
     return this.http.get(url);
@@ -54,8 +52,6 @@ export class AddProductService {
     let url = "http://localhost:8282/descending-order"
     return this.http.get(url);
   }
-
-
 
 
 

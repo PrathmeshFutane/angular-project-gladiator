@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import Swal from 'sweetalert2';
 import { Customer } from '../appmodel/cart';
 import { CustomerService } from '../customer.service';
 import { OrderService } from '../order.service';
@@ -18,7 +20,7 @@ export class DashboardComponent implements OnInit {
     alert(this.customerName)
   }
 
-  constructor(private modalService: NgbModal, private customerService: CustomerService,private orderService: OrderService) { }
+  constructor(private router: Router, private modalService: NgbModal, private customerService: CustomerService, private orderService: OrderService) { }
 
   customerId: number;
   customer: Customer = new Customer();
@@ -27,11 +29,18 @@ export class DashboardComponent implements OnInit {
 
 
 
-  viewMyOrder(){
-    alert("this is view order");
+  viewMyOrder() {
+    // alert("this is view order");
+
     this.customerId = parseInt(sessionStorage.getItem('customerId'));
-    this.orderService.displayAllOrders(this.customerId).subscribe(data=>{
-      alert(JSON.stringify(data));
+    this.orderService.displayAllOrders(this.customerId).subscribe(data => {
+      //alert(JSON.stringify(data));
+      Swal.fire(
+        'My Orders',
+        'largest shopping website',
+        'success'
+      )
+
     })
   }
 

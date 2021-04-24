@@ -23,14 +23,14 @@ export class RetailerComponent implements OnInit {
 
     constructor(private retailerService: RetailerService, private router: Router) { }
     ngOnInit(): void {
-        
+
     }
 
     //this is login for retailer
     loginCheck() {
         console.log(this.login);
         this.retailerService.login(this.login).subscribe(response => {
-            alert(JSON.stringify(response));
+            //alert(JSON.stringify(response));
             console.log(response);
             if (response.status == true) {
                 Swal.fire(
@@ -43,7 +43,7 @@ export class RetailerComponent implements OnInit {
                 sessionStorage.setItem('retailerId', id);
                 this.router.navigate(['retailer-homepage']);
                 sessionStorage.setItem("retailerName", response['name'])
-                sessionStorage.setItem("approvalStatus" , response['approvalStatus'] )
+                sessionStorage.setItem("approvalStatus", response['approvalStatus'])
             }
             else
                 Swal.fire({
