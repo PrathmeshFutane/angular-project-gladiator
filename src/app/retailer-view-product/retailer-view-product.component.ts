@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Product } from '../appmodel/product';
 import { RetailerService } from '../retailer.service';
 
 @Component({
@@ -10,6 +11,7 @@ export class RetailerViewProductComponent implements OnInit {
 
   constructor(private retailerService: RetailerService){ }
   data: any
+  product : Product = new Product();
   ngOnInit(): void {
 
     this.retailerService.getProductsByRetailerId(sessionStorage.getItem('retailerId')).subscribe(data => {
@@ -17,6 +19,21 @@ export class RetailerViewProductComponent implements OnInit {
       this.data = data;
       console.log('this is total retailer' + data);
       alert(data['retailer']['ownerName'])
+    })
+  }
+
+
+
+  updateStock(stock,info){
+    alert(stock + " " + info)
+    this.product.productId = info['productId']
+    this.product.productName = info['productName']
+    this.product.productDescription = info['productDescription']
+    this.product.stock = stock
+    this.product.image = info['image']
+    this.product.unitPrice = info['unitPrice']
+    this.retailerService.updateProductStock(this.product).subscribe(data => {
+      alert(JSON.stringify(data))
     })
   }
 

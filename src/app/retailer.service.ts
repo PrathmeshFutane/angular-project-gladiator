@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Product } from './appmodel/cartItem';
 import { Login } from './appmodel/login';
 import { Retailer } from './appmodel/retailer';
 
@@ -36,6 +37,11 @@ export class RetailerService {
   getProductsByRetailerId(retailerId) {
     let url = "http://localhost:8282/get-products-by-retailer?retailerId=" + retailerId;
     return this.http.get(url);
+  }
+
+  updateProductStock(product : Product): Observable<any> {
+    let url = "http://localhost:8282/update-stock";
+    return this.http.post(url, product);
   }
 
 }

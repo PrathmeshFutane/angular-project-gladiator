@@ -11,7 +11,7 @@
         <div class="card-body">
           <span class="title">{{info['productId']}}</span>
           <h5 class="card-title">{{info['productName']}}</h5>
-          <h5 class="card-title">{{info['stock']}}</h5>
+          <input type="text" name="stock" value="{{info['stock']}}" #stock (keyup)="updateStock(stock.value,info)">
           <p class="card-text">{{info['productDescription']}}</p>
           <div class="content subtitle">Price {{info['unitPrice']}}</div>
         </div>

@@ -2,6 +2,7 @@ import { Category } from "./category";
 import { Retailer } from "./retailer";
 
 export class Product {
+    productId: number;
     productName: string;
     productDescription: string;
     stock: number;
