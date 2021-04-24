@@ -14,14 +14,33 @@ export class AdminApproveRetailerComponent implements OnInit {
 
   retailer: Retailer = new Retailer();
   ngOnInit(): void {
-    this.retailer.retailerStatus = 'Y';
-    this.retailer.retailerId = parseInt(sessionStorage.getItem('retailerId'));
-    this.adminService.adminApproveRetailer(this.retailer).subscribe(data => {
-      alert(data)
-      this.data = data;
-    })
-
+   
+   this.adminService.fetchTotalRetailer().subscribe(data=> {
+     alert(JSON.stringify(data))
+     this.data=data
+   })
 
   }
+//For Approve
+
+
+  approve(info) {
+    alert(JSON.stringify(info))
+    this.adminService.adminApproveRetailer(info).subscribe(data=> {
+      alert(JSON.stringify(data))
+    })
+  }
+
+
+  //For reject
+
+  reject(info){
+    alert(JSON.stringify(info))
+    this.adminService.adminRejectRetailer(info).subscribe(data=> {
+      alert(JSON.stringify(data))
+    })
+  }
+
+
 
 }

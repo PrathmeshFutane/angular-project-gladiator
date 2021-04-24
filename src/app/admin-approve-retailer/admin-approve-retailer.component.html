@@ -4,9 +4,10 @@
             <tr>
                 <th>name</th>
                 <th>email</th>
-                <th>company</th>
-                <th>For Approve</th>
-                <th>For Delete</th>
+                <th>Company</th>
+                <th>Mobile</th>
+                <th>Approve</th>
+                <th>Reject</th>
             </tr>
         </thead>
         <tbody *ngFor="let i of data">
@@ -15,9 +16,9 @@
             <td>{{i.email}}</td>
             <td>{{i.retailerStatus}}</td>
             <td>{{i.mobileNumber}}</td>
-            <td>{{i.revenue}}</td>
-            <td><button class="btn btn-primary" >Approve</button></td>
-            <td><button class="btn btn-primary" >Reject</button></td>
+           
+            <td><button class="btn btn-primary" (click)="approve(i)" >Approve</button></td>
+            <td><button class="btn btn-primary" (click)="reject(i)">Reject</button></td>
         </tbody>
         
     </table>

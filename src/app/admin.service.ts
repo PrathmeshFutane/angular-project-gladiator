@@ -39,8 +39,11 @@ export class AdminService {
     return this.http.post<any>(url, retailer);
   }
 
-
-
+  adminRejectRetailer(retailer: Retailer): Observable<any> {
+    let url = "http://localhost:8282/admin-reject-retailer";
+    return this.http.post<any>(url, retailer);
+  }
+ 
 
 
 
