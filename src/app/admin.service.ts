@@ -24,21 +24,21 @@ export class AdminService {
   }
 
 
-  fetchTotalCustomer( ) : Observable<Customer>  {
+  fetchTotalCustomer(): Observable<Customer> {
     let url = "http://localhost:8282/admin-get-total-customer";
     return this.http.get<Customer>(url);
   }
 
-  fetchTotalRetailer() : Observable<Retailer> {
-    let url ="http://localhost:8282/admin-get-total-retailer";
+  fetchTotalRetailer(): Observable<Retailer> {
+    let url = "http://localhost:8282/admin-get-total-retailer";
     return this.http.get<Retailer>(url);
   }
 
-   AdminApproveRetailer(retailer : Retailer) : Observable<any> {
-     let url = "http://localhost:8282/admin-approve-retailer";
-     return this.http.post<any>(url , retailer);
-   }
-  
+  adminApproveRetailer(retailer: Retailer): Observable<any> {
+    let url = "http://localhost:8282/admin-approve-retailer";
+    return this.http.post<any>(url, retailer);
+  }
+
 
 
 

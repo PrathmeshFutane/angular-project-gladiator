@@ -1,18 +1,24 @@
-  <div class="container-fluid" >
-    <div class="row  ">
+  <div class="container-fluid bg-light " >
+    <div class="row  " >
 
-      <div class="col-sm-3 col-md-4 col-lg-4">
-        
-      </div>
+      <!-- <div class="col-sm-3 col-md-4 col-lg-4">
 
-      <div class="col-sm-3 col-md-4 col-lg-4 category" >
-        <i class="fa fa-globe fa-4x" routerLink="/products" style="cursor: pointer;"></i>
+      </div> -->
+
+      <div class="col-sm-3 col-md-4 col-lg-4 category" style="display: flex; justify-content: space-between; align-items: center;" >
+        <div style="display: block;">
+          <i class="fa fa-globe fa-3x globe" routerLink="/products" style="cursor: pointer; width: 50px;"></i>
+          <h6>Products</h6>
+        </div>
         
-        <div class="container "  *ngFor="let i of data">
+        <div class="container " *ngFor="let i of data">
           <div class="content individual-category" (click)="getProductById(i)">
-            <h3>{{i['name']}}</h3>
+            <h5>{{i['name']}}</h5>
           </div>
         </div>
       </div>
     </div>
   </div>
+
+
+

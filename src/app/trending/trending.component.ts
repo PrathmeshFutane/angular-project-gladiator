@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AddProductService } from '../product.service';
 
 @Component({
   selector: 'trending',
@@ -7,10 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TrendingComponent implements OnInit {
 
-  constructor() { }
+  constructor(private productService: AddProductService) { }
+  data: any;
 
   ngOnInit() {
-
+    this.productService.displayAllData().subscribe(data => {
+      console.log(data);
+      // $scope.users = data.users.slice(5, 11);
+      this.data = data;
+      console.log(data[0]['image'])
+    })
   }
 
 }

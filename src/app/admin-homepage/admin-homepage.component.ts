@@ -1,8 +1,9 @@
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Admin } from '../appmodel/admin';
 import { AdminService } from '../admin.service';
 import { CustomerService } from '../customer.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -10,13 +11,19 @@ import { CustomerService } from '../customer.service';
   templateUrl: './admin-homepage.component.html',
   styleUrls: ['./admin-homepage.component.css']
 })
-export class AdminHomepageComponent {
+export class AdminHomepageComponent implements OnInit {
 
-  //constructor(private http: HttpClient, private router: Router) { }
+
 
   closeResult = '';
 
-  constructor(private modalService: NgbModal, private adminService: AdminService) { }
+  constructor(private router: Router, private modalService: NgbModal, private adminService: AdminService) { }
+
+  ngOnInit() {
+    if (sessionStorage.getItem('adminId') == undefined || sessionStorage.getItem('adminId') == null || sessionStorage.getItem('adminId') == "") {
+      this.router.navigate(['admin'])
+    }
+  }
 
   adminId: number;
   admin: Admin = new Admin();
@@ -65,7 +72,7 @@ export class AdminHomepageComponent {
     });
 
     // this is to get the total customer information
-    
+
     this.adminService.fetchTotalCustomer().subscribe(response => {
       this.customerData = response;
     })
@@ -92,7 +99,7 @@ export class AdminHomepageComponent {
     });
 
     // this is to get the admin information
-   
+
     this.adminService.fetchTotalRetailer().subscribe(response => {
       this.retailerData = response;
     })

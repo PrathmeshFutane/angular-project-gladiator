@@ -1,8 +1,6 @@
 import { HttpClient } from '@angular/common/http';
-import {
-  Component,
-  OnInit
-} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import Swal from 'sweetalert2/dist/sweetalert2.js';
 
 @Component({
   selector: 'app-root',
@@ -37,5 +35,12 @@ export class AppComponent implements OnInit {
     else {
       alert("customer not registered")
     }
+  }
+
+
+  call() {
+
+    Swal.fire('Hello Angular');
+
   }
 }

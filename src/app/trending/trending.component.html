@@ -1,54 +1,67 @@
-<div class="container trending" style="display: flex; justify-content: center; align-items: center;">
 
-  <!-- first row -->
-  <div class="row" style="display: flex; justify-content: space-around; align-items: center;">
-    <div class="col-sm-12 col-lg-3 col-md-3">
-      <div class="card">
-        <img class="card-img-top"
-          src="https://media.istockphoto.com/photos/online-shopping-concept-picture-id1135609382?k=6&m=1135609382&s=612x612&w=0&h=Wi4VYqeHJqPL46ILanoD_O_LEBarzjwj3d8TWHMeFaE="
-          alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">title and make up the bulk of the card's
-            content.</p>
-          <a class="btn btn-primary">Add To Cart</a>
-        </div>
-      </div>
-    </div>
+<div class="container-fluid" style="margin-top: 30px;">
+  <div class="card bg-light">
+    <div class="card-body">
+      <div class="row" *ngFor="let i of data">
 
-    <div class="col-sm-12 col-lg-3 col-md-3">
-      <div class="card">
-        <img class="card-img-top"
-          src="https://media.istockphoto.com/photos/online-shopping-concept-picture-id1135609382?k=6&m=1135609382&s=612x612&w=0&h=Wi4VYqeHJqPL46ILanoD_O_LEBarzjwj3d8TWHMeFaE="
-          alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text"> and make up the bulk of the card's
-            content.</p>
-            <a  class="btn btn-primary">Add To Cart</a>
+        <!-- one -->
+        <!-- <div class="col-sm-12 col-lg-3 col-md-3" >
+          <div class="card" >
+            <span class="title">{{info['productId']}}</span>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <h5 class="card-title">{{info['productName']}}</h5>
+              <i class="fas fa-heart fa-2x" (click)="wishlist(info)" style="cursor: pointer; color: red;"></i>
+            </div>
+
+
+            <h5 class="card-title">{{info['stock']}}</h5>
+            <p class="card-text">{{info['productDescription']}}</p>
+            <div class="content subtitle">Price {{info['unitPrice']}}</div>
           </div>
+        </div> -->
+
       </div>
     </div>
+    <!--row end-->
 
-    <div class="col-sm-12 col-lg-3 col-md-3">
-      <div class="card">
-        <img class="card-img-top"
-          src="https://media.istockphoto.com/photos/online-shopping-concept-picture-id1135609382?k=6&m=1135609382&s=612x612&w=0&h=Wi4VYqeHJqPL46ILanoD_O_LEBarzjwj3d8TWHMeFaE="
-          alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Sard title and make up the bulk of the card's
-            content.</p>
-            <a  class="btn btn-primary">Add To Cart</a>
-          </div>
-      </div>
-    </div>
 
-    
 
-    <!-- second row -->
+  </div>
+</div>
 
-    <div class="row" style=  " margin-top: 20px; display: flex; justify-content: space-around; align-items: center;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- for future reference -->
+<!-- second row -->
+<!-- <div class="row" style=" margin-top: 20px; display: flex; justify-content: space-around; align-items: center;">
       <div class="col-sm-12 col-lg-3 col-md-3">
         <div class="card">
           <img class="card-img-top"
@@ -62,7 +75,7 @@
           </div>
         </div>
       </div>
-  
+
       <div class="col-sm-12 col-lg-3 col-md-3">
         <div class="card">
           <img class="card-img-top"
@@ -72,11 +85,11 @@
             <h5 class="card-title">Card title</h5>
             <p class="card-text"> and make up the bulk of the card's
               content.</p>
-              <a  class="btn btn-primary">Add To Cart</a>
-            </div>
+            <a class="btn btn-primary">Add To Cart</a>
+          </div>
         </div>
       </div>
-  
+
       <div class="col-sm-12 col-lg-3 col-md-3">
         <div class="card">
           <img class="card-img-top"
@@ -86,11 +99,8 @@
             <h5 class="card-title">Card title</h5>
             <p class="card-text">Sard title and make up the bulk of the card's
               content.</p>
-              <a  class="btn btn-primary">Add To Cart</a>
-            </div>
+            <a class="btn btn-primary">Add To Cart</a>
+          </div>
         </div>
       </div>
-
-
-
-</div>
+    </div> -->

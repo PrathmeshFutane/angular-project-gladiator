@@ -9,15 +9,16 @@ import { Retailer } from '../appmodel/retailer';
 })
 export class AdminApproveRetailerComponent implements OnInit {
 
-  constructor(private adminService : AdminService) { }
-  data : any;
-  
-  retailer : Retailer = new Retailer();
+  constructor(private adminService: AdminService) { }
+  data: any;
+
+  retailer: Retailer = new Retailer();
   ngOnInit(): void {
-    this.retailer.retailerStatus = 'Y' ;
+    this.retailer.retailerStatus = 'Y';
     this.retailer.retailerId = parseInt(sessionStorage.getItem('retailerId'));
-    this.adminService.AdminApproveRetailer(this.retailer).subscribe(data=> {
+    this.adminService.adminApproveRetailer(this.retailer).subscribe(data => {
       alert(data)
+      this.data = data;
     })
 
 

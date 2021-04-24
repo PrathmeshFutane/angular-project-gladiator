@@ -39,9 +39,9 @@ export class RetailerHomepageComponent implements OnInit {
       console.log("resp" + JSON.stringify(response))
 
     })
-    // if (sessionStorage.getItem('retailerId') == undefined || sessionStorage.getItem('retailerId') == null || sessionStorage.getItem('retailerId') == "" || sessionStorage.length == 0) {
-    //   this.router.navigate(['retailer'])
-    // }
+    if (sessionStorage.getItem('retailerId') == undefined || sessionStorage.getItem('retailerId') == null || sessionStorage.getItem('retailerId') == "" || sessionStorage.length == 0) {
+      this.router.navigate(['retailer'])
+    }
     this.productId = sessionStorage.getItem("registeredProductId")
   }
 

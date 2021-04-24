@@ -1,19 +1,24 @@
 <!-- card -->
-<div class="card" style="margin-top: 20px; margin-bottom: 20px;">
-  <div class="card-header bg-primary text-white">
-    Prathmesh Futane
-  </div>
-  <div class="card-body ">
-    <div class="card-text">Shipping address :</div>
-    <div class="card-text">Mobile No :</div>
-    <div class="card-text">Total Price :</div>
-
-    <div class="displayDates">
-      <div class="card-text">Shipping Date :</div>
-      <div class="card-text">Delivery Date: 25/04/2020</div>
+<div class="container">
+  <div class="card" style="margin-top: 20px; margin-bottom: 20px;">
+    <div class="card-header bg-primary text-white">
+      {{data[0]['order']['customer']['name']}}
+    </div>
+    <div class="card-body ">
+      <div class="card-text">Order Id : {{orderId}} </div>
+      
+      <div class="card-text">Shipping address : {{data[0]['order']['customer']['address1']}} , {{data[0]['order']['customer']['address2']}}</div>
+      
+      <div class="card-text">Mobile No : {{data[0]['order']['customer']['mobileNumber']}}</div>
+      <div class="card-text">Total Price : {{data[0]['order']['totalPrice']}}</div>
+      <div class="displayDates">
+        <div class="card-text">Order Date : {{data[0]['order']['orderDate']}}</div>
+        <div class="card-text">Delivery Date: {{data[0]['order']['deliveryDate']}}</div>
+      </div>
     </div>
   </div>
 </div>
+
 
 <!-- payment option -->
 <div class="container" style="display: flex; justify-content: center; align-items: center;">
@@ -39,7 +44,7 @@
         <div class="card-body">
           <h5 class="card-title">Cash On Delivery</h5>
           <p class="card-text">Try this one</p>
-          <button class="btn btn-primary" routerLink="/success">COD</button>
+          <button class="btn btn-primary" routerLink="/final-checkout">COD</button>
         </div>
       </div>
     </div>

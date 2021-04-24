@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 import { Retailer } from '../appmodel/retailer';
 import { RetailerService } from '../retailer.service';
 
@@ -19,20 +20,30 @@ export class RetailerRegisterComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  
-  register(){
+
+  register() {
     if (this.retailer.password == this.confirmPassword) {
-      alert(JSON.stringify(this.retailer));
+      //alert(JSON.stringify(this.retailer));
       this.retailerService.register(this.retailer).subscribe(response => {
-        alert(JSON.stringify(response));
+        //alert(JSON.stringify(response));
         if (response.status == true) {
+          Swal.fire(
+            'welcome to webrash',
+            'online shopping website',
+            'success'
+          )
           sessionStorage.setItem('retailerId', response.registeredRetailerId);
           this.router.navigate(['retailer']);
         }
       })
     } else {
-      alert("password doesnot match")
+      Swal.fire({
+        icon: 'error',
+        title: 'password doesnot match',
+        text: 'try again'
+      })
     }
-    
+
+
   }
 }

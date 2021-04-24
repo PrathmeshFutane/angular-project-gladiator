@@ -5,6 +5,7 @@ import {
 import {
   Router
 } from '@angular/router';
+import Swal from 'sweetalert2';
 import {
   Cart
 } from '../appmodel/cart';
@@ -29,22 +30,28 @@ export class RegisterComponent {
   confirmPassword: string;
   cart: Cart = new Cart();
 
-  constructor(private customerService: CustomerService, private router: Router, private cartService: CartServiceService) {}
+  constructor(private customerService: CustomerService, private router: Router, private cartService: CartServiceService) { }
 
   register() {
     if (this.customer.password == this.confirmPassword) {
-      alert(JSON.stringify(this.customer));
+      //alert(JSON.stringify(this.customer));
       this.customerService.register(this.customer).subscribe(response => {
-        alert(JSON.stringify(response));
+        //alert(JSON.stringify(response));
         if (response.status == true) {
+
+          Swal.fire(
+            'Registration successfull',
+            'You made it',
+            'success'
+          )
           sessionStorage.setItem('customerId', response.registeredCustomerId);
 
           //to create cart
           if (sessionStorage.getItem("registeredCartId") == undefined) {
             this.cart.customer.customerId = parseInt(sessionStorage.getItem('customerId'));
-            alert(JSON.stringify(this.cart));
+            //alert(JSON.stringify(this.cart));
             this.cartService.createCart(this.cart).subscribe(data => {
-              alert(JSON.stringify(data));
+              //alert(JSON.stringify(data));
               sessionStorage.setItem("registeredCartId", data['registeredCartId'])
             })
           } else {
@@ -56,7 +63,11 @@ export class RegisterComponent {
         }
       })
     } else {
-      alert("password doesnot match")
+      Swal.fire({
+        icon: 'error',
+        title: 'password doesnot match',
+        text: 'try again'
+      })
     }
 
   }
