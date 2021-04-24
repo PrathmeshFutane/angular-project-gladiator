@@ -98,10 +98,25 @@ export class ProductsComponent implements OnInit {
   }
 
 
+  //code for Ascending 
+  ascendingOrder(){ 
+   // alert('click')
+    this.productService.ascendingOrder().subscribe(data=> {
+      alert(JSON.stringify(data))
+      this.data = data;
+    })
 
 
+  }
 
+  //code for descending
+  descendingOrder(){
+   // alert('click')
+    this.productService.descendingOrder().subscribe(data=> {
+      alert(JSON.stringify(data))
+      this.data = data;
+  })
 
-
+  }
 
 }

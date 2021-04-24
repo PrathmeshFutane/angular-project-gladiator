@@ -42,4 +42,22 @@ export class AddProductService {
     let url = "http://localhost:8282/product-filter?price1=5000&price2=10000"
     return this.http.get(url);
   }
+
+  //code for sorting
+
+  ascendingOrder(){
+    let url = "http://localhost:8282/ascending-order"
+    return this.http.get(url);
+  }
+
+  descendingOrder(){
+    let url = "http://localhost:8282/descending-order"
+    return this.http.get(url);
+  }
+
+
+
+
+
+
 }
