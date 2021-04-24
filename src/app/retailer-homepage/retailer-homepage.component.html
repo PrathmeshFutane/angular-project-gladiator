@@ -48,7 +48,7 @@
           <i class="fa fa-user fa-3x"></i>
         </h5>
         <div class="container" style="text-align: center;">
-          <button class="btn  btn-outline-dark" >View My Products</button>
+          <button class="btn  btn-outline-dark" routerLink="/retailer-view-product">View My Products</button>
         </div>
       </div>
     </div>
@@ -80,7 +80,7 @@
 
 
 <!-- below code is for add the items -->
-
+<div *ngIf= "isApproved">
 <div class="container card bg-light" style="width: 50%; margin-bottom: 10px;">
   <label for="cars" style="margin-top: 10px; margin-bottom: 10px;">Choose a Category:</label>
 
@@ -175,7 +175,7 @@
     <button type="submit" class="btn btn-primary">Add Image</button>
   </form>
 </div>
-
+</div>
 <!-- <div class="container">
   <div class="col-sm-12 col-md-6 col-lg-4" *ngFor="let info of data "></div>
       <div class="card" style="width: 100%;">

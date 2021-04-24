@@ -27,6 +27,7 @@ export class RetailerHomepageComponent implements OnInit {
   revenue: any;
   retailer: Retailer = new Retailer();
   ownerName = sessionStorage.getItem('retailerName');
+  isApproved : boolean = false;
 
 
 
@@ -43,6 +44,9 @@ export class RetailerHomepageComponent implements OnInit {
       this.router.navigate(['retailer'])
     }
     this.productId = sessionStorage.getItem("registeredProductId")
+    if(sessionStorage.getItem('approvalStatus') == "Y"){
+      this.isApproved = true;
+    }
   }
 
 
@@ -126,6 +130,8 @@ export class RetailerHomepageComponent implements OnInit {
     }
   }
 
+
+  
 
 
 

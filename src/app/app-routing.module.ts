@@ -23,6 +23,7 @@ import { ProductsComponent } from './products/products.component';
 import { RegisterComponent } from './register/register.component';
 import { RetailerHomepageComponent } from './retailer-homepage/retailer-homepage.component';
 import { RetailerRegisterComponent } from './retailer-register/retailer-register.component';
+import { RetailerViewProductComponent } from './retailer-view-product/retailer-view-product.component';
 import { RetailerComponent } from './retailer/retailer.component';
 import { SearchByKeywordComponent } from './search-by-keyword/search-by-keyword.component';
 import { SearchResultComponent } from './search-result/search-result.component';
@@ -61,6 +62,7 @@ const routes: Routes = [
   { path: 'update-customer-profile', component: UpdateCustomerProfileComponent },
   { path: 'wishlist', component: WishlistComponent },
   { path: 'final-checkout', component: FinalCheckoutComponent },
+  { path: 'retailer-view-product', component: RetailerViewProductComponent },
   { path: '**', component: PagenotfoundComponent }
 
 ];
