@@ -20,11 +20,11 @@ export class BankDetailsComponent {
     this.payment.customer.customerId = parseInt(sessionStorage.getItem('customerId'))
     this.payment.order.orderId = parseInt(sessionStorage.getItem('registeredOrderId'))
     //alert(this.payment.cardNumber +' ' + this.payment.expiryMonth +' '  + this.payment.expiryYear + this.payment.order.orderId + this.payment.cvv + this.payment.customer.customerId);
-    // this.paymentService.makePayment(this.payment).subscribe(data => {
+    this.paymentService.makePayment(this.payment).subscribe(data => {
 
-    //   alert(JSON.stringify(data))
-    //   this.router.navigate(['final-checkout'])
-    // })
+      alert(JSON.stringify(data))
+      this.router.navigate(['final-checkout'])
+    })
     this.router.navigate(['final-checkout'])
   }
 

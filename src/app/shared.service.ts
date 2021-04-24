@@ -13,6 +13,7 @@ export class SharedService {
   dataForSearching: any;
   productDescription: any;
   wishlist: any;
+  viewOrderItems: any;
 
   setSearchValue(searchValue) {
     this.searchValue = searchValue
@@ -61,4 +62,12 @@ export class SharedService {
   getWishlist() {
     return this.wishlist;
   }
+
+  setViewOrderItems(viewOrderItems){
+    this.viewOrderItems = viewOrderItems
+   }
+
+   getViewOrderItems(){
+     return this.viewOrderItems;
+   }
 }

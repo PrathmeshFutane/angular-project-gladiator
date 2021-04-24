@@ -29,4 +29,10 @@ export class OrderService {
     let url = "http://localhost:8282/get-order-by-customer?customerId=" + customerId;
     return this.http.get(url);
   }
+
+  displayOrderItems(orderId): Observable<any>{
+    let url = "http://localhost:8282/get-orderId-by-order?orderId=" + orderId;
+    return this.http.get(url);
+  }
+
 }

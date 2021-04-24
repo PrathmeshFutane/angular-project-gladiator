@@ -1,0 +1,48 @@
+
+
+<div class="container">
+    <div class="container">
+      <h2>Your OrderItems</h2>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Product Image</th>
+            <th>OrderItems Id</th>
+            <th>Quantity</th>
+            <th>Sub Total </th>
+            <th>Product Name</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let info of data">
+              
+            <th style="height: 100px; width: 100px;">
+              <img height="100%" width="100%" class="card-img-top"
+                src="http://localhost:8282/downloads/{{info['product']['image']}}" alt="Card image cap">
+            </th>
+           <th>{{info['orderItemsId']}}</th>
+           <th>{{info['quantity']}}</th>
+           <th>{{info['subTotalPrice']}}</th>
+            <th style="height: 100px; width: 400px;">{{info['product']['productName']}}</th>
+            <th>{{info['order']['orderId']}}</th>
+            
+           
+            
+          </tr>
+        </tbody>
+      </table>
+  
+      <div class="container" style="margin-bottom: 20px;display: flex; align-items: center; justify-content: space-between;">
+        <div  >
+          <button class="btn btn-warning" style="color: white;" routerLink="/view-order" >Back To View Order</button>
+
+          <button class="btn btn-danger">Cancel Order</button>
+          <button class="btn btn-success" (click)="makePayment()">Go To Payment</button>
+        </div>
+  
+        
+      </div>
+    </div>
+  </div>
+  

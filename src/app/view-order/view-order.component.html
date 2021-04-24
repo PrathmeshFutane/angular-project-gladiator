@@ -1,1 +1,43 @@
-<p>view-order works!</p>
+
+<div class="container">
+    <div class="container">
+      <h2>Your Orders</h2>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Order Id</th>
+            <th>Order Date</th>
+            <th>Total Price</th>
+            <th>Delivery Date</th>
+            <th>Order Status</th>
+  
+           
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let info of data">
+            
+            <th style="height: 100px; width: 400px;">{{info['orderId']}}</th>
+            <th>{{info['orderDate']}}</th>
+            <th>{{info['totalPrice']}}</th>
+            <th>{{info['deliveryDate']}}</th>
+            <th>{{info['orderStatus']}}</th>
+            <th><button class="btn btn-primary" (click)="getOrderItems(info)">Check your Order Items</button></th>
+            
+            
+          
+           
+          </tr>
+        </tbody>
+      </table>
+  
+      <div class="container" style="margin-bottom: 20px;display: flex; align-items: center; justify-content: space-between;">
+        <div  >
+          <button class="btn btn-warning" style="color: white;" routerLink="" >Back To Shopping</button>
+        </div>
+  
+        
+      </div>
+    </div>
+  </div>
+  

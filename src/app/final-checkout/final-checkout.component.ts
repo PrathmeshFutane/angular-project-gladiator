@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Order } from '../appmodel/order';
 import { OrderService } from '../order.service';
 
@@ -9,7 +10,7 @@ import { OrderService } from '../order.service';
 })
 export class FinalCheckoutComponent implements OnInit {
 
-  constructor(private orderService : OrderService) { }
+  constructor(private orderService : OrderService,private router: Router) { }
 
   order: Order = new Order();
 
@@ -21,6 +22,7 @@ export class FinalCheckoutComponent implements OnInit {
     this.order.orderId = parseInt(sessionStorage.getItem('registeredOrderId'));
     this.orderService.confirmOrder(this.order).subscribe(data=>{
       alert(JSON.stringify(data));
+
     })
 
   }

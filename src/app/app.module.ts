@@ -46,6 +46,7 @@ import { OrderCancelComponent } from './order-cancel/order-cancel.component';
 import { UpdateCustomerProfileComponent } from './update-customer-profile/update-customer-profile.component';
 import { FinalCheckoutComponent } from './final-checkout/final-checkout.component';
 import { RetailerViewProductComponent } from './retailer-view-product/retailer-view-product.component';
+import { ViewOrderItemComponent } from './view-order-item/view-order-item.component';
 
 
 @NgModule({
@@ -89,7 +90,8 @@ import { RetailerViewProductComponent } from './retailer-view-product/retailer-v
     OrderCancelComponent,
     UpdateCustomerProfileComponent,
     FinalCheckoutComponent,
-    RetailerViewProductComponent
+    RetailerViewProductComponent,
+    ViewOrderItemComponent
 
   ],
   imports: [

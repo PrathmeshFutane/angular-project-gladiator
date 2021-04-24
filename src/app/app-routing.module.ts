@@ -30,6 +30,8 @@ import { SearchResultComponent } from './search-result/search-result.component';
 import { SuccessComponent } from './success/success.component';
 import { TrendingComponent } from './trending/trending.component';
 import { UpdateCustomerProfileComponent } from './update-customer-profile/update-customer-profile.component';
+import { ViewOrderItemComponent } from './view-order-item/view-order-item.component';
+import { ViewOrderComponent } from './view-order/view-order.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
 
 const routes: Routes = [
@@ -63,6 +65,8 @@ const routes: Routes = [
   { path: 'wishlist', component: WishlistComponent },
   { path: 'final-checkout', component: FinalCheckoutComponent },
   { path: 'retailer-view-product', component: RetailerViewProductComponent },
+  { path: 'view-order', component: ViewOrderComponent },
+  { path: 'view-order-item', component: ViewOrderItemComponent },
   { path: '**', component: PagenotfoundComponent }
 
 ];
