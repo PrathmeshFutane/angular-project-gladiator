@@ -8,7 +8,7 @@
     <div class="card bg-light">
         <div class="card-body">
             <div class="container" style="width: 50%; margin-bottom: 30px;">
-                <form (ngSubmit)="addProduct()">
+                <form (ngSubmit)="addCategory()">
                     <div class="form-group">
                         <label for="category">Enter Category</label>
                         <input  type="text" class="form-control" id="category" name="category" required [(ngModel)]="category.name" >
@@ -17,8 +17,6 @@
                     <button class="btn btn-primary w-5">Add Category</button>
                 </form>
             </div> 
-            
         </div>
     </div>
 </div>
-

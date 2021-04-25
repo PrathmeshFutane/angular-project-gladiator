@@ -64,6 +64,7 @@ export class RetailerHomepageComponent implements OnInit {
 
 
   onFileChange(event) {
+    //console.log(event.target.files[0])
     this.productImage = event.target.files[0];
   }
 
@@ -151,7 +152,7 @@ export class RetailerHomepageComponent implements OnInit {
     });
 
     this.retailerService.viewRetailerProfile(sessionStorage.getItem('retailerId')).subscribe(data => {
-      //alert(JSON.stringify(data))
+      alert(JSON.stringify(data))
       this.data = data;
 
     })

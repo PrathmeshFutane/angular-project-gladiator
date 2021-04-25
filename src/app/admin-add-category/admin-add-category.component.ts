@@ -17,16 +17,21 @@ export class AdminAddCategoryComponent implements OnInit {
   }
 
   category: Category = new Category();
-  addProduct() {
+  addCategory() {
+    if (this.category.name == null) {
+      alert("you have to enter something")
+    }
+    else {
+      this.addCategoryService.addCategory(this.category).subscribe(response => {
+        //alert(JSON.stringify(response));
+        Swal.fire(
+          'Category added Successfully',
+          'largest website webrash',
+          'success'
+        )
+        this.router.navigate(['admin-homepage'])
+      })
+    }
 
-    this.addCategoryService.addCategory(this.category).subscribe(response => {
-      //alert(JSON.stringify(response));
-      Swal.fire(
-        'Category added Successfully',
-        'largest website webrash',
-        'success'
-      )
-      this.router.navigate(['admin-homepage'])
-    })
   }
 }

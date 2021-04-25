@@ -11,9 +11,7 @@
     </div>
 
     <form (ngSubmit)="loginCheck()">
-
       <!-- Email -->
-
       <div class="form-group">
         <label for="email">Email</label>
         <input type="email" class="form-control" required #email="ngModel" id="email" name="email" [(ngModel)]="login.email">

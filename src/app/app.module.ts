@@ -29,10 +29,7 @@ import { SearchResultComponent } from './search-result/search-result.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SuccessComponent } from './success/success.component';
 import { ErrorComponent } from './error/error.component';
-import { AddProductComponent } from './add-product/add-product.component';
 import { AdminHomepageComponent } from './admin-homepage/admin-homepage.component';
-import { AdminTotalCustomerComponent } from './admin-total-customer/admin-total-customer.component';
-import { AdminTotalRetailerComponent } from './admin-total-retailer/admin-total-retailer.component';
 import { AdminAddCategoryComponent } from './admin-add-category/admin-add-category.component';
 import { RetailerHomepageComponent } from './retailer-homepage/retailer-homepage.component';
 import { BankDetailsComponent } from './bank-details/bank-details.component';
@@ -76,10 +73,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     DashboardComponent,
     SuccessComponent,
     ErrorComponent,
-    AddProductComponent,
     AdminHomepageComponent,
-    AdminTotalCustomerComponent,
-    AdminTotalRetailerComponent,
     AdminAddCategoryComponent,
     RetailerHomepageComponent,
     BankDetailsComponent,

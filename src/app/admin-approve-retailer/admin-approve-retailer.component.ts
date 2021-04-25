@@ -18,7 +18,7 @@ export class AdminApproveRetailerComponent implements OnInit {
   ngOnInit(): void {
 
     this.adminService.fetchTotalRetailer().subscribe(data => {
-      alert(JSON.stringify(data))
+      //alert(JSON.stringify(data))
       this.data = data
     })
     if (!sessionStorage.getItem('adminId')) {

@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AddProductComponent } from './add-product/add-product.component';
 import { AdminAddCategoryComponent } from './admin-add-category/admin-add-category.component';
 import { AdminApproveRetailerComponent } from './admin-approve-retailer/admin-approve-retailer.component';
 import { AdminHomepageComponent } from './admin-homepage/admin-homepage.component';
@@ -51,7 +50,6 @@ const routes: Routes = [
   { path: 'success', component: SuccessComponent },
   { path: 'cart', component: CartComponent },
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'add-product', component: AddProductComponent },
   { path: 'admin-homepage', component: AdminHomepageComponent },
   { path: 'checking', component: CheckingComponent },
   { path: 'retailer-homepage', component: RetailerHomepageComponent },

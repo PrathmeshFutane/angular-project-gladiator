@@ -241,7 +241,7 @@
 <!-- Modal for retailer profile -->
 <ng-template #retailerProfile let-modal>
   <div class="modal-header">
-    <h4 class="modal-title" id="modal-basic-title">Revenue</h4>
+    <h4 class="modal-title" id="modal-basic-title">Retailer Profile</h4>
     <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
       <i class="fa fa-window-close fa-2x"></i>
     </button>
@@ -250,7 +250,7 @@
      <div class="content">
 
       Details of your profile are as follows: <br />
-      Retailer ID : {{ data.retailerId }} <br />
+      Retailer ID : {{ data['retailerId'] }} <br />
       Name : {{ data.ownerName }} <br />
       Email : {{ data.email }} <br />
       Company : {{ data.company }} <br />
@@ -259,7 +259,7 @@
      </div>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">close</button>
   </div>
 </ng-template>
 

@@ -25,7 +25,7 @@ export class ViewOrderComponent implements OnInit {
     //alert("this is view order");
     this.customerId = parseInt(sessionStorage.getItem('customerId'));
     this.orderService.displayAllOrders(this.customerId).subscribe(data => {
-      //alert(JSON.stringify(data));
+      alert(JSON.stringify(data));
       Swal.fire(
         'Your Orders',
         'largest shopping website',
@@ -40,17 +40,23 @@ export class ViewOrderComponent implements OnInit {
     // alert("This is order items");
     // alert(JSON.stringify(info));
     //alert(info['orderId'])
-    this.orderService.displayOrderItems(info['orderId']).subscribe(data => {
-      //alert(JSON.stringify(data));
+    if (info['orderStatus'] == "Confirmed") {
+      alert("your order has already confirmed")
+    }
+    else {
+      this.orderService.displayOrderItems(info['orderId']).subscribe(data => {
+        //alert(JSON.stringify(data));
 
 
-      this.sharedService.setViewOrderItems(data);
-      this.router.navigate(['view-order-item']);
-      Swal.fire(
-        'Your Orders Items',
-        'largest shopping website',
-        'success'
-      )
-    })
+        this.sharedService.setViewOrderItems(data);
+        this.router.navigate(['view-order-item']);
+        Swal.fire(
+          'Your Orders Items',
+          'largest shopping website',
+          'success'
+        )
+      })
+    }
+
   }
 }

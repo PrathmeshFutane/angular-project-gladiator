@@ -37,6 +37,7 @@ export class NavbarComponent implements OnInit {
     this.sharedService.setSearchValue(this.searchValue);
     this.sharedService.setKeywordValue(this.searchValue);
     this.router.navigate(['search-by-keyword'])
+    this.searchValue.toLocaleLowerCase;
     this.searchService.searchByKeyword(this.searchValue).subscribe(data => {
       //alert(JSON.stringify(data))
     })
