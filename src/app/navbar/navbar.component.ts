@@ -33,13 +33,14 @@ export class NavbarComponent implements OnInit {
     //alert(this.id)
     this.router.navigate([''])
     this.router.navigate(['search-by-keyword'])
-    alert(this.searchValue)
+    //alert(this.searchValue)
     this.sharedService.setSearchValue(this.searchValue);
     this.sharedService.setKeywordValue(this.searchValue);
     this.router.navigate(['search-by-keyword'])
     this.searchService.searchByKeyword(this.searchValue).subscribe(data => {
-      alert(JSON.stringify(data))
+      //alert(JSON.stringify(data))
     })
+
 
   }
 

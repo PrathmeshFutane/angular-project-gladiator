@@ -74,7 +74,7 @@
           <i class="text-white text-center fa fa-user fa-3x"></i>
         </h5>
         <div class="container" style="text-align: center;">
-          <button class="btn  btn-outline-light" (click)="open(content)">View Profile</button>
+          <button class="btn  btn-outline-light" (click)="viewRetailerProfile(retailerProfile)">View Profile</button>
         </div>
       </div>
     </div>
@@ -230,6 +230,31 @@
      <div class="content">
 
       {{retailer['revenue']}}
+
+     </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+  </div>
+</ng-template>
+
+<!-- Modal for retailer profile -->
+<ng-template #retailerProfile let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Revenue</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <i class="fa fa-window-close fa-2x"></i>
+    </button>
+  </div>
+  <div class="modal-body">
+     <div class="content">
+
+      Details of your profile are as follows: <br />
+      Retailer ID : {{ data.retailerId }} <br />
+      Name : {{ data.ownerName }} <br />
+      Email : {{ data.email }} <br />
+      Company : {{ data.company }} <br />
+      Mobile Number : {{ data.mobileNumber }} <br />
 
      </div>
   </div>

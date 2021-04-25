@@ -47,6 +47,8 @@ import { UpdateCustomerProfileComponent } from './update-customer-profile/update
 import { FinalCheckoutComponent } from './final-checkout/final-checkout.component';
 import { RetailerViewProductComponent } from './retailer-view-product/retailer-view-product.component';
 import { ViewOrderItemComponent } from './view-order-item/view-order-item.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 @NgModule({
@@ -91,7 +93,9 @@ import { ViewOrderItemComponent } from './view-order-item/view-order-item.compon
     UpdateCustomerProfileComponent,
     FinalCheckoutComponent,
     RetailerViewProductComponent,
-    ViewOrderItemComponent
+    ViewOrderItemComponent,
+    ForgotPasswordComponent
+
 
   ],
   imports: [
@@ -100,7 +104,8 @@ import { ViewOrderItemComponent } from './view-order-item/view-order-item.compon
     FormsModule,
     RouterModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    NgxPaginationModule
 
   ],
   providers: [],

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CartItem } from '../appmodel/cartItem';
 import { CartItemService } from '../cart-item.service';
 import { AddCategoryServiceService } from '../category-service.service';
@@ -11,7 +12,7 @@ import { SharedService } from '../shared.service';
 })
 export class SearchResultComponent implements OnInit {
 
-  constructor(private categoryService: AddCategoryServiceService, private sharedService: SharedService, private cartItemService: CartItemService) { }
+  constructor(private router: Router, private categoryService: AddCategoryServiceService, private sharedService: SharedService, private cartItemService: CartItemService) { }
 
   categoryId: any;
   data: any;
@@ -25,7 +26,7 @@ export class SearchResultComponent implements OnInit {
     this.categoryId = this.sharedService.getCategoryId();
     //alert(this.categoryId)
     this.categoryService.getProductsByCategory(this.categoryId).subscribe(data => {
-      alert(JSON.stringify(data));
+      //alert(JSON.stringify(data));
       this.data = data;
       console.log(data)
     })
@@ -35,7 +36,7 @@ export class SearchResultComponent implements OnInit {
 
   addToCart(productInformation) {
     //create cart on page load for customer
-    alert(productInformation['productId'] + " " + productInformation['productName'] + " " + productInformation['productDescription'] + " " + this.id + " " + productInformation['unitPrice'])
+    //alert(productInformation['productId'] + " " + productInformation['productName'] + " " + productInformation['productDescription'] + " " + this.id + " " + productInformation['unitPrice'])
 
 
 
@@ -45,8 +46,14 @@ export class SearchResultComponent implements OnInit {
 
     //code to send data to database
     this.cartItemService.addToCart(this.cartItem).subscribe(data => {
-      alert(JSON.stringify(data))
+      //alert(JSON.stringify(data))
     })
 
+  }
+
+
+  productDescription(information) {
+    this.sharedService.setProductDescription(information)
+    this.router.navigate(['product-description'])
   }
 }

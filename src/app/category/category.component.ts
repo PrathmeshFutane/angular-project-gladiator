@@ -22,13 +22,13 @@ export class CategoryComponent implements OnInit {
     })
   }
 
+  
   // get all products by category
 
   getProductById(information) {
-    alert(information['categoryId'])
+    //alert(information['categoryId'])
     this.sharedService.setCategoryId(information['categoryId'])
     this.router.navigate(['search-result'])
-
   }
 
 }

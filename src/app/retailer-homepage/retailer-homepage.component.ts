@@ -142,6 +142,31 @@ export class RetailerHomepageComponent implements OnInit {
     }
   }
 
+  viewRetailerProfile(content) {
+    this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then((result) => {
+      this.closeResult = `Closed with: ${result}`;
+
+    }, (reason) => {
+      this.closeResult = `Dismissed ${this.getDismissReason2(reason)}`;
+    });
+
+    this.retailerService.viewRetailerProfile(sessionStorage.getItem('retailerId')).subscribe(data => {
+      //alert(JSON.stringify(data))
+      this.data = data;
+
+    })
+  }
+
+  private getDismissReason2(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return `with: ${reason}`;
+    }
+  }
+
 
 
 

@@ -23,7 +23,8 @@ export class ProductsComponent implements OnInit {
   searchValue: any;
   obj = [];
   obj2 = [];
-
+  page: number = 1;
+  totalProducts: string;
 
 
 
@@ -33,7 +34,11 @@ export class ProductsComponent implements OnInit {
     this.productService.displayAllData().subscribe(data => {
       console.log(data);
       this.data = data;
-      console.log(data[0]['image'])
+      // this.totalProducts = data
+      //console.log(data[0]['image'])
+      // console.log(datalength)
+      console.log("this " + data['length'])
+      this.totalProducts = data['length']
     })
 
     // this.productService.displayAllData().subscribe((data: Product[]) => {
@@ -112,17 +117,17 @@ export class ProductsComponent implements OnInit {
 
   //code for filter
   from500to1000() {
-    alert('click')
+    //alert('click')
     this.productService.filter500to1000().subscribe(data => {
-      alert(JSON.stringify(data))
+      //alert(JSON.stringify(data))
       this.data = data;
     })
   }
 
   from5000to10000() {
-    alert('click')
+    //alert('click')
     this.productService.filter5000to10000().subscribe(data => {
-      alert(JSON.stringify(data))
+      //alert(JSON.stringify(data))
       this.data = data;
     })
   }
@@ -132,7 +137,7 @@ export class ProductsComponent implements OnInit {
   ascendingOrder() {
     // alert('click')
     this.productService.ascendingOrder().subscribe(data => {
-      alert(JSON.stringify(data))
+      //alert(JSON.stringify(data))
       this.data = data;
     })
 
@@ -143,7 +148,7 @@ export class ProductsComponent implements OnInit {
   descendingOrder() {
     // alert('click')
     this.productService.descendingOrder().subscribe(data => {
-      alert(JSON.stringify(data))
+      //alert(JSON.stringify(data))
       this.data = data;
     })
 

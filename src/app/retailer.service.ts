@@ -39,9 +39,14 @@ export class RetailerService {
     return this.http.get(url);
   }
 
-  updateProductStock(product : Product): Observable<any> {
+  updateProductStock(product: Product): Observable<any> {
     let url = "http://localhost:8282/update-stock";
     return this.http.post(url, product);
   }
 
-}
+  viewRetailerProfile(retailerId): Observable<any> {
+    let url = "http://localhost:8282/retailer-profile?retailerId=" + retailerId;
+    return this.http.get(url);
+  }
+
+  }

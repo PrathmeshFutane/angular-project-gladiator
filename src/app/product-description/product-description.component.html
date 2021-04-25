@@ -25,12 +25,16 @@
   </div>
 </div>
 
-<div class="jumbotron  my-3" style="margin-top: 20px;"  *ngIf="!isDataLoaded">
-  <div class="container text-center bg-light card">
-    <h1 class="display-6 card-body text-white bg-danger">You have to select the item first</h1>
+<div class="jumbotron  my-3" style="margin-top: 20px; cursor: pointer;" routerLink=""  *ngIf="!isDataLoaded">
+  <div class="container text-center bg-light " style="width: 50%;">
+    <h6 class="display-6 card-body text-white bg-danger">You have to select the item first</h6>
     <p class="lead"></p>
   </div>
+  
+ 
 </div>
+
+
 
 <div style="display: flex; justify-content: space-around; align-items: center;" *ngIf="isDataLoaded"> 
   <div class="container  p-5" >
@@ -50,7 +54,7 @@
             <hr class="my-4">
             <h5>About this Item</h5>
             <h6 class="card-text">{{data['productDescription']}}</h6>
-            <i class="fas fa-heart fa-2x" (click)="wishlist(data)" style="cursor: pointer; color: red;"></i>
+            <i class="fas fa-heart fa-2x text-right" (click)="wishlist(data)" style="cursor: pointer; color: red; text-align: right;"></i> 
             <div class="my-3" style="display: flex; justify-content: space-around; align-items: center;">
               <button class="btn btn-warning text-white" routerLink=" ">Back To Shopping</button>
               <button class="btn btn-primary" (click)="addToCart(data)">Add To Cart</button>
