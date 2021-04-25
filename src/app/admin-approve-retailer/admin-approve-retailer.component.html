@@ -1,26 +1,38 @@
+<div class="jumbotron ">
+    <div class="container">
+      <h3 class="text-center display-5 mt-3">Retailer status</h3>
+    </div>
+  </div>
+
 <div class="container"> 
-    <table>
-        <thead>
-            <tr>
-                <th>name</th>
-                <th>email</th>
-                <th>Company</th>
-                <th>Mobile</th>
-                <th>Approve</th>
-                <th>Reject</th>
-            </tr>
-        </thead>
-        <tbody *ngFor="let i of data">
-            <td>{{i.ownerName}}</td>
-            <td>{{i.company}}</td>
-            <td>{{i.email}}</td>
-            <td>{{i.retailerStatus}}</td>
-            <td>{{i.mobileNumber}}</td>
-           
-            <td><button class="btn btn-primary" (click)="approve(i)" >Approve</button></td>
-            <td><button class="btn btn-primary" (click)="reject(i)">Reject</button></td>
-        </tbody>
-        
-    </table>
+    <div class="card m-5">
+        <div class="card-body">
+            <table class="table table-stripped">
+                <thead>
+                    <tr>
+                        <th>name</th>
+                        <th>email</th>
+                        <th>Company</th>
+                        <th>Status</th>
+                        <th>Mobile</th>
+                        <th>Approve</th>
+                        <th>Reject</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let i of data">
+                    <td>{{i.ownerName}}</td>
+                    <td>{{i.company}}</td>
+                    <td>{{i.email}}</td>
+                    <td>{{i.retailerStatus}}</td>
+                    <td>{{i.mobileNumber}}</td>
+                   
+                    <td><button class="btn btn-primary bg-primary" (click)="approve(i)" >Approve</button></td>
+                    <td><button class="btn btn-primary bg-primary" (click)="reject(i)">Reject</button></td>
+                </tbody>
+                
+            </table>
+        </div>
+    </div>
+    
 </div>
 

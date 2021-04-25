@@ -17,7 +17,7 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     this.customerName = sessionStorage.getItem('customerName')
-    alert(this.customerName)
+    //alert(this.customerName)
   }
 
   constructor(private router: Router, private modalService: NgbModal, private customerService: CustomerService, private orderService: OrderService) { }

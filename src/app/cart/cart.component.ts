@@ -18,6 +18,7 @@ export class CartComponent implements OnInit {
   data: [];
   cartItems: CartItem = new CartItem();
   order: Order = new Order();
+  isDataLoaded = false;
 
   ngOnInit(): void {
     this.cartItems.cart.cartId = parseInt(sessionStorage.getItem('registeredCartId'));
@@ -26,6 +27,9 @@ export class CartComponent implements OnInit {
       //alert(JSON.stringify(data))
       console.log("is it " + data);
       this.data = data;
+      if (data[0]['product']['productName']) {
+        this.isDataLoaded = true;
+      }
     })
   }
 

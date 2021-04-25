@@ -10,6 +10,7 @@
             <th>Total Price</th>
             <th>Delivery Date</th>
             <th>Order Status</th>
+            <th>View Order Items</th>
   
            
           </tr>
@@ -17,7 +18,7 @@
         <tbody>
           <tr *ngFor="let info of data">
             
-            <th style="height: 100px; width: 400px;">{{info['orderId']}}</th>
+            <th >{{info['orderId']}}</th>
             <th>{{info['orderDate']}}</th>
             <th>{{info['totalPrice']}}</th>
             <th>{{info['deliveryDate']}}</th>

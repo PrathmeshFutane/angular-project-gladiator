@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 import { Order } from '../appmodel/order';
 import { OrderItem } from '../appmodel/orderItem';
 import { CheckoutService } from '../checkout.service';
@@ -43,11 +44,20 @@ export class FinalCheckoutComponent implements OnInit {
   }
 
   cancelOrder() {
-    alert("this is cancel");
+    //alert("this is cancel");
     this.order.orderId = parseInt(sessionStorage.getItem('registeredOrderId'));
     this.orderService.cancelOrder(this.order).subscribe(data => {
-      alert(JSON.stringify(data));
+      Swal.fire({
+        title: 'Order is Cancelled',
+        text: 'largest online shopping',
+        imageUrl: 'https://img.favpng.com/0/11/3/smiley-emoticon-sadness-animation-clip-art-png-favpng-4TW3cwaPdc77DeYafp0cAG9P9.jpg',
+        imageWidth: 400,
+        imageHeight: 200,
+        imageAlt: 'Custom image',
+      })
+      //alert(JSON.stringify(data));
     })
+    this.router.navigate([''])
   }
 
 }

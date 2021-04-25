@@ -1,36 +1,40 @@
 
-<div class="container-fluid" style="margin-top: 30px;">
-  <div class="card bg-light">
+
+
+<div style="display: flex; align-items: center; justify-content: space-between;">
+  <div class="card" *ngFor="let info of data " style="width: 60%;">
+    <div class="image" style="text-align: center;">
+      <img height="100%" width="100%" class="card-img-top img"
+        src="http://localhost:8282/downloads/{{info['image']}}" alt="Card image cap">
+
+    </div>
     <div class="card-body">
-      <div class="row" *ngFor="let i of data">
-
-        <!-- one -->
-        <!-- <div class="col-sm-12 col-lg-3 col-md-3" >
-          <div class="card" >
-            <span class="title">{{info['productId']}}</span>
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-              <h5 class="card-title">{{info['productName']}}</h5>
-              <i class="fas fa-heart fa-2x" (click)="wishlist(info)" style="cursor: pointer; color: red;"></i>
-            </div>
-
-
-            <h5 class="card-title">{{info['stock']}}</h5>
-            <p class="card-text">{{info['productDescription']}}</p>
-            <div class="content subtitle">Price {{info['unitPrice']}}</div>
-          </div>
-        </div> -->
-
+      
+      <div style="display: flex; justify-content: space-between; align-items: center;"> 
+        <h5 class="card-title">{{info['productName']}}</h5>
       </div>
     </div>
-    <!--row end-->
-
-
-
   </div>
 </div>
+<div class="container-fluid mt-4">
+  <div class="row">
+    <div class="col-sm-12 col-md-6 col-lg-3" *ngFor="let info of data ">
+      <div class="card" style="width: 60%;">
+        <div class="image" style="text-align: center;">
+          <img height="100%" width="100%" class="card-img-top img"
+            src="http://localhost:8282/downloads/{{info['image']}}" alt="Card image cap">
 
-
-
+        </div>
+        <div class="card-body">
+          
+          <div style="display: flex; justify-content: space-between; align-items: center;"> 
+            <h5 class="card-title">{{info['productName']}}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 

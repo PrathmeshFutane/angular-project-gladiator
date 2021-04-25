@@ -1,20 +1,61 @@
-<div class="container mt-4">
-    <div class="row">
-  
-      <div class="col-sm-12 col-md-6 col-lg-4" *ngFor="let info of data">
-          <div class=" card"  (click)="productDescription(info)" style="width: 100%; cursor: pointer;">
+<!-- <div class="container mt-4">
+  <div class="row">
+
+    <div class="col-sm-12 col-md-6 col-lg-4" *ngFor="let info of data">
+      <div class=" card" (click)="productDescription(info)" style="width: 100%; cursor: pointer;">
         <div class="image" style="text-align: center;">
-          <img height="100%" width="100%" class="card-img-top img" src="http://localhost:8282/downloads/{{info['image']}}"
-            alt="Card image cap">
-  
+          <img height="100%" width="100%" class="card-img-top img"
+            src="http://localhost:8282/downloads/{{info['image']}}" alt="Card image cap">
+
         </div>
         <div class="card-body">
-          <span class="title">{{info['productId']}}</span>
-          <h5 class="card-title">{{info['productName']}}</h5>
-          <input type="text" name="stock" value="{{info['stock']}}" #stock (keyup)="updateStock(stock.value,info)">
-          <p class="card-text">{{info['productDescription']}}</p>
-          <div class="content subtitle">Price {{info['unitPrice']}}</div>
+          <span class="title"></span>
+          <h5 class="card-title"></h5>
+
+          <p class="card-text"></p>
+          <div class="content subtitle">Price </div>
         </div>
       </div>
     </div>
-  
+  </div>
+</div> -->
+
+
+<div class="container">
+  <div class="container">
+    <h2>Your Products</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Product Image</th>
+          <th>Product Id</th>
+          <th>Name</th>
+          <th>Description </th>
+          <th>Unit Price</th>
+          <th>Update Quantity</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let info of data">
+
+          <th style="height: 100px; width: 100px;">
+            <img height="100%" width="100%" class="card-img-top" src="http://localhost:8282/downloads/{{info['image']}}"
+              alt="Card image cap">
+          </th>
+          <th>{{info['productId']}}</th>
+          <th>{{info['productName']}}</th>
+          <th>{{info['productDescription']}}</th>
+          <th>{{info['unitPrice']}}</th>
+          <th><input type="text" name="stock" value="{{info['stock']}}" #stock (keyup)="updateStock(stock.value,info)">
+          </th>
+
+
+
+        </tr>
+      </tbody>
+    </table>
+
+    
+  </div>
+</div>

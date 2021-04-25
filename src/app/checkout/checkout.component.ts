@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import Swal from 'sweetalert2';
 import { Order } from '../appmodel/order';
 import { OrderItem } from '../appmodel/orderItem';
 import { CheckoutService } from '../checkout.service';
@@ -15,7 +16,7 @@ import { OrderService } from '../order.service';
 })
 export class CheckoutComponent implements OnInit {
 
-  constructor(private http: HttpClient, private router: Router,private orderService: OrderService, private checkoutService: CheckoutService, private modalService: NgbModal) { }
+  constructor(private http: HttpClient, private router: Router, private orderService: OrderService, private checkoutService: CheckoutService, private modalService: NgbModal) { }
 
   data: any;
 
@@ -34,11 +35,16 @@ export class CheckoutComponent implements OnInit {
     })
   }
 
-  cancelOrder(){
+  cancelOrder() {
     alert("this is cancel");
     this.order.orderId = parseInt(sessionStorage.getItem('registeredOrderId'));
-    this.orderService.cancelOrder(this.order).subscribe(data=>{
-      alert(JSON.stringify(data));
+    this.orderService.cancelOrder(this.order).subscribe(data => {
+      //alert(JSON.stringify(data));
+      Swal.fire(
+        'Your Order is cancelled',
+        'largest online shopping website',
+        'success'
+      )
       this.router.navigate([''])
     })
   }

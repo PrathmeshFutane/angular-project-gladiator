@@ -4,7 +4,7 @@
      Jeshma M
      This is the Homepage of retailer
 -->
-<button class="btn btn-primary" (click)="getProductByRetailerId()">View My Products</button>
+<!-- <button class="btn btn-primary" (click)="getProductByRetailerId()">View My Products</button> -->
 
 <div class="container">
   <!-- first -->
@@ -42,30 +42,45 @@
 
 <div class="row" style=" margin-bottom:30px; margin-top: 30px; display: flex; justify-content: space-around; align-items: center;">
   <div class="col-lg-3 col-md-3 col-sm-12">
-    <div class="card  bg-light" style="width: 18rem;">
-      <div class="card-body">
+    <div class="card  bg-success" style="width: 18rem;">
+      <div class="card-body text-center">
         <h5 class="card-title">
-          <i class="fa fa-user fa-3x"></i>
+          <i class="text-white text-center fa fa-ad fa-3x"></i>
         </h5>
         <div class="container" style="text-align: center;">
-          <button class="btn  btn-outline-dark" routerLink="/retailer-view-product">View My Products</button>
+          <button class="btn  btn-outline-light" routerLink="/retailer-view-product">View My Products</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-lg-3 col-md-3 col-sm-12">
+    <div class="card bg-info" style="width: 18rem;">
+      <div class="card-body text-center">
+        <h5 class="card-title ">
+          <i class="text-white text-center fa fa-user fa-3x"></i>
+        </h5>
+        <div class="container" style="text-align: center;">
+          <button class="btn  btn-outline-light" (click)="open(content)">Total Revenue</button>
         </div>
       </div>
     </div>
   </div>
 
   <div class="col-lg-3 col-md-3 col-sm-12">
-    <div class="card bg-light" style="width: 18rem;">
+    <div class="card bg-warning" style="width: 18rem;">
       <div class="card-body">
-        <h5 class="card-title">
-          <i class="fa fa-user fa-3x"></i>
+        <h5 class="card-title text-center ">
+          <i class="text-white text-center fa fa-user fa-3x"></i>
         </h5>
         <div class="container" style="text-align: center;">
-          <button class="btn  btn-outline-dark" (click)="open(content)">Total Revenue</button>
+          <button class="btn  btn-outline-light" (click)="open(content)">View Profile</button>
         </div>
       </div>
     </div>
   </div>
+
+  
 
   
   
@@ -74,6 +89,14 @@
 
 
 <hr class="my-4">
+
+<!-- code for retailer is not approved -->
+<div class="jumbotron " *ngIf="!isApproved">
+  <div class="container card text-center bg-danger text-white my-5 p-5">
+    <h1 class="display-4">Your are not Approved yet By Admin</h1>
+    <p class="lead">You will get a mail as soon you get Approved</p>
+  </div>
+</div>
 
 
 
@@ -120,7 +143,7 @@
 
       <div class="form-group">
         <label for="productDetails">Product Details</label>
-        <input type="text" class="form-control" id="name" required name="productDetails"
+        <input type="textfield" class="form-control" id="name" required name="productDetails"
           [(ngModel)]="product.productDescription" #productDescription="ngModel">
         <div *ngIf="productDescription.invalid && (productDescription.dirty || productDescription.touched)"
           class="alert alert-danger">

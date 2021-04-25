@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 import { AdminService } from '../admin.service';
 import { Retailer } from '../appmodel/retailer';
 
@@ -9,35 +11,48 @@ import { Retailer } from '../appmodel/retailer';
 })
 export class AdminApproveRetailerComponent implements OnInit {
 
-  constructor(private adminService: AdminService) { }
+  constructor(private adminService: AdminService, private router: Router) { }
   data: any;
 
   retailer: Retailer = new Retailer();
   ngOnInit(): void {
-   
-   this.adminService.fetchTotalRetailer().subscribe(data=> {
-     alert(JSON.stringify(data))
-     this.data=data
-   })
+
+    this.adminService.fetchTotalRetailer().subscribe(data => {
+      alert(JSON.stringify(data))
+      this.data = data
+    })
+    if (!sessionStorage.getItem('adminId')) {
+      this.router.navigate(['admin'])
+    }
 
   }
-//For Approve
+  //For Approve
 
 
   approve(info) {
     alert(JSON.stringify(info))
-    this.adminService.adminApproveRetailer(info).subscribe(data=> {
-      alert(JSON.stringify(data))
+    this.adminService.adminApproveRetailer(info).subscribe(data => {
+      //alert(JSON.stringify(data))
+      Swal.fire(
+        'Retailer Approved Successfully',
+        'webrash',
+        'success'
+      )
     })
   }
 
 
   //For reject
 
-  reject(info){
+  reject(info) {
     alert(JSON.stringify(info))
-    this.adminService.adminRejectRetailer(info).subscribe(data=> {
-      alert(JSON.stringify(data))
+    this.adminService.adminRejectRetailer(info).subscribe(data => {
+      //alert(JSON.stringify(data))
+      Swal.fire(
+        'Retailer Rejected Successfully',
+        'webrash',
+        'success'
+      )
     })
   }
 

@@ -1,10 +1,24 @@
-<div class="container" style="width: 50%; margin-bottom: 30px;">
-    <form (ngSubmit)="addProduct()">
-        <div class="form-group">
-            <label for="category">Enter Category</label>
-            <input type="text" class="form-control" id="category" name="category" required [(ngModel)]="category.name" >
-        </div>
+<div class="jumbotron ">
+    <div class="container">
+      <h3 class="text-center display-5 mt-3">Add Categories</h3>
+    </div>
+  </div>
 
-        <button class="btn btn-primary w-5">Add Category</button>
-    </form>
-</div> 
+<div class="container my-5"> 
+    <div class="card bg-light">
+        <div class="card-body">
+            <div class="container" style="width: 50%; margin-bottom: 30px;">
+                <form (ngSubmit)="addProduct()">
+                    <div class="form-group">
+                        <label for="category">Enter Category</label>
+                        <input  type="text" class="form-control" id="category" name="category" required [(ngModel)]="category.name" >
+                    </div>
+                    <br>
+                    <button class="btn btn-primary w-5">Add Category</button>
+                </form>
+            </div> 
+            
+        </div>
+    </div>
+</div>
+

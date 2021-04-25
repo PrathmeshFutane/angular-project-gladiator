@@ -15,6 +15,9 @@ export class NavbarComponent implements OnInit {
   searchValue: string;
   data: any;
   id: number;
+  login: boolean = true;
+  logout: boolean = false;
+  dashboard: boolean = false;
 
 
 
@@ -43,6 +46,7 @@ export class NavbarComponent implements OnInit {
   clearData() {
     sessionStorage.clear();
     this.router.navigate([''])
+    location.reload();
   }
 
 
@@ -51,7 +55,22 @@ export class NavbarComponent implements OnInit {
       console.log(data);
       this.data = data;
       console.log(data[0]['image'])
+      if (sessionStorage.getItem('customerId') != undefined || sessionStorage.getItem('retailerId') != undefined || sessionStorage.getItem('adminId')) {
+        this.login = false;
+        this.logout = true;
+        this.dashboard = true;
+      }
+      if (sessionStorage.getItem('retailerId')) {
+        this.logout = true;
+        this.login = false;
+      }
+      if (sessionStorage.getItem('adminId')) {
+        this.logout = true;
+        this.login = false;
+
+      }
     })
+
   }
 
 

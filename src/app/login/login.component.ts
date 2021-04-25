@@ -30,7 +30,7 @@ export class LoginComponent {
   message: string;
   rememberMe: boolean;
 
-  constructor(private customerService: CustomerService, private router: Router, private cartService: CartServiceService) {}
+  constructor(private customerService: CustomerService, private router: Router, private cartService: CartServiceService) { }
   cart: Cart = new Cart();
 
 
@@ -61,6 +61,8 @@ export class LoginComponent {
           text: 'Something went wrong!',
           footer: 'try again'
         })
+      setInterval(function () { location.reload(); }, 1500);
+
     })
 
 

@@ -15,9 +15,11 @@ export class TrendingComponent implements OnInit {
     this.productService.displayAllData().subscribe(data => {
       console.log(data);
       // $scope.users = data.users.slice(5, 11);
-      this.data = data;
+      this.data = data[Math.floor(Math.random() * data["productName"].length)];
       console.log(data[0]['image'])
     })
   }
+
+
 
 }

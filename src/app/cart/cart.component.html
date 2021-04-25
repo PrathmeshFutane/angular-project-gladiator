@@ -1,5 +1,16 @@
+<div class="jumbotron ">
+  <div class="container bg-light my-5 card text-center" *ngIf="!isDataLoaded">
+    <div class="card-body">
+      <h1 class="display-6">cart is empty</h1>
+      <p class="lead">Buy something</p>
+      <button class="btn btn-primary" routerLink="">Back To Shopping</button>
+    </div>
+    
+  </div>
+</div>
+
 <div class="container">
-  <div class="container">
+  <div class="container" *ngIf="isDataLoaded">
     <h2>Your Cart</h2>
     <table class="table table-striped">
       <thead>
@@ -13,8 +24,8 @@
           <th>Delete</th>
         </tr>
       </thead>
-      <tbody>
-        <tr *ngFor="let info of data">
+      <tbody >
+        <tr *ngFor="let info of data" >
           <th style="height: 100px; width: 100px;">
             <img height="100%" width="100%" class="card-img-top"
               src="http://localhost:8282/downloads/{{info['product']['image']}}" alt="Card image cap">

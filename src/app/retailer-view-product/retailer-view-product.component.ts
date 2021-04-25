@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import Swal from 'sweetalert2';
 import { Product } from '../appmodel/product';
 import { RetailerService } from '../retailer.service';
 
@@ -9,23 +10,24 @@ import { RetailerService } from '../retailer.service';
 })
 export class RetailerViewProductComponent implements OnInit {
 
-  constructor(private retailerService: RetailerService){ }
+  constructor(private retailerService: RetailerService) { }
   data: any
-  product : Product = new Product();
+  product: Product = new Product();
   ngOnInit(): void {
 
     this.retailerService.getProductsByRetailerId(sessionStorage.getItem('retailerId')).subscribe(data => {
-      alert(JSON.stringify(data))
+      //alert(JSON.stringify(data))
       this.data = data;
       console.log('this is total retailer' + data);
-      alert(data['retailer']['ownerName'])
+      //alert(data['retailer']['ownerName'])
+
     })
   }
 
 
 
-  updateStock(stock,info){
-    alert(stock + " " + info)
+  updateStock(stock, info) {
+    //alert(stock + " " + info)
     this.product.productId = info['productId']
     this.product.productName = info['productName']
     this.product.productDescription = info['productDescription']
@@ -33,7 +35,12 @@ export class RetailerViewProductComponent implements OnInit {
     this.product.image = info['image']
     this.product.unitPrice = info['unitPrice']
     this.retailerService.updateProductStock(this.product).subscribe(data => {
-      alert(JSON.stringify(data))
+      Swal.fire(
+        'Product Updated Successfully',
+        'largest shopping website',
+        'success'
+      )
+      //alert(JSON.stringify(data))
     })
   }
 
