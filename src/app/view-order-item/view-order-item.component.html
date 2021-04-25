@@ -11,10 +11,11 @@
             <th>Quantity</th>
             <th>Sub Total </th>
             <th>Product Name</th>
+            <th>Order Items</th>
             
           </tr>
         </thead>
-        <tbody>
+        <tbody *ngIf="isData">
           <tr *ngFor="let info of data">
               
             <th style="height: 100px; width: 100px;">
@@ -37,7 +38,7 @@
         <div  style="display: flex; justify-content: space-between; align-items: center;">
           <button class="btn btn-warning" style="color: white;" routerLink="/view-order" >Back To View Order</button>
 
-          <button class="btn btn-danger">Cancel Order</button>
+          
           <button class="btn btn-success" (click)="makePayment()">Go To Payment</button>
         </div>
   

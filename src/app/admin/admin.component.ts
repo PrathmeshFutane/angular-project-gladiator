@@ -20,7 +20,7 @@ export class AdminComponent implements OnInit {
   constructor(private adminService: AdminService, private router: Router) { }
 
   ngOnInit() {
-    
+
   }
 
   loginCheck() {
@@ -47,6 +47,8 @@ export class AdminComponent implements OnInit {
           footer: 'try again'
         })
     })
+    setInterval(function () { location.reload(); }, 1500);
+
 
   }
 }

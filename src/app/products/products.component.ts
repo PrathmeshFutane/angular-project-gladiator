@@ -23,7 +23,7 @@ export class ProductsComponent implements OnInit {
   searchValue: any;
   obj = [];
   obj2 = [];
-  pinkColor: boolean = false;
+
 
 
 
@@ -147,6 +147,12 @@ export class ProductsComponent implements OnInit {
       this.data = data;
     })
 
+  }
+
+
+  productDescription(information) {
+    this.sharedService.setProductDescription(information)
+    this.router.navigate(['product-description'])
   }
 
 }

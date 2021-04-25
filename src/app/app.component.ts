@@ -13,17 +13,7 @@ export class AppComponent implements OnInit {
   constructor(private http: HttpClient) {
   }
   ngOnInit() {
-    //   navigator.geolocation.getCurrentPosition(function (position) {
-    //     alert('Location accessed')
-    //     console.log(position['coords']['latitude']);
-    //     console.log(position['coords']['longitude']);
-
-    //   }, function (error) {
-    //     console.log(error['message'])
-    //   }, {
-    //     timeout: 10000
-    //   })
-    // }
+    
 
     if (sessionStorage.getItem('customerId') != undefined || sessionStorage.getItem('customerId') != "") {
       let id = sessionStorage.getItem('customerId');

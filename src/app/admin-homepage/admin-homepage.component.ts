@@ -38,7 +38,7 @@ export class AdminHomepageComponent implements OnInit {
 
   //  This is model for profile
   openProfile(content) {
-    this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then((result) => {
+    this.modalService.open(content, { size: 'xl' }).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
     }, (reason) => {
       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
@@ -67,7 +67,7 @@ export class AdminHomepageComponent implements OnInit {
 
   // This is for all Customer 
   openTotalCustomer(customer) {
-    this.modalService.open(customer, { ariaLabelledBy: 'model-for-customer' }).result.then((result) => {
+    this.modalService.open(customer, { size: 'xl' }).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
     }, (reason) => {
       this.closeResult = `Dismissed ${this.getDismissReasonCustomer(reason)}`;
@@ -94,7 +94,7 @@ export class AdminHomepageComponent implements OnInit {
 
   //  This is for Total Retailer 
   openTotalRetailer(retailer) {
-    this.modalService.open(retailer, { ariaLabelledBy: 'modal-for-retailer' }).result.then((result) => {
+    this.modalService.open(retailer, { size: 'xl' }).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
     }, (reason) => {
       this.closeResult = `Dismissed ${this.getDismissReasonRetailer(reason)}`;

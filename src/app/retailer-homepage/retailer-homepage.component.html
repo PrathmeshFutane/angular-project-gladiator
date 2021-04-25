@@ -143,8 +143,9 @@
 
       <div class="form-group">
         <label for="productDetails">Product Details</label>
-        <input type="textfield" class="form-control" id="name" required name="productDetails"
-          [(ngModel)]="product.productDescription" #productDescription="ngModel">
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" id="productDetails" required name="productDetails"
+        [(ngModel)]="product.productDescription" #productDescription="ngModel"></textarea>
+        
         <div *ngIf="productDescription.invalid && (productDescription.dirty || productDescription.touched)"
           class="alert alert-danger">
           <div *ngIf="productDescription.errors.required">
@@ -179,7 +180,7 @@
       </div>
 
 
-      <button type="submit" class="btn btn-primary">Register</button>
+      <button type="submit" class="btn btn-primary">Add Product</button>
       <button type="reset" class="btn btn-danger m-3">Reset</button>
 
     </form>

@@ -7,6 +7,7 @@ import { RetailerService } from '../retailer.service';
 import { ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Retailer } from '../appmodel/retailer';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-retailer-homepage',
@@ -27,7 +28,7 @@ export class RetailerHomepageComponent implements OnInit {
   revenue: any;
   retailer: Retailer = new Retailer();
   ownerName = sessionStorage.getItem('retailerName');
-  isApproved : boolean = false;
+  isApproved: boolean = false;
 
 
 
@@ -44,7 +45,7 @@ export class RetailerHomepageComponent implements OnInit {
       this.router.navigate(['retailer'])
     }
     this.productId = sessionStorage.getItem("registeredProductId")
-    if(sessionStorage.getItem('approvalStatus') == "Y"){
+    if (sessionStorage.getItem('approvalStatus') == "Y") {
       this.isApproved = true;
     }
   }
@@ -73,7 +74,12 @@ export class RetailerHomepageComponent implements OnInit {
     this.product.category.categoryId = this.id;
     console.log(retailerId + " " + this.product.category.categoryId)
     this.productService.addProduct(this.product).subscribe(response => {
-      alert(JSON.stringify(response));
+      //alert(JSON.stringify(response));
+      Swal.fire(
+        'Product Added successfully',
+        'largest online shopping website',
+        'success'
+      )
       sessionStorage.setItem('registeredProductId', response['registeredProductId'])
     })
   }
@@ -85,14 +91,20 @@ export class RetailerHomepageComponent implements OnInit {
     formData.append('productId', sessionStorage.getItem('registeredProductId'));
     formData.append('productImg', this.productImage);
     this.productService.imageUpload(formData).subscribe(data => {
-      alert(JSON.stringify(data))
+      //alert(JSON.stringify(data))
+      Swal.fire(
+        'Images Added Successfully',
+        'largest online shopping website',
+        'success'
+      )
     })
-    alert("image upload");
+    //alert("image upload");
+    location.reload();
   }
 
   getProductByRetailerId() {
     this.retailerService.getProductsByRetailerId(sessionStorage.getItem('retailerId')).subscribe(data => {
-      alert(JSON.stringify(data))
+      //alert(JSON.stringify(data))
       this.data = data;
       console.log(data);
       alert(data['retailer']['ownerName'])
@@ -131,7 +143,7 @@ export class RetailerHomepageComponent implements OnInit {
   }
 
 
-  
+
 
 
 

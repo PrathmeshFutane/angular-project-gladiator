@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { Product } from '../appmodel/product';
 import { RetailerService } from '../retailer.service';
@@ -10,7 +11,7 @@ import { RetailerService } from '../retailer.service';
 })
 export class RetailerViewProductComponent implements OnInit {
 
-  constructor(private retailerService: RetailerService) { }
+  constructor(private retailerService: RetailerService, private router: Router) { }
   data: any
   product: Product = new Product();
   ngOnInit(): void {
@@ -22,6 +23,10 @@ export class RetailerViewProductComponent implements OnInit {
       //alert(data['retailer']['ownerName'])
 
     })
+
+    if (sessionStorage.getItem('retailerId')==undefined) {
+      this.router.navigate(['retailer'])
+    }
   }
 
 

@@ -12,6 +12,7 @@ export class WishlistComponent implements OnInit {
   constructor(private router: Router, private sharedService: SharedService) { }
   data: any;
   products: any;
+  isDataLoaded: boolean = false;
 
   ngOnInit(): void {
     this.data = JSON.parse(localStorage.getItem('wishlist'));

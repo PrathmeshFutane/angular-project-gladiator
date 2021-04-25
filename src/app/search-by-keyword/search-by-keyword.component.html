@@ -3,8 +3,8 @@
         
         <div class="col-sm-12 col-md-6 col-lg-4" *ngFor="let info of data " >
             <div class="card" style="width: 100%;">
-                <div class="image" style="text-align: center;">
-                    <img height="100%"  width="100%" class="card-img-top img" src="http://localhost:8282/downloads/{{info['image']}}"  alt="Card image cap">
+                <div class=" image" style="height:300px; width:300px;text-align: center;">
+                    <img  (click)="productDescription(info)" height="100%"  width="100%" class="card-img-top img" src="http://localhost:8282/downloads/{{info['image']}}"  alt="Card image cap" style="cursor: pointer;">
 
                 </div>
                 <div class="card-body">
@@ -24,7 +24,7 @@
 
                   
                   <!-- <button  class="btn btn-primary" style="margin-left:15px;" (click)="mycart(i)" >Add to Cart</button> -->
-                  <button (click)="addToCart(info)"  class="btn btn-primary" style="margin-left:15px;"  >Add to Cart</button>
+                  <!-- <button (click)="addToCart(info)"  class="btn btn-primary" style="margin-left:15px;"  >Add to Cart</button> -->
                 
                 
                 

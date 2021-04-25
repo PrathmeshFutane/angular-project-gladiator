@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -20,7 +21,7 @@ export class DashboardComponent implements OnInit {
     //alert(this.customerName)
   }
 
-  constructor(private router: Router, private modalService: NgbModal, private customerService: CustomerService, private orderService: OrderService) { }
+  constructor(private http: HttpClient, private router: Router, private modalService: NgbModal, private customerService: CustomerService, private orderService: OrderService) { }
 
   customerId: number;
   customer: Customer = new Customer();
@@ -28,10 +29,9 @@ export class DashboardComponent implements OnInit {
   customerName: string;
 
 
-
+  //to view user's order
   viewMyOrder() {
     // alert("this is view order");
-
     this.customerId = parseInt(sessionStorage.getItem('customerId'));
     this.orderService.displayAllOrders(this.customerId).subscribe(data => {
       //alert(JSON.stringify(data));
@@ -40,18 +40,13 @@ export class DashboardComponent implements OnInit {
         'largest shopping website',
         'success'
       )
-
     })
   }
 
 
-
-
-
-
   //below code is for open model
   open(content) {
-    this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then((result) => {
+    this.modalService.open(content, { size: 'xl' }).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
     }, (reason) => {
       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
@@ -74,4 +69,33 @@ export class DashboardComponent implements OnInit {
   }
 
 
+
+
+
+
+
+  //for location
+  getMyLocation() {
+    navigator.geolocation.getCurrentPosition(function (position) {
+      alert('Location accessed')
+      console.log(position['coords']['latitude']);
+      console.log(position['coords']['longitude']);
+      console.log(position)
+
+
+    }, function (error) {
+      console.log(error['message'])
+    }, {
+      timeout: 10000
+    })
+
+  }
+
+
+
+
+
 }
+
+
+

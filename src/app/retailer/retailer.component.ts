@@ -53,6 +53,8 @@ export class RetailerComponent implements OnInit {
                     footer: 'try again'
                 })
         })
+        setInterval(function () { location.reload(); }, 1500);
+
     }
 
     //made change

@@ -37,27 +37,31 @@ export class SearchByKeywordComponent implements OnInit {
     let keyword = this.sharedService.getSearchValue()
     this.searchService.searchByKeyword(keyword).subscribe(data => {
       this.data = []
-      alert(JSON.stringify(data));
+
+      //alert(JSON.stringify(data));
       this.data = data;
     })
   }
 
 
 
-  addToCart(productInformation) {
-    //create cart on page load for customer
-    alert(productInformation['productId'] + " " + productInformation['productName'] + " " + productInformation['productDescription'] + " " + this.id + " " + productInformation['unitPrice'])
+  // addToCart(productInformation) {
+  //   //create cart on page load for customer
+  //   // alert(productInformation['productId'] + " " + productInformation['productName'] + " " + productInformation['productDescription'] + " " + this.id + " " + productInformation['unitPrice'])
 
+  //   this.cartItem.cart.cartId = parseInt(sessionStorage.getItem('registeredCartId'));
+  //   this.cartItem.product.productId = productInformation['productId'];
+  //   this.cartItem.quantity = 1;
 
+  //   //code to send data to database
+  //   this.cartItemService.addToCart(this.cartItem).subscribe(data => {
+  //     //alert(JSON.stringify(data))
+  //   })
 
-    this.cartItem.cart.cartId = parseInt(sessionStorage.getItem('registeredCartId'));
-    this.cartItem.product.productId = productInformation['productId'];
-    this.cartItem.quantity = 1;
+  // }
 
-    //code to send data to database
-    this.cartItemService.addToCart(this.cartItem).subscribe(data => {
-      alert(JSON.stringify(data))
-    })
-
+  productDescription(information) {
+    this.sharedService.setProductDescription(information)
+    this.router.navigate(['product-description'])
   }
 }
