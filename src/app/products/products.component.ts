@@ -46,12 +46,12 @@ export class ProductsComponent implements OnInit {
     //   this.searchValue = this.sharedService.getSearchValue();
     // })
 
-    this.productService.getAllQuantity().subscribe(data => {
-      console.log(data)
-      this.quantity = data;
-      this.id = data['total_count']
+    // this.productService.getAllQuantity().subscribe(data => {
+    //   console.log(data)
+    //   this.quantity = data;
+    //   this.id = data['total_count']
 
-    })
+    // })
   }
 
   addToCart(productInformation) {
