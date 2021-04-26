@@ -30,7 +30,7 @@ export class AdminApproveRetailerComponent implements OnInit {
 
 
   approve(info) {
-    alert(JSON.stringify(info))
+    //alert(JSON.stringify(info))
     this.adminService.adminApproveRetailer(info).subscribe(data => {
       //alert(JSON.stringify(data))
       Swal.fire(

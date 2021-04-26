@@ -93,12 +93,13 @@ export class RetailerHomepageComponent implements OnInit {
     formData.append('productImg', this.productImage);
     this.productService.imageUpload(formData).subscribe(data => {
       //alert(JSON.stringify(data))
-      Swal.fire(
-        'Images Added Successfully',
-        'largest online shopping website',
-        'success'
-      )
+
     })
+    Swal.fire(
+      'Images Added Successfully',
+      'largest online shopping website',
+      'success'
+    )
     //alert("image upload");
     location.reload();
   }
