@@ -57,21 +57,26 @@ export class ProductsComponent implements OnInit {
   addToCart(productInformation) {
     //create cart on page load for customer
     //alert(productInformation['productId'] + " " + productInformation['productName'] + " " + productInformation['productDescription'] + " " + this.id + " " + productInformation['unitPrice'])
-    this.cartItem.cart.cartId = parseInt(sessionStorage.getItem('registeredCartId'));
-    this.cartItem.product.productId = productInformation['productId'];
-    this.cartItem.quantity = 1;
+    if (sessionStorage.getItem('customerId')) {
+      this.cartItem.cart.cartId = parseInt(sessionStorage.getItem('registeredCartId'));
+      this.cartItem.product.productId = productInformation['productId'];
+      this.cartItem.quantity = 1;
 
-    //code to send data to database
-    this.cartItemService.addToCart(this.cartItem).subscribe(data => {
-      Swal.fire({
-        position: 'top-end',
-        icon: 'success',
-        title: 'Item Added To Cart',
-        showConfirmButton: false,
-        timer: 1000
+      //code to send data to database
+      this.cartItemService.addToCart(this.cartItem).subscribe(data => {
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: 'Item Added To Cart',
+          showConfirmButton: false,
+          timer: 1000
+        })
+        //alert(JSON.stringify(data))
       })
-      //alert(JSON.stringify(data))
-    })
+    }
+    else {
+      this.router.navigate(['login'])
+    }
   }
 
 

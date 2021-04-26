@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AddProductService } from '../product.service';
+import { SearchByKeywordComponent } from '../search-by-keyword/search-by-keyword.component';
 import { SearchService } from '../search.service';
 import { SharedService } from '../shared.service';
 
@@ -30,19 +31,25 @@ export class NavbarComponent implements OnInit {
 
 
   search() {
+    console.log("from navbar")
     //alert(this.id)
-    this.router.navigate([''])
-    this.router.navigate(['search-by-keyword'])
+    //this.router.navigate([''])
+    //this.router.navigate(['search-by-keyword'])
     //alert(this.searchValue)
     this.sharedService.setSearchValue(this.searchValue);
-    this.sharedService.setKeywordValue(this.searchValue);
-    this.router.navigate(['search-by-keyword'])
-    this.searchValue.toLocaleLowerCase;
+    //this.sharedService.setKeywordValue(this.searchValue);
+
+    //stack overflow
+    this.router.navigateByUrl('/search-by-keyword', { skipLocationChange: true }).then(() => {
+      this.router.navigate(['search-by-keyword']);
+    });
+
+
+    //this.router.navigate(['search-by-keyword'])
+    // this.searchValue.toLocaleLowerCase;
     this.searchService.searchByKeyword(this.searchValue).subscribe(data => {
       //alert(JSON.stringify(data))
     })
-
-
   }
 
   clearData() {

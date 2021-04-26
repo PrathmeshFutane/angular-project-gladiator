@@ -91,17 +91,22 @@ export class RetailerHomepageComponent implements OnInit {
     let formData: FormData = new FormData();
     formData.append('productId', sessionStorage.getItem('registeredProductId'));
     formData.append('productImg', this.productImage);
-    this.productService.imageUpload(formData).subscribe(data => {
-      //alert(JSON.stringify(data))
+    if (formData == null) {
+      alert("You have to choose the image")
+    }
+    else {
+      this.productService.imageUpload(formData).subscribe(data => {
+        //alert(JSON.stringify(data))
+      })
+      Swal.fire(
+        'Images Added Successfully',
+        'largest online shopping website',
+        'success'
+      )
+      //alert("image upload");
+      location.reload();
+    }
 
-    })
-    Swal.fire(
-      'Images Added Successfully',
-      'largest online shopping website',
-      'success'
-    )
-    //alert("image upload");
-    location.reload();
   }
 
   getProductByRetailerId() {

@@ -16,6 +16,7 @@ export class AdminComponent implements OnInit {
   password: string;
   message: string;
   rememberMe: boolean;
+  name: string;
 
   constructor(private adminService: AdminService, private router: Router) { }
 
@@ -27,6 +28,8 @@ export class AdminComponent implements OnInit {
     console.log(this.login);
     this.adminService.login(this.login).subscribe(response => {
       //alert(JSON.stringify(response));
+      sessionStorage.setItem('adminName', response['name'])
+      //alert(response['name'])
 
       console.log(response);
       if (response.status == true) {

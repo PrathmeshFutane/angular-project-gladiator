@@ -31,15 +31,17 @@ export class SearchByKeywordComponent implements OnInit {
 
 
   ngOnInit(): void {
+    //alert("from search by keyword")
     //alert(this.sharedService.getSearchValue())
     this.router.navigate([''])
     this.router.navigate(['search-by-keyword'])
-    let keyword = this.sharedService.getSearchValue()
-    this.searchService.searchByKeyword(keyword).subscribe(data => {
-      this.data = []
 
-      //alert(JSON.stringify(data));
+    let keyword = this.sharedService.getSearchValue()
+    alert(keyword)
+    this.searchService.searchByKeyword(keyword).subscribe(data => {
       this.data = data;
+      //alert(JSON.stringify(data));
+      //this.data = data;
     })
   }
 

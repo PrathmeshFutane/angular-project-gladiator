@@ -18,6 +18,19 @@ export class BankDetailsComponent {
 
   makePayment() {
 
+
+    // Swal.fire({
+    //   title: 'Payment Successfull',
+    //   text: 'Order Details is sent to your email id',
+    //   imageUrl: 'https://media3.giphy.com/media/ddGZulOVHKMeekaHrn/giphy.gif',
+    //   imageWidth: 400,
+    //   imageHeight: 200,
+    //   imageAlt: 'Custom image',
+    // })
+    // this.router.navigate(['success'])
+
+
+
     this.payment.customer.customerId = parseInt(sessionStorage.getItem('customerId'))
     this.payment.order.orderId = parseInt(sessionStorage.getItem('registeredOrderId'))
     //alert(this.payment.cardNumber +' ' + this.payment.expiryMonth +' '  + this.payment.expiryYear + this.payment.order.orderId + this.payment.cvv + this.payment.customer.customerId);

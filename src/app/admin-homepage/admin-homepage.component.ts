@@ -15,6 +15,7 @@ export class AdminHomepageComponent implements OnInit {
 
 
   flag = true;
+  adminName: string;
   closeResult = '';
 
   constructor(private router: Router, private modalService: NgbModal, private adminService: AdminService) { }
@@ -22,6 +23,7 @@ export class AdminHomepageComponent implements OnInit {
   ngOnInit() {
     if (sessionStorage.getItem('adminId') == undefined || sessionStorage.getItem('adminId') == null || sessionStorage.getItem('adminId') == "") {
       this.router.navigate(['admin'])
+      this.adminName = sessionStorage.getItem('adminName')
     }
 
 

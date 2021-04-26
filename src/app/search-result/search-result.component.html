@@ -1,7 +1,13 @@
+<!-- Author
+     Prathmesh Futane
+     This is search result for category -->
+
 <div class="container mt-4">
     <div class="row" >
         
-        <div class="col-sm-12 col-md-6 col-lg-4" *ngFor="let info of data | searchfilter : searchValue" >
+        <div class="col-sm-12 col-md-6 col-lg-4" *ngFor="let info of data | paginate : { id: 'list_of_product', itemsPerPage : 6,
+        currentPage : page,
+        totalItems: totalProducts}" >
             <div class="card" style="width: 100%;">
                 <div class="image" style="text-align: center;">
                     <img style="cursor: pointer;" (click)="productDescription(info)" height="100%"  width="100%" class="card-img-top img" src="http://localhost:8282/downloads/{{info['image']}}"  alt="{{info['productName']}}">
@@ -32,4 +38,12 @@
             </div>
         </div>
     </div>
+</div>
+
+<div class="container">
+    <pagination-controls id="list_of_product" maxSize="5" directionLinks="true" (pageChange)="page = $event"></pagination-controls>
+</div>
+
+<div class="container m-5">
+    <button class="btn btn-primary" routerLink="">Back To Shopping</button>
 </div>

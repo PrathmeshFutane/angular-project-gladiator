@@ -20,6 +20,8 @@ export class SearchResultComponent implements OnInit {
   id: number;
   searchValue: any;
   cartItem: CartItem = new CartItem();
+  page: number = 1;
+  totalProducts: string;
 
 
   ngOnInit(): void {

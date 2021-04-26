@@ -36,7 +36,7 @@ export class CheckoutComponent implements OnInit {
   }
 
   cancelOrder() {
-    alert("this is cancel");
+    //alert("this is cancel");
     this.order.orderId = parseInt(sessionStorage.getItem('registeredOrderId'));
     this.orderService.cancelOrder(this.order).subscribe(data => {
       //alert(JSON.stringify(data));

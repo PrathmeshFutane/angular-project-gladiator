@@ -38,14 +38,14 @@ export class FinalCheckoutComponent implements OnInit {
     this.order.orderId = parseInt(sessionStorage.getItem('registeredOrderId'));
     this.orderService.confirmOrder(this.order).subscribe(data => {
       //alert(JSON.stringify(data));
-      // Swal.fire({
-      //   title: 'Order is placed',
-      //   text: 'largest online shopping',
-      //   imageUrl: 'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Z2lmdHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80',
-      //   imageWidth: 400,
-      //   imageHeight: 200,
-      //   imageAlt: 'Custom image',
-      // })
+      Swal.fire({
+        title: 'Order is placed',
+        text: 'largest online shopping',
+        imageUrl: 'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Z2lmdHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80',
+        imageWidth: 400,
+        imageHeight: 200,
+        imageAlt: 'Custom image',
+      })
       this.router.navigate(['bank-details'])
     })
 

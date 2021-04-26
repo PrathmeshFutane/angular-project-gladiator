@@ -1,10 +1,24 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import {
+  Component,
+  OnInit
+} from '@angular/core';
+import {
+  Router
+} from '@angular/router';
 import Swal from 'sweetalert2';
-import { CartItem, Product } from '../appmodel/cartItem';
-import { CartItemService } from '../cart-item.service';
-import { AddProductService } from '../product.service';
-import { SharedService } from '../shared.service';
+import {
+  CartItem,
+  Product
+} from '../appmodel/cartItem';
+import {
+  CartItemService
+} from '../cart-item.service';
+import {
+  AddProductService
+} from '../product.service';
+import {
+  SharedService
+} from '../shared.service';
 
 @Component({
   selector: 'app-product-description',
@@ -31,21 +45,27 @@ export class ProductDescriptionComponent implements OnInit {
   addToCart(productInformation) {
     //create cart on page load for customer
     //alert(productInformation['productId'] + " " + productInformation['productName'] + " " + productInformation['productDescription'] + " " + this.id + " " + productInformation['unitPrice'])
-    this.cartItem.cart.cartId = parseInt(sessionStorage.getItem('registeredCartId'));
-    this.cartItem.product.productId = productInformation['productId'];
-    this.cartItem.quantity = 1;
+    if (sessionStorage.getItem('customerId')) {
+      this.cartItem.cart.cartId = parseInt(sessionStorage.getItem('registeredCartId'));
+      this.cartItem.product.productId = productInformation['productId'];
+      this.cartItem.quantity = 1;
 
-    //code to send data to database
-    this.cartItemService.addToCart(this.cartItem).subscribe(data => {
-      Swal.fire({
-        position: 'top-end',
-        icon: 'success',
-        title: 'Item Added To Cart',
-        showConfirmButton: false,
-        timer: 1000
+      //code to send data to database
+      this.cartItemService.addToCart(this.cartItem).subscribe(data => {
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: 'Item Added To Cart',
+          showConfirmButton: false,
+          timer: 1000
+        })
+        //alert(JSON.stringify(data))
       })
-      //alert(JSON.stringify(data))
-    })
+    }
+    else {
+      this.router.navigate(['login'])
+    }
+
   }
 
   ngOnInit(): void {
