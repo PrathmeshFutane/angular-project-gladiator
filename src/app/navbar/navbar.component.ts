@@ -20,33 +20,21 @@ export class NavbarComponent implements OnInit {
   logout: boolean = false;
   dashboard: boolean = false;
 
-
-
-
-
   constructor(private http: HttpClient, private router: Router, private productService: AddProductService, private sharedService: SharedService, private searchService: SearchService) {
     console.log(this.data)
   }
 
-
-
   search() {
     console.log("from navbar")
     //alert(this.id)
-    //this.router.navigate([''])
-    //this.router.navigate(['search-by-keyword'])
     //alert(this.searchValue)
     this.sharedService.setSearchValue(this.searchValue);
-    //this.sharedService.setKeywordValue(this.searchValue);
-
+    
     //stack overflow
     this.router.navigateByUrl('/search-by-keyword', { skipLocationChange: true }).then(() => {
       this.router.navigate(['search-by-keyword']);
-    });
-
-
-    //this.router.navigate(['search-by-keyword'])
-    // this.searchValue.toLocaleLowerCase;
+    });    
+   
     this.searchService.searchByKeyword(this.searchValue).subscribe(data => {
       //alert(JSON.stringify(data))
     })

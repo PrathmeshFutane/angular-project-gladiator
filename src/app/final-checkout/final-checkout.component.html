@@ -1,39 +1,32 @@
 
 
+<div class="container">
+  <div class="card" style="margin-top: 20px; margin-bottom: 20px;">
+    <div class="card-header bg-primary text-white">
+      {{data[0]['order']['customer']['name']}}
+    </div>
+    <div class="card-body ">
+      <div class="card-text">Order Id : {{orderId}} </div>
 
+      <div class="card-text">Shipping address : {{data[0]['order']['customer']['address1']}} ,
+        {{data[0]['order']['customer']['address2']}}</div>
 
-
-
-
-
-
-<div class="container" style="display: flex; justify-content: center; align-items: center;">
-  <div class="row payment">
-
-    <div class="col-lg-6 col-md-6 col-sm-12">
-      <div class="card" style="margin-top: 20px; margin-bottom: 20px;">
-        <div class="card-header bg-primary text-white">
-          {{data[0]['order']['customer']['name']}}
-        </div>
-        <div class="card-body ">
-          <div class="card-text">Order Id : {{orderId}} </div>
-
-          <div class="card-text">Shipping address : {{data[0]['order']['customer']['address1']}} ,
-            {{data[0]['order']['customer']['address2']}}</div>
-
-          <div class="card-text">Mobile No : {{data[0]['order']['customer']['mobileNumber']}}</div>
-          <div class="card-text">Total Price : {{data[0]['order']['totalPrice']}}</div>
-          <div class="displayDates">
-            <div class="card-text">Order Date : {{data[0]['order']['orderDate']}}</div>
-            <div class="card-text">Delivery Date: {{data[0]['order']['deliveryDate']}}</div>
-          </div>
-        </div>
+      <div class="card-text">Mobile No : {{data[0]['order']['customer']['mobileNumber']}}</div>
+      <div class="card-text">Total Price : {{data[0]['order']['totalPrice']}}</div>
+      <div class="displayDates">
+        <div class="card-text">Order Date : {{data[0]['order']['orderDate']}}</div>
+        <div class="card-text">Delivery Date: {{data[0]['order']['deliveryDate']}}</div>
       </div>
     </div>
+  </div>
+</div>
 
-    <div class="col-sm-12 col-lg-3 col-md-3">
-      <div class="card">
-        <img class="card-img-top" style="width: 60%;" src="https://cvescrow.com/wp-content/uploads/Notice-of-right-to-cancel.png"
+<div class="container " >
+  <div class="row m-5" style="display: flex; justify-content: space-around; align-items: center;">
+    <!-- first div -->
+    <div class="col-lg-3 col-sm-6 col-md-3">
+      <div class="card text-center" style="text-align: center;">
+        <img class="card-img-top" style="width: 60%; margin-left: 40px;" src="https://cvescrow.com/wp-content/uploads/Notice-of-right-to-cancel.png"
           alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title">Cancel Order</h5>
@@ -42,16 +35,16 @@
       </div>
     </div>
 
-    <div class="col-sm-12 col-lg-3 col-md-3">
-        <div class="card">
-          <img class="card-img-top" style="width: 60%;" src="https://cdn.pixabay.com/photo/2013/07/13/10/06/affirmative-156538_960_720.png"
-            alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Confirm Order</h5>
-            <button class="btn btn-success" (click)="confirmOrder()">Proceed To Payment</button>
-          </div>
+    <!-- second div -->
+    <div class="col-lg-3 col-sm-6 col-md-3">
+      <div class="card">
+        <img class="card-img-top" style="width: 60%; margin-left: 40px;" src="https://cdn.pixabay.com/photo/2013/07/13/10/06/affirmative-156538_960_720.png"
+          alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title text-center">Confirm Order</h5>
+          <button class="btn btn-success text-center" (click)="confirmOrder()">Proceed To Payment</button>
         </div>
       </div>
-
+    </div>
   </div>
 </div>

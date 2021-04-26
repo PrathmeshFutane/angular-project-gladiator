@@ -37,26 +37,15 @@ export class ViewOrderComponent implements OnInit {
   }
 
   getOrderItems(info) {
-    // alert("This is order items");
-    // alert(JSON.stringify(info));
-    //alert(info['orderId'])
-    if (info['orderStatus'] == "Confirmed") {
-      alert("your order has already confirmed")
-    }
-    else {
-      this.orderService.displayOrderItems(info['orderId']).subscribe(data => {
-        //alert(JSON.stringify(data));
-
-
-        this.sharedService.setViewOrderItems(data);
-        this.router.navigate(['view-order-item']);
-        Swal.fire(
-          'Your Orders Items',
-          'largest shopping website',
-          'success'
-        )
-      })
-    }
-
+    this.orderService.displayOrderItems(info['orderId']).subscribe(data => {
+      //alert(JSON.stringify(data));
+      this.sharedService.setViewOrderItems(data);
+      this.router.navigate(['view-order-item']);
+      Swal.fire(
+        'Your Orders Items',
+        'largest shopping website',
+        'success'
+      )
+    })
   }
 }

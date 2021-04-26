@@ -46,6 +46,8 @@ import { RetailerViewProductComponent } from './retailer-view-product/retailer-v
 import { ViewOrderItemComponent } from './view-order-item/view-order-item.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { CodComponent } from './cod/cod.component';
+import { CashOnDeliveryComponent } from './cash-on-delivery/cash-on-delivery.component';
 
 
 @NgModule({
@@ -88,7 +90,9 @@ import { NgxPaginationModule } from 'ngx-pagination';
     FinalCheckoutComponent,
     RetailerViewProductComponent,
     ViewOrderItemComponent,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+    CodComponent,
+    CashOnDeliveryComponent
 
 
   ],

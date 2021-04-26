@@ -29,19 +29,9 @@ export class TrendingComponent implements OnInit {
   cartItem: CartItem = new CartItem();
 
   ngOnInit() {
-    // this.productService.displayAllData().subscribe(data => {
-    //   console.log(data);
-    //   // $scope.users = data.users.slice(5, 11);
-    //   this.data = data[Math.floor(Math.random() * data["productName"].length)];
-    //   console.log(data[0]['image'])
-    // })
-
     this.productService.displayAllData().subscribe(data => {
       console.log(data);
       this.data = data;
-      // this.totalProducts = data
-      //console.log(data[0]['image'])
-      // console.log(datalength)
       console.log("this " + data['length'])
       this.totalProducts = data['length']
     })

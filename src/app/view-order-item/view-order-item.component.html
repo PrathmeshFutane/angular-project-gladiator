@@ -26,10 +26,7 @@
            <th>{{info['quantity']}}</th>
            <th>{{info['subTotalPrice']}}</th>
             <th >{{info['product']['productName']}}</th>
-            <th>{{info['order']['orderId']}}</th>
-            
-           
-            
+            <th>{{info['order']['orderId']}}</th> 
           </tr>
         </tbody>
       </table>
@@ -37,13 +34,8 @@
       <div class="container" style="margin-bottom: 20px;">
         <div  style="display: flex; justify-content: space-between; align-items: center;">
           <button class="btn btn-warning" style="color: white;" routerLink="/view-order" >Back To View Order</button>
-
-          
-          <button class="btn btn-success" (click)="makePayment()">Go To Payment</button>
-        </div>
-  
-        
+          <button class="btn btn-success" *ngIf="!isConfirmed" (click)="makePayment()">Go To Payment</button>
+        </div>  
       </div>
     </div>
   </div>
-  

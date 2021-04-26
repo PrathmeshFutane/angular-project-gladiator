@@ -9,9 +9,9 @@
     <h3>Register</h3>
   </div>
 
-  <form (ngSubmit)="register()">
+  <form  (ngSubmit)="register()">
 
-    <div class="form-group">
+    <div class="form-group  ">
       <label for="name">Name</label>
       <input type="text" class="form-control" required name="name" id="name" [(ngModel)]="customer.name" #name="ngModel">
       <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">

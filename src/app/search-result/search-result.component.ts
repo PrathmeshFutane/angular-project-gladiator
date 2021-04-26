@@ -38,10 +38,8 @@ export class SearchResultComponent implements OnInit {
 
   addToCart(productInformation) {
     //create cart on page load for customer
+
     //alert(productInformation['productId'] + " " + productInformation['productName'] + " " + productInformation['productDescription'] + " " + this.id + " " + productInformation['unitPrice'])
-
-
-
     this.cartItem.cart.cartId = parseInt(sessionStorage.getItem('registeredCartId'));
     this.cartItem.product.productId = productInformation['productId'];
     this.cartItem.quantity = 1;

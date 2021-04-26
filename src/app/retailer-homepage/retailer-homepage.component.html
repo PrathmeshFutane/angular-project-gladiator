@@ -4,20 +4,12 @@
      Jeshma M
      This is the Homepage of retailer
 -->
-<!-- <button class="btn btn-primary" (click)="getProductByRetailerId()">View My Products</button> -->
 
 <div class="container">
   <!-- first -->
   <div class="row" style="display: flex; justify-content: space-around; align-items: center;">
 
-    <div class="col-lg-3 col-md-3 col-sm-12">
-      <!-- <div class="card " style="width: 18rem;">
-          <div class="card-body">
-            <h5 class="card-title text-center">Prathmesh Futane</h5>
-            
-          </div>
-        </div> -->
-    </div>
+    <div class="col-lg-3 col-md-3 col-sm-12"></div>
 
     <!-- second -->
     <div class="col-lg-3 col-md-3 col-sm-12" style="padding: 20px;;">
@@ -30,7 +22,6 @@
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </div>
@@ -79,12 +70,6 @@
       </div>
     </div>
   </div>
-
-  
-
-  
-  
-
 </div>
 
 
@@ -97,9 +82,6 @@
     <p class="lead">You will get a mail as soon you get Approved</p>
   </div>
 </div>
-
-
-
 
 
 <!-- below code is for add the items -->
@@ -116,17 +98,11 @@
 
 <!-- ---------------------------retailer add product------------------------------ -->
 
-
-
-
 <div class=" container  mb-3" style="display: flex; justify-content: center; align-items: center;">
-
 
   <div class="card bg-light" style="width: 57%;   padding: 30px; ">
     <!-- form -->
     <form (ngSubmit)="addProduct()">
-
-
 
       <div class="form-group">
         <label for="productName">Product Name</label>
@@ -138,8 +114,6 @@
           </div>
         </div>
       </div>
-
-
 
       <div class="form-group">
         <label for="productDetails">Product Details</label>
@@ -154,7 +128,6 @@
         </div>
       </div>
 
-
       <div class="form-group">
         <label for="stock">Stock</label>
         <input type="number" class="form-control" id="number" required name="stock" [(ngModel)]="product.stock "
@@ -165,8 +138,6 @@
           </div>
         </div>
       </div>
-
-      
 
       <div class="form-group">
         <label for="unitPrice">Price</label>
@@ -179,7 +150,6 @@
         </div>
       </div>
 
-
       <button type="submit" class="btn btn-primary">Add Product</button>
       <button type="reset" class="btn btn-danger m-3">Reset</button>
 
@@ -188,7 +158,7 @@
 </div>
 
 
-
+<!-- code for submit image -->
 <div class="card bg-light   container text-center" style="width: 50%;">
   <form (ngSubmit)="setImage()">
     <div class="form-group">
@@ -200,23 +170,7 @@
   </form>
 </div>
 </div>
-<!-- <div class="container">
-  <div class="col-sm-12 col-md-6 col-lg-4" *ngFor="let info of data "></div>
-      <div class="card" style="width: 100%;">
-        <div class="image" style="text-align: center;">
-          <img height="100%" width="100%" class="card-img-top img"
-            src="http://localhost:8282/downloads/{{info['image']}}" alt="Card image cap">
-
-        </div>
-        <div class="card-body">
-          <span class="title">{{info['productId']}}</span>
-          <h5 class="card-title">{{info['productName']}}</h5>
-          <h5 class="card-title">{{info['stock']}}</h5>
-          <p class="card-text">{{info['productDescription']}}</p>
-          <div class="content subtitle">Price {{info['unitPrice']}}</div>
-        </div>
-      </div>
-</div> -->
+<!-- end of code of submit Image -->
 
 <!-- Modal for the revenue -->
 <ng-template #content let-modal>
@@ -250,11 +204,11 @@
      <div class="content">
 
       Details of your profile are as follows: <br />
-      Retailer ID : {{ data['retailerId'] }} <br />
-      Name : {{ data.ownerName }} <br />
-      Email : {{ data.email }} <br />
-      Company : {{ data.company }} <br />
-      Mobile Number : {{ data.mobileNumber }} <br />
+      Retailer ID : {{ retailer['retailerId'] }} <br />
+      Name : {{ retailer['ownerName'] }} <br />
+      Email : {{ retailer['email']}} <br />
+      Company : {{ retailer['company'] }} <br />
+      Mobile Number : {{ retailer['mobileNumber'] }} <br />
 
      </div>
   </div>

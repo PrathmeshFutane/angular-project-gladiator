@@ -1,3 +1,8 @@
+
+<!-- Author
+     Prathmesh Futane
+     This is products page -->
+
 <div class="container">
   <div class="card " style="width: 18rem;">
     <div class="card-body" style="cursor: pointer;">
@@ -34,9 +39,6 @@
   </div>
 </div>
 
-<!-- Author
-     Prathmesh Futane
-     This is products page -->
 
 
 <div class="container mt-4">
@@ -62,24 +64,9 @@
           <h5 class="card-title">{{info['stock']}}</h5>
           <p class="card-text">{{info['productDescription']}}</p>
           <div class="content subtitle">Price {{info['unitPrice']}}</div>
-
-          
-          <!-- select quantity -->
-
-          <!-- <select [(ngModel)]="id" name="id" class="form-select" style="margin-top: 10px; margin-bottom: 10px;" aria-label="Default select example">
-                    <option *ngFor="let i of quantity"  [value]="i.QuantityId">{{i.totalCount}}</option> 
-                    
-                </select> -->
-
-
-
-
-          <!-- <button  class="btn btn-primary" style="margin-left:15px;" (click)="mycart(i)" >Add to Cart</button> -->
+ 
           <button (click)="addToCart(info)" class="btn btn-primary" style="margin-left:15px;">Add to Cart</button>
-          
           <button class="btn btn-info" style="margin-left: 10px; color:white" (click)=addToCompare(info)>Add To Compare</button>
-
-
         </div>
       </div>
     </div>
@@ -88,8 +75,3 @@
 
 <pagination-controls id="list_of_product" maxSize="5" directionLinks="true" (pageChange)="page = $event"></pagination-controls>
 
-
-<!-- <select [(ngModel)]="id" class="form-select" style="margin-top: 10px; margin-bottom: 10px;" aria-label="Default select example">
-    <option *ngFor="let i of data"  [value]="i.categoryId">{{i['name']}}</option> 
-  </select>
-  id is : {{id}} -->

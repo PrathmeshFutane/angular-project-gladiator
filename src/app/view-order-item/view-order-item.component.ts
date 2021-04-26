@@ -14,19 +14,22 @@ export class ViewOrderItemComponent implements OnInit {
   data: any;
   orderId: number;
   isData: boolean = false;
-
-
+  orderStatus: string;
+  isConfirmed = false;
 
   ngOnInit(): void {
     this.data = this.sharedService.getViewOrderItems();
     //alert(JSON.stringify(this.data));
     this.orderId = this.data[0]['order']['orderId'];
+    this.orderStatus = this.data[0]['order']['orderStatus']
+    if (this.orderStatus == "Confirmed") {
+      this.isConfirmed = true;
+    }
     //alert(this.orderId);
     if (this.data) {
       this.isData = true;
     }
   }
-
 
   makePayment() {
     //alert(this.orderId);

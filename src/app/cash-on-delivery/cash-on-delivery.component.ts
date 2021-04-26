@@ -1,17 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
-import { Order } from '../appmodel/order';
 import { OrderItem } from '../appmodel/orderItem';
+import { Order } from '../appmodel/order';
 import { CheckoutService } from '../checkout.service';
 import { OrderService } from '../order.service';
 
 @Component({
-  selector: 'app-final-checkout',
-  templateUrl: './final-checkout.component.html',
-  styleUrls: ['./final-checkout.component.css']
+  selector: 'app-cash-on-delivery',
+  templateUrl: './cash-on-delivery.component.html',
+  styleUrls: ['./cash-on-delivery.component.css']
 })
-export class FinalCheckoutComponent implements OnInit {
+export class CashOnDeliveryComponent implements OnInit {
 
   constructor(private orderService: OrderService, private router: Router, private checkoutService: CheckoutService) { }
 
@@ -29,10 +29,7 @@ export class FinalCheckoutComponent implements OnInit {
     })
   }
 
-
-
-
-
+  // for confirm Order
   confirmOrder() {
     //alert("this is confirm");
     this.order.orderId = parseInt(sessionStorage.getItem('registeredOrderId'));
@@ -47,7 +44,7 @@ export class FinalCheckoutComponent implements OnInit {
         imageHeight: 200,
         imageAlt: 'Custom image',
       })
-      this.router.navigate(['bank-details'])
+      this.router.navigate(['success'])
     })
 
   }

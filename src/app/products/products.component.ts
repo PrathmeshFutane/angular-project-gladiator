@@ -34,24 +34,11 @@ export class ProductsComponent implements OnInit {
     this.productService.displayAllData().subscribe(data => {
       console.log(data);
       this.data = data;
-      // this.totalProducts = data
-      //console.log(data[0]['image'])
-      // console.log(datalength)
       console.log("this " + data['length'])
       this.totalProducts = data['length']
     })
 
-    // this.productService.displayAllData().subscribe((data: Product[]) => {
-    //   this.products = data;
-    //   this.searchValue = this.sharedService.getSearchValue();
-    // })
 
-    // this.productService.getAllQuantity().subscribe(data => {
-    //   console.log(data)
-    //   this.quantity = data;
-    //   this.id = data['total_count']
-
-    // })
   }
 
   addToCart(productInformation) {

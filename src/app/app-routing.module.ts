@@ -7,6 +7,7 @@ import { AdminComponent } from './admin/admin.component';
 import { BankDetailsComponent } from './bank-details/bank-details.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { CartComponent } from './cart/cart.component';
+import { CashOnDeliveryComponent } from './cash-on-delivery/cash-on-delivery.component';
 import { CategoryComponent } from './category/category.component';
 import { CheckingComponent } from './checking/checking.component';
 import { CheckoutComponent } from './checkout/checkout.component';
@@ -65,12 +66,13 @@ const routes: Routes = [
   { path: 'retailer-view-product', component: RetailerViewProductComponent },
   { path: 'view-order', component: ViewOrderComponent },
   { path: 'view-order-item', component: ViewOrderItemComponent },
+  { path: 'cash-on-delivery', component: CashOnDeliveryComponent },
   { path: '**', component: PagenotfoundComponent }
 
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { onSameUrlNavigation : 'reload' } ) ],
+  imports: [RouterModule.forRoot(routes, { onSameUrlNavigation: 'reload' })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

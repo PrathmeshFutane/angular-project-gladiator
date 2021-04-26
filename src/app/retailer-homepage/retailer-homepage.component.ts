@@ -18,6 +18,7 @@ export class RetailerHomepageComponent implements OnInit {
 
   constructor(private modalService: NgbModal, private productService: AddProductService, private retailerService: RetailerService, private router: Router, private http: HttpClient) { }
 
+  retailer: Retailer = new Retailer;
   product: Product = new Product();
   data: any;
   id: number;
@@ -26,7 +27,6 @@ export class RetailerHomepageComponent implements OnInit {
   info: any;
   closeResult: string = '';
   revenue: any;
-  retailer: Retailer = new Retailer();
   ownerName = sessionStorage.getItem('retailerName');
   isApproved: boolean = false;
 
@@ -49,19 +49,6 @@ export class RetailerHomepageComponent implements OnInit {
       this.isApproved = true;
     }
   }
-
-
-
-
-  // ngOnInit(): void {
-  //   let url = "https://fakestoreapi.com/products";
-  //   this.http.get(url).subscribe(response => {
-  //     this.data = response;
-  //     console.log(response);
-  //   })
-  // }
-
-
 
   onFileChange(event) {
     //console.log(event.target.files[0])
@@ -149,6 +136,7 @@ export class RetailerHomepageComponent implements OnInit {
     }
   }
 
+  // modal to view retailer profile
   viewRetailerProfile(content) {
     this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
@@ -158,8 +146,8 @@ export class RetailerHomepageComponent implements OnInit {
     });
 
     this.retailerService.viewRetailerProfile(sessionStorage.getItem('retailerId')).subscribe(data => {
-      alert(JSON.stringify(data))
-      this.data = data;
+      //alert(JSON.stringify(data))
+      this.retailer = data;
 
     })
   }

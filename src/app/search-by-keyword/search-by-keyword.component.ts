@@ -37,7 +37,7 @@ export class SearchByKeywordComponent implements OnInit {
     this.router.navigate(['search-by-keyword'])
 
     let keyword = this.sharedService.getSearchValue()
-    alert(keyword)
+    //alert(keyword)
     this.searchService.searchByKeyword(keyword).subscribe(data => {
       this.data = data;
       //alert(JSON.stringify(data));

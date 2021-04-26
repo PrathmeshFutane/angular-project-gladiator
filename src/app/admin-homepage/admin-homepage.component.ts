@@ -23,8 +23,10 @@ export class AdminHomepageComponent implements OnInit {
   ngOnInit() {
     if (sessionStorage.getItem('adminId') == undefined || sessionStorage.getItem('adminId') == null || sessionStorage.getItem('adminId') == "") {
       this.router.navigate(['admin'])
-      this.adminName = sessionStorage.getItem('adminName')
+
     }
+    this.adminName = sessionStorage.getItem('adminName')
+    //alert(this.adminName)
 
 
   }
