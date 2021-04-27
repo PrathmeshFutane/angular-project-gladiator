@@ -45,7 +45,7 @@ export class AdminApproveRetailerComponent implements OnInit {
   //For reject
 
   reject(info) {
-    alert(JSON.stringify(info))
+    //alert(JSON.stringify(info))
     this.adminService.adminRejectRetailer(info).subscribe(data => {
       //alert(JSON.stringify(data))
       Swal.fire(
