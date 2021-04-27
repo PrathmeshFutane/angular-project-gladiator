@@ -42,7 +42,7 @@
         <tr *ngFor="let i of data">
           <th style="height: 100px; width: 100px;"><img height="100%" width="100%" class="card-img-top"
             src="http://localhost:8282/downloads/{{i['product']['image']}}" alt="Card image cap"></th>
-          <th style="margin-left: 20px; text-align: center;">1</th>
+          <th style="margin-left: 20px; text-align: center;">{{i['quantity']}}</th>
           <th style="height: 100px; width: 400px;">{{i['product']['productName']}}</th>
           <th>{{i['product']['unitPrice']}}</th>
           <th style="margin-left: 20px; text-align: center;"> {{i['subTotalPrice']}} </th>
