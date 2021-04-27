@@ -8,14 +8,23 @@
 <div class="container">
   <!-- first -->
   <div class="row" style="display: flex; justify-content: space-around; align-items: center;">
-    
+
     <div class="col-lg-3 col-md-3 col-sm-12">
-      <!-- <div class="card " style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title text-center">Prathmesh Futane</h5>
-          
+      <!-- first -->
+      <div class="row" style="display: flex; justify-content: space-around; align-items: center;">
+        <div class="col-lg-3 col-md-3 col-sm-12">
+          <div class="card bg-warning text-white" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class=" text-center card-title">
+                <i class="fa fa-eye fa-3x"></i>
+              </h5>
+              <div class="container" style="text-align: center;">
+                <button class="btn btn-outline-light  " routerLink="/view-order">View Order</button>
+              </div>
+            </div>
+          </div>
         </div>
-      </div> -->
+      </div>
     </div>
 
     <!-- second -->
@@ -35,57 +44,17 @@
 <!-- --------------------------------------------------------------------------------------------- -->
 
 <div class="container">
-  <!-- first -->
-  <div class="row" style="display: flex; justify-content: space-around; align-items: center;">
-    <div class="col-lg-3 col-md-3 col-sm-12">
-      <div class="card bg-info text-white" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class=" text-center card-title">
-            <i class="fa fa-eye fa-3x"></i>
-          </h5>
-          <div class="container" style="text-align: center;">
-            <button class="btn btn-outline-light  " routerLink="/view-order">View Order</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!--forgot password-->
-    <!-- <div class="col-lg-3 col-md-3 col-sm-12">
-      <div class="card bg-warning text-white" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class=" text-center card-title">
-            <i class="fa fa-eye fa-3x"></i>
-          </h5>
-          <div class="container" style="text-align: center;">
-            <button class="btn btn-outline-light  " routerLink="/view-order">View Order</button>
-          </div>
-        </div>
-      </div>
-    </div> -->
 
 
-    <!-- second -->
-    <div class="col-lg-3 col-md-3 col-sm-12">
-      <div class="card " style="width: 18rem;">
-        <div class="card-body bg-primary text-white">
-          <h5 class="card-title text-center">
-            <i class=" text-center fa fa-map-marker fa-3x"></i>
-          </h5>
-          <div class="container" style="text-align: center;">
-            <button style="text-align: center;" (click)="getMyLocation()" class="btn  btn-outline-light ">Get my location</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    
+
   <!-- first row end -->
 
-<hr class="my-5">   
+  <hr class="my-5">
 
   <!-- second row start -->
 
-  <div class="row" style=" margin-bottom:30px; margin-top: 30px; display: flex; justify-content: space-around; align-items: center;">
+  <div class="row"
+    style=" margin-bottom:30px; margin-top: 30px; display: flex; justify-content: space-around; align-items: center;">
     <div class="col-lg-3 col-md-3 col-sm-12">
       <div class="card " style="width: 18rem;">
         <div class="card-body bg-success text-white">
@@ -116,7 +85,7 @@
       <div class="card " style="width: 18rem;">
         <div class="card-body  bg-info text-white">
           <h5 class="card-title text-center">
-            <i class="fa fa-shopping-bag fa-3x" ></i>
+            <i class="fa fa-shopping-bag fa-3x"></i>
           </h5>
           <div class="container" style="text-align: center;">
             <button class="btn  btn-outline-light" routerLink="/wishlist">Wishlist</button>
@@ -125,7 +94,7 @@
       </div>
     </div>
 
-    
+
 
   </div>
 </div>
@@ -143,10 +112,10 @@
     </button>
   </div>
   <div class="modal-body">
-     <div class="content">
+    <div class="content">
 
       <!-- This is your profile congratulation bro     -->
-       
+
       Details of your profile are as follows: <br />
       Customer ID : {{ data.customerId }} <br />
       Name : {{ data.name }} <br />
@@ -154,7 +123,7 @@
       Address1 : {{ data.address1 }} <br />
       Address2 : {{ data.address2 }} <br />
 
-     </div>
+    </div>
   </div>
   <div class="modal-footer">
     <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
