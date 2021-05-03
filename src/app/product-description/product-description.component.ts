@@ -38,7 +38,7 @@ export class ProductDescriptionComponent implements OnInit {
   obj = [];
   obj2 = [];
   isDataLoaded = false;
-
+  currentRate: number = 5;
   cartItem: CartItem = new CartItem();
 
 

@@ -48,6 +48,8 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { NgxPaginationModule } from 'ngx-pagination';
 import { CodComponent } from './cod/cod.component';
 import { CashOnDeliveryComponent } from './cash-on-delivery/cash-on-delivery.component';
+import { NewPasswordComponent } from './new-password/new-password.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 
 @NgModule({
@@ -92,7 +94,8 @@ import { CashOnDeliveryComponent } from './cash-on-delivery/cash-on-delivery.com
     ViewOrderItemComponent,
     ForgotPasswordComponent,
     CodComponent,
-    CashOnDeliveryComponent
+    CashOnDeliveryComponent,
+    NewPasswordComponent
 
 
   ],
@@ -103,7 +106,8 @@ import { CashOnDeliveryComponent } from './cash-on-delivery/cash-on-delivery.com
     RouterModule,
     HttpClientModule,
     NgbModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    NgxSpinnerModule
 
   ],
   providers: [],

@@ -2,7 +2,6 @@ import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Component, OnInit } from '@angular/core';
 import { Admin } from '../appmodel/admin';
 import { AdminService } from '../admin.service';
-import { CustomerService } from '../customer.service';
 import { Router } from '@angular/router';
 
 
@@ -17,6 +16,8 @@ export class AdminHomepageComponent implements OnInit {
   flag = true;
   adminName: string;
   closeResult = '';
+
+
 
   constructor(private router: Router, private modalService: NgbModal, private adminService: AdminService) { }
 
@@ -127,6 +128,11 @@ export class AdminHomepageComponent implements OnInit {
 
 
 
+  //code for javascript pie chart
+
+  pieChart() {
+    
+  }
 
 
 

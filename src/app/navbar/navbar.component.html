@@ -2,8 +2,176 @@
      Prathmesh Futane
      This is navbar -->
 
+<!-- new navbar -->
+<div class="pos-f-t">
+  <nav class="navbar navbar-light bg-light">
+    <!-- brand name -->
+    <div class="brand-logo"
+      style="margin-left: 10px; font-size:20px; font-family:Verdana, Geneva, Tahoma, sans-serif; cursor: pointer;"
+      routerLink="">webrash
+    </div>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <!-- search bar -->
+    <div class="input-group container" style="width: 80%;">
+      <input width="70%" type="text" class="form-control" placeholder="Search" name="searchValue" [(ngModel)]="searchValue">
+      <div class="input-group-append">
+        <div style="margin-left: 10px;">
+          <i style="cursor: pointer;" class="fa fa-search fa-2x" (click)="search()" routerLink="/search-by-keyword"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- button for Toggle -->
+    <button class="navbar-toggler mx-3" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent"
+      aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </nav>
+
+  <div class="collapse" id="navbarToggleExternalContent">
+    <div class="bg-light p-4">
+      <div class="container" style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px;">
+        <!-- dashboard icon -->
+        <span style="cursor: pointer;"><i class="fa fa-user fa-2x" routerLink="/dashboard" *ngIf="dashboard"></i></span>
+      
+        <button class="btn btn-danger" (click)="clearData()" *ngIf="logout">logout</button>
+      
+        <i style="margin-right:10px; cursor:pointer; " routerLink="/compare" class="fa fa-star "></i> 
+
+        <button class="btn btn-primary" routerLink="/login" *ngIf="login">login</button>
+
+        <i style="color:grey; cursor: pointer;" class="fa fa-shopping-cart fa-2x" routerLink="/cart" aria-hidden="true"></i>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--user favicon
+<div class="nav-item">
+  <span class="nav-link" routerLink="/dashboard">
+    <span><i class="fa fa-user fa-2x" routerLink="/dashboard" *ngIf="dashboard"></i></span>
+  </span>
+</div>
+
+ logout button 
+<div>
+  <button class="btn btn-danger" (click)="clearData()" *ngIf="logout">logout</button>
+</div>
+
+<!compare icon
+<i style="margin-right:10px; cursor:pointer; " routerLink="/compare" class="fa fa-star "></i> 
+
+cart and login button 
+<form class="d-flex ">
+  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    <li class="nav-item">
+      <div class="nav-link " aria-current="page" routerLink="/login">
+        <button class="btn btn-primary" routerLink="/login" *ngIf="login">login</button>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/cart">
+        <i style="color:grey" class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</form>
+
+-->
+
+
+
+
+
+
+
+
+
+
+
+<!-- old navbar incase of emergency -->
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light" style="box-shadow: -3px -2px 8px 8px rgba(0,0,0,0.35);">
 
   <div class="container-fluid">
     <a class="navbar-brand" routerLink="">webrash</a>
@@ -12,18 +180,18 @@
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
- 
+
     <div class="collapse navbar-collapse" style="display: flex;" id="navbarSupportedContent">
 
-      
-        <input width="100%" class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="searchValue"
-        [(ngModel)]="searchValue" list="search-list">
 
-        
-        <i style="cursor: pointer;" class="fa fa-search fa-2x" (click)="search()" routerLink="/search-by-keyword"></i>
-  
+      <input width="100%" class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
+        name="searchValue" [(ngModel)]="searchValue" list="search-list">
+
+
+      <i style="cursor: pointer;" class="fa fa-search fa-2x" (click)="search()" routerLink="/search-by-keyword"></i>
+
       <div class="nav-item">
-        <span class="nav-link" routerLink="/dashboard" >
+        <span class="nav-link" routerLink="/dashboard">
           <span><i class="fa fa-user fa-2x" *ngIf="dashboard"></i></span>
         </span>
       </div>
@@ -36,8 +204,8 @@
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
             <div class="nav-link " aria-current="page" routerLink="/login">
-              
-              <button class="btn btn-primary" *ngIf="login" >login</button>
+
+              <button class="btn btn-primary" *ngIf="login">login</button>
             </div>
           </li>
           <li class="nav-item">
@@ -50,4 +218,4 @@
 
     </div>
   </div>
-</nav>
+</nav> -->

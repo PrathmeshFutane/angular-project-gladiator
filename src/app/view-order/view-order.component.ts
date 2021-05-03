@@ -20,6 +20,7 @@ export class ViewOrderComponent implements OnInit {
   customer: Customer = new Customer();
   data: any;
   customerName: string;
+  //srNo:number=1;
 
   ngOnInit(): void {
     //alert("this is view order");

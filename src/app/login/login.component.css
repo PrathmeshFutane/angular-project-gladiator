@@ -3,3 +3,13 @@
   border: 2px solid grey;
   padding: 30px;
 }
+
+a {
+  color: black !important;
+}
+
+a:hover {
+  color: rgb(35, 35, 231) !important;
+  font-size: 17.5px;
+  transition: all 0.9s;
+}

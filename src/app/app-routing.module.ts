@@ -14,8 +14,10 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { CompareComponent } from './compare/compare.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FinalCheckoutComponent } from './final-checkout/final-checkout.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { LoginComponent } from './login/login.component';
+import { NewPasswordComponent } from './new-password/new-password.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { PaymentComponent } from './payment/payment.component';
 import { ProductDescriptionComponent } from './product-description/product-description.component';
@@ -67,6 +69,8 @@ const routes: Routes = [
   { path: 'view-order', component: ViewOrderComponent },
   { path: 'view-order-item', component: ViewOrderItemComponent },
   { path: 'cash-on-delivery', component: CashOnDeliveryComponent },
+  { path: 'forgot-password', component: ForgotPasswordComponent },
+  { path: 'new-password', component: NewPasswordComponent },
   { path: '**', component: PagenotfoundComponent }
 
 ];

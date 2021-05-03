@@ -4,10 +4,15 @@
 
 <div class="container">
     <div class="container">
-      <h2>Your Orders</h2>
+      <div class="container" style="display: flex; justify-content: center; align-items: center;">
+        <div class="card bg-light" style="margin-top: 20px; margin-bottom:20px;text-align: center; width: 75%; padding: 15px;">
+          <h2>Your Orders</h2>
+        </div>
+      </div>
       <table class="table table-striped">
         <thead>
           <tr>
+            <th>SrNo.</th>
             <th>Order Id</th>
             <th>Order Date</th>
             <th>Total Price</th>
@@ -17,8 +22,9 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let info of data">
+          <tr *ngFor="let info of data; index as srNo">
             
+            <th >{{srNo + 1}}</th>
             <th >{{info['orderId']}}</th>
             <th>{{info['orderDate']}}</th>
             <th>{{info['totalPrice']}}</th>

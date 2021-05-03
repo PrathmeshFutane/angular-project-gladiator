@@ -50,9 +50,6 @@ export class LoginComponent {
           'online shopping website',
           'success'
         )
-
-
-
         this.router.navigate(['products']);
       } else
         Swal.fire({

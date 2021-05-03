@@ -34,7 +34,10 @@
             <h3 class="card-title">{{data['productName']}}</h3>
             <hr class="my-4" style="width: 50%;">
             <h5 class="content subtitle">Price {{data['unitPrice']}}</h5>
-            <hr class="my-4">
+            <hr class="my-4" width="50%">
+            <ngb-rating [(rate)]="currentRate" style="font-size: 20px;"></ngb-rating>
+            <hr width="50%">
+            <pre>Rate: <b>{{currentRate}}</b></pre>
             <h5>About this Item</h5>
             <h6 class="card-text">{{data['productDescription']}}</h6>
             <i class="fas fa-heart fa-2x text-right" (click)="wishlist(data)" style="cursor: pointer; color: red; text-align: right;"></i> 

@@ -45,4 +45,19 @@ export class CustomerService {
     return this.http.post(url, customer);
   }
 
+
+  sendOTP(customer: Customer) {
+    let url = "http://localhost:8282/send-otp";
+    return this.http.post(url, customer);
+  }
+
+  checkOTP(otp) {
+    let url = "http://localhost:8282/check-otp?otp=" + otp;
+    return this.http.get(url, otp);
+  }
+
+  updatePassword(customer) {
+    let url = "http://localhost:8282/update-password";
+    return this.http.post(url, customer)
+  }
 }
